@@ -1,9 +1,9 @@
 # Project Plan
 
 ### Week 4
-- [ ] Create project repository on GitHub
-- [ ] Create project structure in intellij and push
-- [ ] Add link to list of indie projects in student repo.
+- [x] Create project repository on GitHub
+- [x] Create project structure in intellij and push
+- [x] Add link to list of indie projects in student repo.
 - [ ] Complete Problem Statement
 - [ ] Determine possible Web Services or APIs to use
 - [ ] List technologies, versions and how they will be used
@@ -12,7 +12,7 @@
 - [ ] Document application flow in text and pictures - figma
 - [ ] Screen design
 - [ ] Triple-check for Checkpoint 1
-- [ ] Vertabelo model of database
+- [x] Vertabelo model of database
 
 ### Week 4
 #### This week's focus is the User Sign Up Story
