@@ -1,2 +1,4 @@
-package org.davidcalabrese.entity;public class User {
+package org.davidcalabrese.entity;
+
+public class User {
 }
