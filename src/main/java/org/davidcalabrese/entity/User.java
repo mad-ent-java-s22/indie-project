@@ -1,18 +1,41 @@
 package org.davidcalabrese.entity;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+/**
+ * Represents a user in the application. Corresponds to table blog.user.
+ *
+ * @author David Calabrese
+ */
+@Entity(name = "user")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(name = "user_name")
     private String userName;
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "time_created")
     private LocalDate timeCreated;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "access_privileges")
     private String accessPrivileges;
 
-    /* No arg constructor **/
+    /** No arg constructor */
     public User() {}
 
     /**
