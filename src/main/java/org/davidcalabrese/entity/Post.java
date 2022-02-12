@@ -2,6 +2,11 @@ package org.davidcalabrese.entity;
 
 import java.time.LocalDate;
 
+/**
+ * Represents a blog post in the application.
+ *
+ * @author David Calabrese
+ */
 public class Post {
     private int id;
     private String title;
@@ -9,8 +14,17 @@ public class Post {
     private LocalDate timeCreated;
     private int userId;
 
+    /** No arg constructor */
     public Post() {}
 
+    /**
+     * Constructor that takes all fields except id
+     *
+     * @param title post title
+     * @param content content of post
+     * @param timeCreated datetime during which post was create
+     * @param userId id of user (corresponds to User.id)
+     */
     public Post(int id, String title, String content, LocalDate timeCreated, int userId) {
         this.id = id;
         this.title = title;
