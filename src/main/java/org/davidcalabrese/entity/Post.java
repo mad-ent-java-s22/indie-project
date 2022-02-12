@@ -42,7 +42,6 @@ public class Post {
      * @param user user who created post (fk relationship)
      */
     public Post(String title, String content, LocalDate timeCreated, User user) {
-        this.id = id;
         this.title = title;
         this.content = content;
         this.timeCreated = timeCreated;
