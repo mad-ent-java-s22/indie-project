@@ -1,5 +1,6 @@
 package org.davidcalabrese.entity;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
 /**
@@ -7,12 +8,27 @@ import java.time.LocalDate;
  *
  * @author David Calabrese
  */
+@Entity(name = "post")
 public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "content")
     private String content;
+
+    // TODO
+    //  figure out how to convert this from timestamp
+    //  check out @CreationTimeStamp & @Convert tags
+    @Column(name = "time_created")
     private LocalDate timeCreated;
-    private int userId;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "post_user"))
+    private User user;
 
     /** No arg constructor */
     public Post() {}
@@ -23,14 +39,14 @@ public class Post {
      * @param title post title
      * @param content content of post
      * @param timeCreated datetime during which post was create
-     * @param userId id of user (corresponds to User.id)
+     * @param user user who created post (fk relationship)
      */
-    public Post(int id, String title, String content, LocalDate timeCreated, int userId) {
+    public Post(String title, String content, LocalDate timeCreated, User user) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.timeCreated = timeCreated;
-        this.userId = userId;
+        this.user = user;
     }
 
     /**
@@ -106,20 +122,20 @@ public class Post {
     }
 
     /**
-     * Gets the value of <code>userId</code>
+     * Gets the value of <code>user</code>
      *
-     * @return value of <code>userId</code>
+     * @return value of <code>user</code>
      */
-    public int getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
     /**
-     * Sets the value of <code>userId</code>
+     * Sets the value of <code>user</code>
      *
-     * @param userId the value of <code>userId</code>
+     * @param user the value of <code>user</code>
      */
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 }
