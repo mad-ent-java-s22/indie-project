@@ -24,6 +24,9 @@ The application will be designed so a user can get caught up on the latest news 
 * I do not want to be distracted from meaningful issues
 * I do not want to be a part of a system that energizes hatred and bigotry
 
-### Project plan
+### Links
 [Project Plan](/ProjectPlan.md)
+[Journal](/Journal.md)
+[Time Log](/TimeLog.md)
+[Weekly Reflections](/WeeklyReflection.md)
 
