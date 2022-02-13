@@ -30,3 +30,28 @@ The application will be designed so a user can get caught up on the latest news 
 [Time Log](/TimeLog.md)
 [Weekly Reflections](/WeeklyReflection.md)
 
+### Project Technologies/Techniques
+* Security/Authentication
+    * AWS's Cognito
+* Database
+    * MySQL 8
+* ORM Framework
+    * Hibernate 5
+* Dependency Management
+    * Maven
+* Web Services consumed using Java
+    * TODO: Figure out how to integrate web services into blog
+* CSS
+    * Bootstrap
+* Data Validation
+    * TBD
+* Logging
+    * Log4J2
+* Hosting
+    * AWS
+* Independent Research Topic/s
+    * AWS
+    * Ethical Design 
+* Unit Testing
+    * JUnit tests to achieve 80%+ code coverage
+* IDE: IntelliJ IDEA
