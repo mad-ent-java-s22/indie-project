@@ -14,7 +14,9 @@ Document project progress, the development process, accomplishments, snags, and 
 * rewrite project plan, readme
 
 ### Week 5
-
+#### 2/14
+* creating screen design with css, figma too difficult, going too slow
+* working on home screen jsp
 ### Week 6
 
 ### Week 7
