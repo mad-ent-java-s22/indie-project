@@ -9,14 +9,14 @@
 - [x] List technologies, versions and how they will be used
 - [x] Weekly reflection
 - [x] Write project plan
-- [ ] Document application flow in text and pictures - figma
-- [ ] Screen design
+- [x] Screen design
 - [ ] Triple-check for Checkpoint 1
 - [x] Vertabelo model of database
 
 ### Week 5
 - [x] Create the database
 - [x] Select Template | Design CSS
+- [ ] Document application flow in text and pictures - figma
 - [ ] Create a home screen
 - [x] add user and post entities with hibernate annotations
 - [ ] add user and post servlets
