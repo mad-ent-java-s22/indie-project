@@ -3,7 +3,7 @@
 Repository for Enterprise Java project.
 
 ### Problem statement
-Need a non-addictive application to share one's thoughts with community. 
+Need a non-addictive, non-manipulative application to share one's thoughts with community. 
 
 ### Solution
 Taciturn is the micro-blogging solution many don't know they need. 
@@ -16,6 +16,9 @@ The application will be designed so a user can get caught up on the latest news 
 * no hateful content allowed 
 * very difficult to harass people
 * builds rather than erodes social trust
+* not built to hijack your attention
+* does not track users or sell their data
+* does not amplify harmful or misleading info
 
 ### User stories
 * as a social media user, I do not want my data to be collected so that I do not have a creepy feeling of being watched every time I log in 
@@ -40,11 +43,13 @@ The application will be designed so a user can get caught up on the latest news 
 * Dependency Management
     * Maven
 * Web Services consumed using Java
-    * TODO: Figure out how to integrate web services into blog
+    * Potential APIs to use in a blog 
+      * [HTTP Cat](https://http.cat/?ref=apilist.fun) provides a cat image for every http status code. This could be used with custom http error pages
+      * [Google Calendar](https://developers.google.com/calendar) Could be used to add to calendar events that are posted in blog
 * CSS
     * Bootstrap
 * Data Validation
-    * TBD
+    * Hibernate Validator
 * Logging
     * Log4J2
 * Hosting
