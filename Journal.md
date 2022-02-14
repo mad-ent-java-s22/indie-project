@@ -10,3 +10,29 @@ Document project progress, the development process, accomplishments, snags, and 
 * Research on how social media sites are designed to be addictive and how this can be avoided 
 * Re-create project structure 
 * Add link to student repo
+#### 2/10
+* rewrite project plan, readme
+
+### Week 5
+
+### Week 6
+
+### Week 7
+
+### Week 8
+
+### Week 9
+
+### Week 10
+
+### Week 11
+
+### Week 12
+
+### Week 13
+
+### Week 14
+
+### Week 15
+
+### Week 16
