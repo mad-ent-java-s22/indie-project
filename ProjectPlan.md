@@ -15,9 +15,15 @@
 
 ### Week 5
 - [x] Create the database
+  - [x] Create user table 
+  - [x] Create post table
 - [x] Select Template | Design CSS
 - [ ] Document application flow in text and pictures - figma
 - [ ] Create a home screen
+- [ ] Brainstorm some technical components of ethical design 
+  - [ ] Tag different kinds of sensitive content (politics, nudity, drugs/alcohol), allow users to filter certain content out 
+  - [ ] Include a settings page that gives user options w/r/t how much time they want to spend on the app, what times of day they want to use it, etc
+  - [ ] Create a way to enforce these user preferences
 - [x] add user and post entities with hibernate annotations
 - [ ] add user and post servlets
 - [x] generic dao class
