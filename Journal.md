@@ -17,6 +17,12 @@ Document project progress, the development process, accomplishments, snags, and 
 #### 2/14
 * creating screen design with css, figma too difficult, going too slow
 * working on home screen jsp
+* Getting this error in GenericDao class
+  incompatible types: org.hibernate.query.criteria.HibernateCriteriaBuilder cannot be converted to javax.persistence.criteria.CriteriaBuilder
+
+I think maybe Hibernate changed which class it is using (maybe used to use javax.persistence.criteria.CriteriaBuilder and now users org.hibernate.query.criteria.HibernateCriteriaBuilder). (GenericDao.java line 44)
+
+If I change the builder type from CriteriaBuilder to HibernateCriteriaBuilder then I'm going to have some issues with the createQuery method.
 ### Week 6
 
 ### Week 7
