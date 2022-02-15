@@ -17,7 +17,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
-    <hibernate-version>6.0.0.CR1</hibernate-version>
+    <hibernate-version>5.4.4.Final</hibernate-version>
     <javax.version>8.0.1</javax.version>
     <jstl-version>1.2</jstl-version>
     <junit-platform-runner-version>1.0.0</junit-platform-runner-version>
@@ -34,13 +34,13 @@
   <dependencies>
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
     <dependency>
-      <groupId>org.hibernate.orm</groupId>
+      <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
       <version>${hibernate-version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 -->
     <dependency>
-      <groupId>org.hibernate.orm</groupId>
+      <groupId>org.hibernate</groupId>
       <artifactId>hibernate-c3p0</artifactId>
       <version>${hibernate-version}</version>
     </dependency>
