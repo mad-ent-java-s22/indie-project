@@ -19,3 +19,21 @@
 | 2/7  | Ex 4 | 4 |  |
 | 2/8  | Indie project | 1 |  |
 | 2/9  | Indie project | 3 | Start project over. Work on project plan and README |
+| 2/10 | Indie Project | 1 | Research Ethical design |
+| 2/11 | Indie Project | 3 | Work on project structure, hibernate and db integration |
+| 2/14 | Indie Project | 5 | Troubleshooting build problems, working on project configuration|
+| 2/15 |               |   |                |
+| 2/16 |               |   |                |
+| 2/17 |               |   |                |
+| 2/18 |               |   |                |
+| 2/19 |               |   |                |
+| 2/20 |               |   |                |
+| 2/21 |               |   |                |
+| 2/22 |               |   |                |
+| 2/23 |               |   |                |
+| 2/24 |               |   |                |
+| 2/25 |               |   |                |
+| 2/26 |               |   |                |
+| 2/27 |               |   |                |
+| 2/28 |               |   |                |
+
