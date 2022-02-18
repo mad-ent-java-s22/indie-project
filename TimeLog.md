@@ -24,8 +24,8 @@
 | 2/14 | Indie Project | 5 | Troubleshooting build problems, working on project configuration|
 | 2/15 | Exercise 5    | 3 |                |
 | 2/15 | Indie Project | 1 | Troubleshooting|
-| 2/16 | Ex 5, IP      | 2 |                |
-| 2/17 |               |   |                |
+| 2/16 | Ex 5, IP      | 4 |                |
+| 2/17 | Ex 5, IP      | 6 |                |
 | 2/18 |               |   |                |
 | 2/19 |               |   |                |
 | 2/20 |               |   |                |
