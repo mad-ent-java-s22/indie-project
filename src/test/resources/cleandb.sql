@@ -47,7 +47,7 @@ CREATE TABLE user (
                       date_created timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
                       email varchar(50) NOT NULL,
                       password varchar(255) NOT NULL,
-                      access_privileges varchar(5) NOT NULL DEFAULT "user",
+                      access_privileges varchar(5) NOT NULL DEFAULT 'user',
                       CONSTRAINT user_pk PRIMARY KEY (id)
 );
 
