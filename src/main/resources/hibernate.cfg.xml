@@ -18,6 +18,7 @@
 
         <mapping class="org.davidcalabrese.entity.User" />
         <mapping class="org.davidcalabrese.entity.Post" />
+        <mapping class="org.davidcalabrese.entity.Tag" />
     </session-factory>
 
 </hibernate-configuration>
