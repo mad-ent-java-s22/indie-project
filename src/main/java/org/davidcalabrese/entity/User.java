@@ -8,7 +8,8 @@ import java.time.LocalDate;
  *
  * @author David Calabrese
  */
-@Entity(name = "user")
+@Entity
+@Table(name = "user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
