@@ -26,7 +26,7 @@
 | 2/15 | Indie Project | 1 | Troubleshooting|
 | 2/16 | Ex 5, IP      | 4 |                |
 | 2/17 | Ex 5, IP      | 6 |                |
-| 2/18 |               |   |                |
+| 2/18 | Indie Project | 2 | Redesign database |
 | 2/19 |               |   |                |
 | 2/20 |               |   |                |
 | 2/21 |               |   |                |
