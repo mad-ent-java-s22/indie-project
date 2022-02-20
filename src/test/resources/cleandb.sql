@@ -16,7 +16,7 @@ DROP TABLE if exists user;
 
 -- Table: post
 CREATE TABLE post (
-                      id int NOT NULL,
+                      id int NOT NULL AUTO_INCREMENT,
                       title varchar(50) NOT NULL,
                       content varchar(255) NOT NULL,
                       date_created timestamp NOT NULL,
@@ -33,14 +33,14 @@ CREATE TABLE post_tag (
 
 -- Table: tag
 CREATE TABLE tag (
-                     id int NOT NULL,
+                     id int NOT NULL AUTO_INCREMENT,
                      name varchar(50) NOT NULL,
                      CONSTRAINT tag_pk PRIMARY KEY (id)
 );
 
 -- Table: user
 CREATE TABLE user (
-                      id int NOT NULL,
+                      id int NOT NULL AUTO_INCREMENT,
                       user_name varchar(50) NOT NULL,
                       first_name varchar(50) NOT NULL,
                       last_name varchar(75) NOT NULL,
