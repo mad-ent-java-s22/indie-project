@@ -20,7 +20,7 @@ CREATE TABLE post (
                       title varchar(50) NOT NULL,
                       content varchar(255) NOT NULL,
                       date_created timestamp NOT NULL,
-                      User_id int NOT NULL,
+                      user_id int NOT NULL,
                       CONSTRAINT post_pk PRIMARY KEY (id)
 ) COMMENT 'represents a blog post';
 
@@ -53,7 +53,7 @@ CREATE TABLE user (
 
 -- foreign keys
 -- Reference: Post_User (table: post)
-ALTER TABLE post ADD CONSTRAINT Post_User FOREIGN KEY Post_User (User_id)
+ALTER TABLE post ADD CONSTRAINT post_user FOREIGN KEY post_user (user_id)
     REFERENCES user (id);
 
 -- Reference: post_tag_post (table: post_tag)
