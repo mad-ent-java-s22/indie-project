@@ -2,13 +2,16 @@ package org.davidcalabrese.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Represents a blog post in the application.
  *
  * @author David Calabrese
  */
-@Entity(name = "post")
+@Entity
+@Table(name = "post")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,6 +32,14 @@ public class Post {
     @ManyToOne
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "post_user"))
     private User user;
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "post_tag",
+            joinColumns = { @JoinColumn(name = "post_id") },
+            inverseJoinColumns = { @JoinColumn(name = "tag_id") }
+    )
+    Set<Tag> tags = new HashSet<>();
 
     /** No arg constructor */
     public Post() {}
