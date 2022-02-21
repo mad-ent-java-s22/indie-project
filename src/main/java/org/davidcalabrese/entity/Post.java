@@ -60,6 +60,17 @@ public class Post {
     }
 
     /**
+     * Constructor taking only title and content
+     *
+     * @param title blog post title
+     * @param content text inside blog post
+     */
+    public Post(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
+
+    /**
      * Gets the value of <code>id</code>
      *
      * @return value of <code>id</code>
