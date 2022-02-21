@@ -1,6 +1,6 @@
 -- foreign keys
 ALTER TABLE post
-    DROP FOREIGN KEY Post_User;
+    DROP FOREIGN KEY post_user;
 
 ALTER TABLE post_tag
     DROP FOREIGN KEY post_tag_post;
@@ -19,7 +19,7 @@ CREATE TABLE post (
                       id int NOT NULL AUTO_INCREMENT,
                       title varchar(50) NOT NULL,
                       content varchar(255) NOT NULL,
-                      date_created timestamp NOT NULL,
+                      date_created timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
                       user_id int NOT NULL,
                       CONSTRAINT post_pk PRIMARY KEY (id)
 ) COMMENT 'represents a blog post';
@@ -52,7 +52,7 @@ CREATE TABLE user (
 );
 
 -- foreign keys
--- Reference: Post_User (table: post)
+-- Reference: post_user (table: post)
 ALTER TABLE post ADD CONSTRAINT post_user FOREIGN KEY post_user (user_id)
     REFERENCES user (id);
 
@@ -63,5 +63,17 @@ ALTER TABLE post_tag ADD CONSTRAINT post_tag_post FOREIGN KEY post_tag_post (pos
 -- Reference: post_tag_tag (table: post_tag)
 ALTER TABLE post_tag ADD CONSTRAINT post_tag_tag FOREIGN KEY post_tag_tag (tag_id)
     REFERENCES tag (id);
+
+-- Insert data
+INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`) VALUES ('user1', 'Pam', 'Smith', 'pam@gmail.com', 'password');
+INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`) VALUES ('user2', 'Dave', 'Johnson', 'dave@gmail.com', 'password');
+INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`) VALUES ('user3', 'Gina', 'Lucas', 'gina@gmail.com', 'password');
+INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`) VALUES ('user4', 'Tony', 'Davis', 'tony@gmail.com', 'password');
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post1', 'This is post 1', '1');
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post2', 'This is post 2', '2');
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post3', 'This is post 3', '3');
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post4', 'This is post 4', '2');
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post5', 'This is post 5', '4');
+
 
 -- End of file.
