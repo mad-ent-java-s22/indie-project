@@ -28,9 +28,15 @@
 - [ ] add user and post servlets
 - [x] generic dao class
 - [ ] Weekly reflection
-- [ ] Work on design
+
 
 ### Week 6
+- [ ] Work on design
+- [ ] redo db model to accommodate many-to-many relationship
+- [ ] get bridging table to work with hibernate
+- [ ] continue writing unit tests 
+- [ ] fix log4j file appender error
+
 
 ### Week 7
 
