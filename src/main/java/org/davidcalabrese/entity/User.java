@@ -24,8 +24,8 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "time_created")
-    private LocalDate timeCreated;
+    @Column(name = "date_created")
+    private LocalDate dateCreated;
 
     @Column(name = "email")
     private String email;
@@ -45,17 +45,17 @@ public class User {
      * @param userName string which identifies a user in application
      * @param firstName user's first name
      * @param lastName user's last name
-     * @param timeCreated datetime account was created
+     * @param dateCreated datetime account was created
      * @param email user's email address
      * @param password user's password
      * @param accessPrivileges user's access privileges (`user` by default, otherwise `admin`)
      */
-    public User(Long id, String userName, String firstName, String lastName, LocalDate timeCreated, String email, String password, String accessPrivileges) {
+    public User(Long id, String userName, String firstName, String lastName, LocalDate dateCreated, String email, String password, String accessPrivileges) {
         this.id = id;
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.timeCreated = timeCreated;
+        this.dateCreated = dateCreated;
         this.email = email;
         this.password = password;
         this.accessPrivileges = accessPrivileges;
@@ -138,8 +138,8 @@ public class User {
      *
      * @return value of <code>timeCreated</code>
      */
-    public LocalDate getTimeCreated() {
-        return timeCreated;
+    public LocalDate getDateCreated() {
+        return dateCreated;
     }
 
     /**
@@ -147,8 +147,8 @@ public class User {
      *
      * @param timeCreated the value of <code>timeCreated</code>
      */
-    public void setTimeCreated(LocalDate timeCreated) {
-        this.timeCreated = timeCreated;
+    public void setDateCreated(LocalDate timeCreated) {
+        this.dateCreated = timeCreated;
     }
 
     /**

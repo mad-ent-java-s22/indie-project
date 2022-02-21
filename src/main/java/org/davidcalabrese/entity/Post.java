@@ -26,8 +26,8 @@ public class Post {
     // TODO
     //  figure out how to convert this from timestamp
     //  check out @CreationTimeStamp & @Convert tags
-    @Column(name = "time_created")
-    private LocalDate timeCreated;
+    @Column(name = "date_created")
+    private LocalDate dateCreated;
 
     @ManyToOne
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "post_user"))
@@ -55,7 +55,7 @@ public class Post {
     public Post(String title, String content, LocalDate timeCreated, User user) {
         this.title = title;
         this.content = content;
-        this.timeCreated = timeCreated;
+        this.dateCreated = dateCreated;
         this.user = user;
     }
 
@@ -114,21 +114,21 @@ public class Post {
     }
 
     /**
-     * Gets the value of <code>timeCreated</code>
+     * Gets the value of <code>dateCreated</code>
      *
-     * @return value of <code>timeCreated</code>
+     * @return value of <code>dateCreated</code>
      */
-    public LocalDate getTimeCreated() {
-        return timeCreated;
+    public LocalDate getDateCreated() {
+        return dateCreated;
     }
 
     /**
-     * Sets the value of <code>timeCreated</code>
+     * Sets the value of <code>dateCreated</code>
      *
-     * @param timeCreated the value of <code>timeCreated</code>
+     * @param dateCreated the value of <code>dateCreated</code>
      */
-    public void setTimeCreated(LocalDate timeCreated) {
-        this.timeCreated = timeCreated;
+    public void setDateCreated(LocalDate dateCreated) {
+        this.dateCreated = dateCreated;
     }
 
     /**
