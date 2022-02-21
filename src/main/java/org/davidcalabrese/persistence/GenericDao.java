@@ -11,6 +11,7 @@ import javax.persistence.criteria.Root;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.davidcalabrese.entity.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -146,6 +147,23 @@ public class GenericDao<T> {
         return session.createQuery(query).getResultList();
     }
 
+    /**
+     * Returns all database entries associated with user (ie posts)
+     *
+     * @param user the user
+     * @return list of user's posts
+     */
+    public List<T> getByUser(User user) {
+        Session session = getSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        query.select(root).where(builder.equal(root.get("user"), user));
+        List<T> entities = session.createQuery(query).getResultList();
+        session.close();
+
+        return entities;
+    }
 
     /**
      * Returns an open session from the SessionFactory
