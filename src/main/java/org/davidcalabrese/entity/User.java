@@ -13,7 +13,7 @@ import java.time.LocalDate;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
 
     @Column(name = "user_name")
     private String userName;
@@ -50,7 +50,7 @@ public class User {
      * @param password user's password
      * @param accessPrivileges user's access privileges (`user` by default, otherwise `admin`)
      */
-    public User(Long id, String userName, String firstName, String lastName, LocalDate dateCreated, String email, String password, String accessPrivileges) {
+    public User(int id, String userName, String firstName, String lastName, LocalDate dateCreated, String email, String password, String accessPrivileges) {
         this.id = id;
         this.userName = userName;
         this.firstName = firstName;
@@ -66,7 +66,7 @@ public class User {
      *
      * @return value of <code>id</code>
      */
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
@@ -75,7 +75,7 @@ public class User {
      *
      * @param id the value of <code>id</code>
      */
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
