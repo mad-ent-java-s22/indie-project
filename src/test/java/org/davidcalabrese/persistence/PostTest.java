@@ -8,6 +8,7 @@ import org.davidcalabrese.testUtil.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -29,6 +30,17 @@ public class PostTest {
     }
 
     @Test
+    public void insertTest() {
+        User user1 = (User) userDao.getById(1);
+        Post testPost = new Post("Test title", "post content here");
+        testPost.setUser(user1);
+        int id = postDao.insert(testPost);
+
+        assertNotNull(id);
+        assertEquals(6, postDao.getAll().size());
+    }
+
+    @Test
     public void getAllPostsSuccess() {
         logger.info("in getAllPostsSuccess");
         List<Post> posts = postDao.getAll();
@@ -46,8 +58,29 @@ public class PostTest {
     @Test
     public void getPostsByUserIdSuccess() {
         logger.info("in getPostsByUserIdSuccess");
+        User user2 = (User) userDao.getById(2);
 
-        List<Post> user2Posts = userDao.get
+        List<Post> user2Posts = postDao.getByUser(user2);
+        assertEquals(2, user2Posts.size());
+    }
+
+    @Test
+    public void updatePostSuccess() {
+        Post testPost = (Post) postDao.getById(1);
+        testPost.setTitle("new title");
+        postDao.saveOrUpdate(testPost);
+
+        Post editedPost = (Post) postDao.getById(1);
+        assertEquals("new title", editedPost.getTitle());
+    }
+
+    @Test
+    public void deletePostSuccess() {
+        logger.info("in deletePostSuccess");
+        Post testPost = (Post) postDao.getById(1);
+        postDao.delete(testPost);
+
+        assertEquals(4, postDao.getAll().size());
     }
 
 }
