@@ -37,7 +37,6 @@ public class Database {
      */
     private Database() {
         loadProperties();
-
     }
 
     /**
