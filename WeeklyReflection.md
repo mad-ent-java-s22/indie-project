@@ -14,8 +14,11 @@ Things are coming together! I have redesigned my data model and thinking over th
 
 I've implemented the genericDao class successfully for my post entities and all of my CRUD tests are passing except for the insert test. I'm getting the following error during the save operation:
 
+```
 org.hibernate.exception.SQLGrammarException: error performing isolated work 
-... Caused by: java.sql.SQLSyntaxErrorException: Table 'blog.hibernate_sequence' doesn't exist
+... 
+Caused by: java.sql.SQLSyntaxErrorException: Table 'blog.hibernate_sequence' doesn't exist
+```
 
 I have no idea what this error is about, I can't even imagine what the SQL statement is hibernate is trying to write. I know if I weren't using Hibernate I would be using some MySQL functions to perform the insert in the post_tag table. I would need to get the id of the post and id of the tag in order to insert. I'm not sure how hibernate does this or what I can do to help it along.
 
