@@ -68,7 +68,6 @@ public class PostTag implements Serializable {
     @Override
     public String toString() {
         return "PostTag{" +
-                "id=" + id +
                 ", post=" + post +
                 ", tag=" + tag +
                 '}';
