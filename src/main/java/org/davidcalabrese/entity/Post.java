@@ -2,8 +2,6 @@ package org.davidcalabrese.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.HashSet;
 import java.util.Set;
 
