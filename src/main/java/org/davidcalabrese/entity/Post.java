@@ -2,6 +2,8 @@ package org.davidcalabrese.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -158,5 +160,10 @@ public class Post {
      */
     public void setUser(User user) {
         this.user = user;
+    }
+
+    String formatDate(LocalDate date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);
+        return date.format(formatter);
     }
 }
