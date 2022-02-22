@@ -2,6 +2,8 @@ package org.davidcalabrese.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Represents a user in the application. Corresponds to table blog.user.
@@ -35,6 +37,9 @@ public class User {
 
     @Column(name = "access_privileges")
     private String accessPrivileges;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Post> posts = new HashSet<>();
 
     /** No arg constructor */
     public User() {}
