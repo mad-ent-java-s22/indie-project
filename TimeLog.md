@@ -27,9 +27,9 @@
 | 2/16 | Ex 5, IP      | 4 |                |
 | 2/17 | Ex 5, IP      | 6 |                |
 | 2/18 | Indie Project | 2 | Redesign database |
-| 2/19 |               |   |                |
-| 2/20 |               |   |                |
-| 2/21 |               |   |                |
+| 2/19 | Indie Project | 4 | CRUD Unit tests, many-to-many annotations|
+| 2/20 | peer review   | 1 |                 |
+| 2/21 | Indie project | 7 | unit tests, display jsps, custom tag lib |
 | 2/22 |               |   |                |
 | 2/23 |               |   |                |
 | 2/24 |               |   |                |
