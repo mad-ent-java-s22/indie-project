@@ -161,4 +161,22 @@ public class Post {
     public void setUser(User user) {
         this.user = user;
     }
+
+    /**
+     * Gets the value of <code>tags</code>
+     *
+     * @return value of <code>tags</code>
+     */
+    public Set<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * Sets the value of <code>tags</code>
+     *
+     * @param tags the value of <code>tags</code>
+     */
+    public void setTags(Set<Tag> tags) {
+        this.tags = tags;
+    }
 }
