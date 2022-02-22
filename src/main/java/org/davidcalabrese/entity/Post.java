@@ -33,13 +33,8 @@ public class Post {
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "post_user"))
     private User user;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-            name = "post_tag",
-            joinColumns = { @JoinColumn(name = "post_id") },
-            inverseJoinColumns = { @JoinColumn(name = "tag_id") }
-    )
-    Set<Tag> tags = new HashSet<>();
+    @OneToMany(mappedBy = "post", fetch = FetchType.EAGER)
+    private Set<PostTag> tags = new HashSet<>();
 
     /** No arg constructor */
     public Post() {}
@@ -49,10 +44,10 @@ public class Post {
      *
      * @param title post title
      * @param content content of post
-     * @param timeCreated datetime during which post was create
+     * @param dateCreated datetime during which post was create
      * @param user user who created post (fk relationship)
      */
-    public Post(String title, String content, LocalDate timeCreated, User user) {
+    public Post(String title, String content, LocalDate dateCreated, User user) {
         this.title = title;
         this.content = content;
         this.dateCreated = dateCreated;
@@ -165,7 +160,7 @@ public class Post {
      *
      * @return value of <code>tags</code>
      */
-    public Set<Tag> getTags() {
+    public Set<PostTag> getTags() {
         return tags;
     }
 
@@ -174,7 +169,7 @@ public class Post {
      *
      * @param tags the value of <code>tags</code>
      */
-    public void setTags(Set<Tag> tags) {
+    public void setTags(HashSet<PostTag> tags) {
         this.tags = tags;
     }
 }
