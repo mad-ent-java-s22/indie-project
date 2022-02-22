@@ -1,11 +1,18 @@
 package org.davidcalabrese.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity(name = "PostTag")
 @Table(name = "post_tag")
 public class PostTag implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
+    private int id;
+
     @Id
     @ManyToOne
     @JoinColumn(name = "post_id", referencedColumnName = "id")
@@ -27,6 +34,24 @@ public class PostTag implements Serializable {
     public PostTag(Post post, Tag tag) {
         this.post = post;
         this.tag = tag;
+    }
+
+    /**
+     * Gets the value of <code>id</code>
+     *
+     * @return value of <code>id</code>
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Sets the value of <code>id</code>
+     *
+     * @param id the value of <code>id</code>
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
@@ -68,6 +93,7 @@ public class PostTag implements Serializable {
     @Override
     public String toString() {
         return "PostTag{" +
+                "id=" + id +
                 ", post=" + post +
                 ", tag=" + tag +
                 '}';
