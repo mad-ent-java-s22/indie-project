@@ -29,3 +29,14 @@ I found an interesting solution to a problem I was having formatting the dates o
 ### Week 6
 Got some helpful advice from Carson and Quinn on how to solve some problems I was running into. 
 * 2/22 - adjusted the data model to make the many-to-many relationship work. I had found some stuff online that mapped a many-to-many relationship with @ManyToMany hibernate annotations. However, I couldn't get this to work. I had overlooked the week 5 video on many to many, so I went and watched it. Then I decided to implement the relationship as two one-to-many relationships and actually creating an entity for the bridging/joining table (post_tag). Originally my joining table only had two columns, one for the post_id (fk to post.id) and one for the tag_id (fk to tag.id). In the video Paula says that its possible to implement the relationship with a table like this but then I would need to make another entity that represented the composite key or something like that. I felt it would be easier to follow her example and add a surrogate pk to the post_tag table. The new ERD can be found in DesignDocuments directory in database_model.PNG file.
+
+I'm getting this error when I try to run tests with the new data model:
+
+```aidl
+org.hibernate.exception.DataException: Could not read entity state from ResultSet : EntityKey[org.davidcalabrese.entity.Tag#1]
+...
+Caused by: java.sql.SQLDataException: Cannot determine value type from string 'politics'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:114)
+```
+
+Looks like maybe this is because I the tag name type in the db is string, but the java entity is of type `Set<PostTag> tags`. I did this because I want to be able to have each post have multiple tags. And each individual tag is a string in the database. Not sure what to do now.  
