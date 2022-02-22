@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -28,7 +29,9 @@
                             <div class="col p-4 d-flex flex-column position-static">
                                 <strong class="d-inline-block mb-2 text-primary">World</strong>
                                 <h3 class="mb-0">${post.title}</h3>
-                                <div class="mb-1 text-muted">${post.dateCreated}</div>
+                                <div class="mb-1 text-muted">
+                                    <tags:localDate date="${post.dateCreated}" pattern='${"MMM d, yyyy \'at\' h:mm a"}'/>
+                                </div>
                                 <p class="card-text mb-auto">${post.content}</p>
                                 <a href="#" class="link-primary">${post.user.getUserName()}</a>
                                 <a href="#" class="stretched-link">Continue reading</a>
