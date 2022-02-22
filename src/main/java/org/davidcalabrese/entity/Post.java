@@ -161,9 +161,4 @@ public class Post {
     public void setUser(User user) {
         this.user = user;
     }
-
-    String formatDate(LocalDate date) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);
-        return date.format(formatter);
-    }
 }
