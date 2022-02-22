@@ -26,9 +26,10 @@ CREATE TABLE post (
 
 -- Table: post_tag
 CREATE TABLE post_tag (
-                          tag_id int NOT NULL,
+                          id int NOT NULL AUTO_INCREMENT,
                           post_id int NOT NULL,
-                          CONSTRAINT post_tag_pk PRIMARY KEY (tag_id,post_id)
+                          tag_id int NOT NULL,
+                          CONSTRAINT post_tag_pk PRIMARY KEY (id)
 );
 
 -- Table: tag
@@ -64,16 +65,39 @@ ALTER TABLE post_tag ADD CONSTRAINT post_tag_post FOREIGN KEY post_tag_post (pos
 ALTER TABLE post_tag ADD CONSTRAINT post_tag_tag FOREIGN KEY post_tag_tag (tag_id)
     REFERENCES tag (id);
 
--- Insert data
+-- inserts 4 test users
 INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`) VALUES ('user1', 'Pam', 'Smith', 'pam@gmail.com', 'password');
 INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`) VALUES ('user2', 'Dave', 'Johnson', 'dave@gmail.com', 'password');
 INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`) VALUES ('user3', 'Gina', 'Lucas', 'gina@gmail.com', 'password');
 INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`) VALUES ('user4', 'Tony', 'Davis', 'tony@gmail.com', 'password');
-INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post1', 'This is post 1', '1');
-INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post2', 'This is post 2', '2');
-INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post3', 'This is post 3', '3');
-INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post4', 'This is post 4', '2');
-INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post5', 'This is post 5', '4');
+
+-- inserts 10 tags
+INSERT INTO `blog`.`tag` (`name`) VALUES ('politics');
+INSERT INTO `blog`.`tag` (`name`) VALUES ('education');
+INSERT INTO `blog`.`tag` (`name`) VALUES ('movies');
+INSERT INTO `blog`.`tag` (`name`) VALUES ('literature');
+INSERT INTO `blog`.`tag` (`name`) VALUES ('entertainment');
+INSERT INTO `blog`.`tag` (`name`) VALUES ('food');
+INSERT INTO `blog`.`tag` (`name`) VALUES ('personal');
+INSERT INTO `blog`.`tag` (`name`) VALUES ('technology');
+INSERT INTO `blog`.`tag` (`name`) VALUES ('funny');
+INSERT INTO `blog`.`tag` (`name`) VALUES ('sports');
+
+-- inserts 5 test posts, each with a tag
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post1', 'This is post 1, it is about politics', 1);
+INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (1, last_insert_id());
+
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post2', 'This is post 2, it is about education', 2);
+INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (2, last_insert_id());
+
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post3', 'This is post 3, it is about movies', 3);
+INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (3, last_insert_id());
+
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post4', 'This is post 4, it is about literature', 2);
+INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (4, last_insert_id());
+
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post5', 'This is post 5, it is about entertainment', 4);
+INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (5, last_insert_id());
 
 
 -- End of file.
