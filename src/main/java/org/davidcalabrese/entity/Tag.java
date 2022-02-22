@@ -19,7 +19,7 @@ public class Tag {
     private int name;
 
     @OneToMany(mappedBy = "tag", fetch = FetchType.EAGER)
-    private Set<Post> posts = new HashSet<>();
+    private Set<PostTag> posts = new HashSet<>();
 
     /** No arg constructor */
     public Tag() {}
