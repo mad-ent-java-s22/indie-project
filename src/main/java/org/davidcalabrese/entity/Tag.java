@@ -65,7 +65,7 @@ public class Tag {
      *
      * @return value of <code>posts</code>
      */
-    public Set<Post> getPosts() {
+    public Set<PostTag> getPosts() {
         return posts;
     }
 
@@ -74,7 +74,7 @@ public class Tag {
      *
      * @param posts the value of <code>posts</code>
      */
-    public void setPosts(Set<Post> posts) {
+    public void setPosts(Set<PostTag> posts) {
         this.posts = posts;
     }
 
