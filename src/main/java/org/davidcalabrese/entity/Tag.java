@@ -1,5 +1,7 @@
 package org.davidcalabrese.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
@@ -9,13 +11,14 @@ import java.util.Set;
 @Table(name = "tag")
 public class Tag {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
     @Column(name = "name")
     private int name;
 
-    @ManyToMany(mappedBy = "tags")
+    @OneToMany(mappedBy = "tag", fetch = FetchType.EAGER)
     private Set<Post> posts = new HashSet<>();
 
     /** No arg constructor */
