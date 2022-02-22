@@ -7,11 +7,6 @@ import java.io.Serializable;
 @Table(name = "post_tag")
 public class PostTag implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    @Column(name = "id", nullable = false)
-    private int id;
-
-    @Id
     @ManyToOne
     @JoinColumn(name = "post_id", referencedColumnName = "id")
     private Post post;
@@ -32,24 +27,6 @@ public class PostTag implements Serializable {
     public PostTag(Post post, Tag tag) {
         this.post = post;
         this.tag = tag;
-    }
-
-    /**
-     * Gets the value of <code>id</code>
-     *
-     * @return value of <code>id</code>
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Sets the value of <code>id</code>
-     *
-     * @param id the value of <code>id</code>
-     */
-    public void setId(int id) {
-        this.id = id;
     }
 
     /**
