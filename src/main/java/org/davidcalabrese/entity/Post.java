@@ -1,5 +1,6 @@
 package org.davidcalabrese.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -25,9 +26,7 @@ public class Post {
     @Column(name = "content")
     private String content;
 
-    // TODO
-    //  figure out how to convert this from timestamp
-    //  check out @CreationTimeStamp & @Convert tags
+    @CreationTimestamp
     @Column(name = "date_created")
     private LocalDate dateCreated;
 
@@ -38,10 +37,11 @@ public class Post {
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
-    })
+    },
+            fetch = FetchType.EAGER)
     @JoinTable(name = "post_tag",
-        joinColumns = @JoinColumn(name = "post_id"),
-        inverseJoinColumns = @JoinColumn(name = "tag_id")
+        joinColumns = { @JoinColumn(name = "post_id") },
+        inverseJoinColumns = { @JoinColumn(name = "tag_id") }
     )
     private Set<Tag> tags = new HashSet<>();
 
