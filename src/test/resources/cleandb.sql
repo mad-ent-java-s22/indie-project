@@ -1,23 +1,14 @@
-
-
-
-
-
 -- tables
 DROP TABLE if exists post_tag;
 DROP TABLE if exists post;
 DROP TABLE if exists tag;
 DROP TABLE if exists user;
 
-
-
-
-
 -- Table: post
 CREATE TABLE post (
                       id int NOT NULL AUTO_INCREMENT,
                       title varchar(50) NOT NULL,
-                      content varchar(255) NOT NULL,
+                      content text NOT NULL,
                       date_created timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
                       user_id int NOT NULL,
                       CONSTRAINT post_pk PRIMARY KEY (id)
@@ -47,6 +38,7 @@ CREATE TABLE user (
                       email varchar(50) NOT NULL,
                       password varchar(255) NOT NULL,
                       access_privileges varchar(5) NOT NULL DEFAULT 'user',
+                      profile_image varchar(255) NOT NULL DEFAULT 'https://www.personality-insights.com/wp-content/uploads/2017/12/default-profile-pic-e1513291410505.jpg',
                       CONSTRAINT user_pk PRIMARY KEY (id)
 );
 
@@ -98,6 +90,5 @@ INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (4, last_insert_id())
 INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post5', 'This is post 5, it is about entertainment and sports', 4);
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (5, last_insert_id());
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (10, last_insert_id());
-
 
 -- End of file.
