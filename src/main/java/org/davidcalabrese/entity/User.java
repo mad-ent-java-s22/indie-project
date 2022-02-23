@@ -1,5 +1,7 @@
 package org.davidcalabrese.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -27,6 +29,7 @@ public class User {
     private String lastName;
 
     @Column(name = "date_created")
+    @CreationTimestamp
     private LocalDate dateCreated;
 
     @Column(name = "email")
