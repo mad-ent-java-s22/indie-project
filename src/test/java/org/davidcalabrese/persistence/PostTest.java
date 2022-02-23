@@ -3,13 +3,16 @@ package org.davidcalabrese.persistence;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.davidcalabrese.entity.Post;
+import org.davidcalabrese.entity.Tag;
 import org.davidcalabrese.entity.User;
 import org.davidcalabrese.testUtil.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -53,7 +56,13 @@ public class PostTest {
         Post testPost = (Post) postDao.getById(1);
         assertEquals("post1", testPost.getTitle());
         assertEquals("This is post 1, it is about politics", testPost.getContent());
-        assertEquals("politics", testPost.getTags().iterator().next());
+
+        Set<Tag> tags = new HashSet<>();
+        Tag politicsTag = new Tag();
+        politicsTag.setName("politics");
+
+//        assertEquals(tags, testPost.getTags().iterator().next());
+        assertEquals("politics", testPost.getTags().iterator().next().getName());
     }
 
     @Test
