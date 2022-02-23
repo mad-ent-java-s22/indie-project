@@ -5,6 +5,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -232,5 +233,18 @@ public class User {
      */
     public void setProfileImage(String profileImage) {
         this.profileImage = profileImage;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+        User user = (User) o;
+        return id == user.id && userName.equals(user.userName) && firstName.equals(user.firstName) && lastName.equals(user.lastName) && dateCreated.equals(user.dateCreated) && email.equals(user.email) && password.equals(user.password) && accessPrivileges.equals(user.accessPrivileges) && profileImage.equals(user.profileImage);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, userName, firstName, lastName, dateCreated, email, password, accessPrivileges, profileImage);
     }
 }
