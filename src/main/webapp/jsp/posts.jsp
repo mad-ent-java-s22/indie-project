@@ -27,7 +27,30 @@
                     <div class="col-md-6">
                         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                             <div class="col p-4 d-flex flex-column position-static">
-                                <strong class="d-inline-block mb-2 text-primary">World</strong>
+                                <div id="tags">
+                                    <c:forEach var="tag" items="${post.tags}">
+                                        <c:choose>
+                                            <c:when test="${tag.getName() == 'politics'}">
+                                                <strong class="d-inline mb-2 text-primary">${tag.getName()}</strong> &nbsp;
+                                            </c:when>
+                                            <c:when test="${tag.getName() == 'entertainment'}">
+                                                <strong class="d-inline mb-2 text-warning">${tag.getName()}</strong> &nbsp;
+                                            </c:when>
+                                            <c:when test="${tag.getName() == 'sports'}">
+                                                <strong class="d-inline mb-2 text-success">${tag.getName()}</strong> &nbsp;
+                                            </c:when>
+                                            <c:when test="${tag.getName() == 'movies'}">
+                                                <strong class="d-inline mb-2 text-secondary">${tag.getName()}</strong> &nbsp;
+                                            </c:when>
+                                            <c:when test="${tag.getName() == 'education'}">
+                                                <strong class="d-inline mb-2 text-info">${tag.getName()}</strong> &nbsp;
+                                            </c:when>
+                                            <c:otherwise>
+                                                <strong class="d-inline mb-2 text-danger">${tag.getName()}</strong> &nbsp;
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </c:forEach>
+                                </div>
                                 <h3 class="mb-0">${post.title}</h3>
                                 <div class="mb-1 text-muted">
                                     <tags:localDate date="${post.dateCreated}" pattern='${"MMM d, yyyy \'at\' h:mm a"}'/>
