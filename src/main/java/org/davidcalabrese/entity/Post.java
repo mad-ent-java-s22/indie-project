@@ -4,15 +4,14 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Represents a blog post in the application.
  *
  * @author David Calabrese
  */
-@Entity
+@Entity(name = "Post")
 @Table(name = "post")
 public class Post {
     @Id
@@ -36,8 +35,15 @@ public class Post {
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "post_user"))
     private User user;
 
-    @OneToMany(mappedBy = "post", fetch = FetchType.EAGER)
-    private Set<PostTag> tags = new HashSet<>();
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(name = "post_tag",
+        joinColumns = @JoinColumn(name = "post_id"),
+        inverseJoinColumns = @JoinColumn(name = "tag_id")
+    )
+    private Set<Tag> tags = new HashSet<>();
 
     /** No arg constructor */
     public Post() {}
@@ -163,7 +169,7 @@ public class Post {
      *
      * @return value of <code>tags</code>
      */
-    public Set<PostTag> getTags() {
+    public Set<Tag> getTags() {
         return tags;
     }
 
@@ -172,7 +178,30 @@ public class Post {
      *
      * @param tags the value of <code>tags</code>
      */
-    public void setTags(HashSet<PostTag> tags) {
+    public void setTags(Set<Tag> tags) {
         this.tags = tags;
+    }
+
+    public void addTag(Tag tag) {
+        tags.add(tag);
+        tag.getPosts().add(this);
+    }
+
+    public void removeTag(Tag tag) {
+        tags.remove(tag);
+        tag.getPosts().remove(this);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Post)) return false;
+        Post post = (Post) o;
+        return id == post.id && title.equals(post.title) && content.equals(post.content) && dateCreated.equals(post.dateCreated) && user.equals(post.user);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, content, dateCreated, user);
     }
 }

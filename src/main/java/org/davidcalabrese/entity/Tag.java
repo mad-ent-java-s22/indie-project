@@ -1,13 +1,12 @@
 package org.davidcalabrese.entity;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
-@Entity
+@Entity(name = "Tag")
 @Table(name = "tag")
 public class Tag {
     @Id
@@ -15,14 +14,17 @@ public class Tag {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-    @Column(name = "name")
+    @NaturalId
     private int name;
 
-    @OneToMany(mappedBy = "tag", fetch = FetchType.EAGER)
-    private Set<PostTag> posts = new HashSet<>();
+    @ManyToMany(mappedBy = "tags", fetch = FetchType.EAGER)
+    private Set<Post> posts = new HashSet<>();
 
-    /** No arg constructor */
-    public Tag() {}
+    /**
+     * No arg constructor
+     */
+    public Tag() {
+    }
 
     /**
      * Gets the value of <code>id</code>
@@ -65,7 +67,7 @@ public class Tag {
      *
      * @return value of <code>posts</code>
      */
-    public Set<PostTag> getPosts() {
+    public Set<Post> getPosts() {
         return posts;
     }
 
@@ -74,7 +76,7 @@ public class Tag {
      *
      * @param posts the value of <code>posts</code>
      */
-    public void setPosts(Set<PostTag> posts) {
+    public void setPosts(Set<Post> posts) {
         this.posts = posts;
     }
 
@@ -83,20 +85,11 @@ public class Tag {
         if (this == o) return true;
         if (!(o instanceof Tag)) return false;
         Tag tag = (Tag) o;
-        return id == tag.id && name == tag.name;
+        return name == tag.name;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
-    }
-
-    @Override
-    public String toString() {
-        return "Tag{" +
-                "id=" + id +
-                ", name=" + name +
-                ", posts=" + posts +
-                '}';
+        return Objects.hash(name);
     }
 }
