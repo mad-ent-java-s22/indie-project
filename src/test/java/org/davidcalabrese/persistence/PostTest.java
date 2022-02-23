@@ -52,7 +52,8 @@ public class PostTest {
         logger.info("in getPostByIdSuccess");
         Post testPost = (Post) postDao.getById(1);
         assertEquals("post1", testPost.getTitle());
-        assertEquals("This is post 1", testPost.getContent());
+        assertEquals("This is post 1, it is about politics", testPost.getContent());
+        assertEquals("politics", testPost.getTags().iterator().next());
     }
 
     @Test
