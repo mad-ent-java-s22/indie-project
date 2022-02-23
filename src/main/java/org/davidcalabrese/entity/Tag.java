@@ -15,7 +15,7 @@ public class Tag {
     private int id;
 
     @NaturalId
-    private int name;
+    private String name;
 
     @ManyToMany(mappedBy = "tags", fetch = FetchType.EAGER)
     private Set<Post> posts = new HashSet<>();
@@ -49,7 +49,7 @@ public class Tag {
      *
      * @return value of <code>name</code>
      */
-    public int getName() {
+    public String getName() {
         return name;
     }
 
@@ -58,7 +58,7 @@ public class Tag {
      *
      * @param name the value of <code>name</code>
      */
-    public void setName(int name) {
+    public void setName(String name) {
         this.name = name;
     }
 
