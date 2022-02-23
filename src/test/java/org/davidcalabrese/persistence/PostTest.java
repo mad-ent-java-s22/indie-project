@@ -55,7 +55,7 @@ public class PostTest {
         logger.info("in getPostByIdSuccess");
         Post testPost = (Post) postDao.getById(1);
         assertEquals("post1", testPost.getTitle());
-        assertEquals("This is post 1, it is about politics", testPost.getContent());
+        assertEquals("This is post 1, it is about politics and education", testPost.getContent());
 
         Set<Tag> tags = new HashSet<>();
         Tag politicsTag = new Tag();
