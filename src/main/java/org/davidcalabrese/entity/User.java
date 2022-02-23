@@ -41,6 +41,9 @@ public class User {
     @Column(name = "access_privileges")
     private String accessPrivileges;
 
+    @Column(name = "profile_image")
+    private String profileImage;
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Post> posts = new HashSet<>();
 
@@ -211,5 +214,23 @@ public class User {
      */
     public void setAccessPrivileges(String accessPrivileges) {
         this.accessPrivileges = accessPrivileges;
+    }
+
+    /**
+     * Gets the value of <code>profileImage</code>
+     *
+     * @return value of <code>profileImage</code>
+     */
+    public String getProfileImage() {
+        return profileImage;
+    }
+
+    /**
+     * Sets the value of <code>profileImage</code>
+     *
+     * @param profileImage the value of <code>profileImage</code>
+     */
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
     }
 }
