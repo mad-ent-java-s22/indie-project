@@ -56,10 +56,10 @@ ALTER TABLE post_tag ADD CONSTRAINT post_tag_tag FOREIGN KEY post_tag_tag (tag_i
     REFERENCES tag (id);
 
 -- inserts 4 test users
-INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`) VALUES ('user1', 'Pam', 'Smith', 'pam@gmail.com', 'password');
-INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`) VALUES ('user2', 'Dave', 'Johnson', 'dave@gmail.com', 'password');
-INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`) VALUES ('user3', 'Gina', 'Lucas', 'gina@gmail.com', 'password');
-INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`) VALUES ('user4', 'Tony', 'Davis', 'tony@gmail.com', 'password');
+INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`, `profile_image`) VALUES ('user1', 'Pam', 'Smith', 'pam@gmail.com', 'password', 'generated_photo_1.jpg');
+INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`, `profile_image`) VALUES ('user2', 'Dave', 'Johnson', 'dave@gmail.com', 'password', 'generated_photo_2.jpg');
+INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`, `profile_image`) VALUES ('user3', 'Gina', 'Lucas', 'gina@gmail.com', 'password', 'generated_photo_3.jpg');
+INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`, `profile_image`) VALUES ('user4', 'Tony', 'Davis', 'tony@gmail.com', 'password', 'generated_photo_4.jpg');
 
 -- inserts 10 tags
 INSERT INTO `blog`.`tag` (`name`) VALUES ('politics');
