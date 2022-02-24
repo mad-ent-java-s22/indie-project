@@ -78,7 +78,19 @@ INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('Post 1', 'Thi
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (1, last_insert_id());
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (2, last_insert_id());
 
-INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('Post 2', 'This is post 2, it is about education', 2);
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('Post 2', 'ESTANCIA, N.M. — The chorus of small voices ringing from a third-grade classroom on a recent morning signaled how far Estancia Elementary School had come in resuming a sense of normalcy after the latest coronavirus surge.
+
+Students in the small, remote community of Estancia, N.M., were enthusiastically engaged in a vocabulary lesson, enunciating words with a “bossy r,” as well as homophones and homonyms, and spelling them on white boards.
+
+But there was also a sign of how far the district, about an hour outside Albuquerque, still had to go. The teacher moving about the classroom and calling on students to use the words in a sentence was clad in camouflage. “My substitute is wearing gear,” one student responded.
+
+“Yes,” Lt. Col. Susana Corona replied, beaming. “The superintendent allows me to wear my uniform. I’m wearing a pair of boots.”
+
+For the last month, dozens of soldiers and airmen and women in the New Mexico National Guard have been deployed to classrooms throughout the state to help with crippling pandemic-related staff shortages. Gov. Michelle Lujan Grisham has also enlisted civilian state employees — herself included — to volunteer as substitute teachers.
+
+New Mexico has been the only state to deploy National Guard troops in classrooms. But since the fall, when districts around the country began recruiting any qualified adult to take over classrooms temporarily, several other states have turned to uniformed personnel. National Guard members in Massachusetts have driven school buses, and last month, police officers in one city in Oklahoma served as substitutes.
+
+The scenes of uniformed officers in classrooms have solicited mixed reactions. Some teachers see it as a slight against their profession, and a way to avoid tackling longstanding problems like low teacher pay. Other critics have worried that putting more uniformed officers in schools could create anxiety in student populations that have historically had hostile experiences with law enforcement.', 2);
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (2, last_insert_id());
 
 INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('Post 3', 'This is post 3, it is about movies', 3);
