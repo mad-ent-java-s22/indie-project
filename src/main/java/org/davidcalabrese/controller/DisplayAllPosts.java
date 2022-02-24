@@ -12,11 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "DisplayPosts", urlPatterns = { "/posts" })
-public class DisplayPosts extends HttpServlet {
+@WebServlet(name = "DisplayPostHome", urlPatterns = { "/all_posts" })
+public class DisplayPostHome extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String url = "/jsp/posts.jsp";
+        String url = "/jsp/all_posts.jsp";
         GenericDao<Post> postDao = new GenericDao<>(Post.class);
 
         List posts = postDao.getAll();

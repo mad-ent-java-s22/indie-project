@@ -50,11 +50,11 @@
                                             </c:otherwise>
                                         </c:choose>
                                     </c:forEach>
-                                </div>
+                                </div>  <!-- end #tags -->
                                 <h3 class="mb-0">${post.title}</h3>
                                 <div class="mb-1 text-muted">
                                     <tags:localDate date="${post.dateCreated}" pattern='${"MMM d, yyyy \'at\' h:mm a"}'/>
-                                </div>
+                                </div>  <!-- end .mb-1 -->
                                 <p class="card-text mb-auto">${post.summary}</p>
                                 <a href="#" class="link-primary">${post.user.getUserName()}</a>
                                 <a href="#" class="stretched-link">Continue reading</a>
