@@ -37,21 +37,21 @@ public class PostTest {
         int id = postDao.insert(testPost);
 
         assertNotNull(id);
-        assertEquals(6, postDao.getAll().size());
+        assertEquals(7, postDao.getAll().size());
     }
 
     @Test
     public void getAllPostsSuccess() {
         logger.info("in getAllPostsSuccess");
         List<Post> posts = postDao.getAll();
-        assertEquals(5, posts.size());
+        assertEquals(6, posts.size());
     }
 
     @Test
     public void getPostByIdSuccess() {
         logger.info("in getPostByIdSuccess");
         Post testPost = (Post) postDao.getById(1);
-        assertEquals("post1", testPost.getTitle());
+        assertEquals("Post 1", testPost.getTitle());
         assertEquals("This is post 1, it is about politics and education", testPost.getContent());
         assertEquals("politics", testPost.getTags().iterator().next().getName());
     }
@@ -81,6 +81,6 @@ public class PostTest {
         Post testPost = (Post) postDao.getById(1);
         postDao.delete(testPost);
 
-        assertEquals(4, postDao.getAll().size());
+        assertEquals(5, postDao.getAll().size());
     }
 }
