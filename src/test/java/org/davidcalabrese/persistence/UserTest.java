@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UserTest {
     GenericDao userDao;
+    GenericDao postDao;
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
@@ -21,6 +22,7 @@ public class UserTest {
     void setUp() {
         logger.info("setting up new user test");
         userDao = new GenericDao<User>(User.class);
+        postDao = new GenericDao<Post>(Post.class);
 
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
@@ -38,5 +40,11 @@ public class UserTest {
         logger.info("in getUserByIdSuccess");
         User user1 = (User) userDao.getById(1);
         assertEquals("Pam", user1.getFirstName());
+    }
+
+    @Test
+    public void getUserFromPostSuccess() {
+        Post post1 = (Post) postDao.getById(1);
+        assertEquals("Pam", post1.getUser().getFirstName());
     }
 }
