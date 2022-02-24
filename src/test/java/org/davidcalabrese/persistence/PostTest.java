@@ -56,9 +56,9 @@ public class PostTest {
     @Test
     public void getPostsByUserIdSuccess() {
         logger.info("in getPostsByUserIdSuccess");
-        User user2 = userDao.getById(2);
+        User user5 = userDao.getById(5);
 
-        List<Post> user2Posts = postDao.getByUser(user2);
+        List<Post> user2Posts = postDao.getByUser(user5);
         assertEquals(2, user2Posts.size());
     }
 
