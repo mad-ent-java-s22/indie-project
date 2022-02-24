@@ -24,12 +24,19 @@
                     <article class="blog-post">
                         <h2 class="blog-post-title">${post.title}</h2>
                         <p class="blog-post-meta">${post.dateCreated} by <a href="#">${post.user.firstName}</a></p>
-                        <p id="summary">${post.summary}</p>
+                        <p class="display-6" id="summary">${post.summary}</p>
                         <hr>
                         <p id="content">${post.content}</p>
                     </article>
-                </div>
-            </div>
+                </div>  <!-- end .col-md-8 -->
+                <div class="col-md-4">
+                    <section id="user-summary" class="d-flex flex-column align-items-center justify-content-center">
+                        <img class="rounded" width="200" height="250" src="img/${post.user.profileImage}" alt="">
+                        <h4 class="display-6 fw-normal mt-2">${post.user.firstName} ${post.user.lastName}</h4>
+                        <p class="mx-5 fst-italic">${post.user.summary}</p>
+                    </section> <!-- end .d-flex -->
+                </div>  <!-- end .col-md-4 -->
+            </div>  <!-- end .row g-5 -->
         </main>
 
     </div> <!-- end #outer-container -->
