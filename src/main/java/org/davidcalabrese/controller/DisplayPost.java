@@ -15,14 +15,18 @@ import java.io.IOException;
 public class DisplayPost extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String pathInfo = req.getPathInfo();
 
-        String url = "/jsp/post/.jsp";
         GenericDao<Post> postDao = new GenericDao<>(Post.class);
 
-        Post post = postDao.getById(2);
+        String pathInfo = req.getPathInfo();
+        // grab everything after slash following "posts" in url, should be the post id
+        int postId = Integer.parseInt(pathInfo.substring(1));
+
+        log("post id: " + postId);
+        Post post = postDao.getById(postId);
 
         req.setAttribute("post", post);
+        String url = "/jsp/post.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(req, resp);
     }
