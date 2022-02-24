@@ -60,7 +60,7 @@
                                 <a href="#" class="stretched-link">Continue reading</a>
                             </div> <!-- end .col -->
                             <div class="col-auto d-none d-lg-block" id="post-img">
-                                <img class="bd-placeholder-img" width="250" height="250" src="img/${post.user.profileImage}" alt="profile pic">
+                                <img class="bd-placeholder-img" width="200" height="250" src="img/${post.user.profileImage}" alt="profile pic">
                             </div> <!-- end #post-img -->
                         </div> <!-- end .row -->
                     </div> <!-- end .col-md-6 -->
