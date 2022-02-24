@@ -11,19 +11,18 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class PostTest {
-    GenericDao postDao;
-    GenericDao userDao;
+    GenericDao<Post> postDao;
+    GenericDao<User> userDao;
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @BeforeEach
     void setUp() {
         logger.info("Starting new post test");
-        postDao = new GenericDao<Post>(Post.class);
-        userDao = new GenericDao<User>(User.class);
+        postDao = new GenericDao<>(Post.class);
+        userDao = new GenericDao<>(User.class);
 
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
@@ -31,12 +30,10 @@ public class PostTest {
 
     @Test
     public void insertTest() {
-        User user1 = (User) userDao.getById(1);
+        User user1 = userDao.getById(1);
         Post testPost = new Post("Test title", "post content here");
         testPost.setUser(user1);
-        int id = postDao.insert(testPost);
 
-        assertNotNull(id);
         assertEquals(7, postDao.getAll().size());
     }
 
@@ -50,7 +47,7 @@ public class PostTest {
     @Test
     public void getPostByIdSuccess() {
         logger.info("in getPostByIdSuccess");
-        Post testPost = (Post) postDao.getById(1);
+        Post testPost = postDao.getById(1);
         assertEquals("Post 1", testPost.getTitle());
         assertEquals("This is post 1, it is about politics and education", testPost.getContent());
         assertEquals("politics", testPost.getTags().iterator().next().getName());
@@ -59,7 +56,7 @@ public class PostTest {
     @Test
     public void getPostsByUserIdSuccess() {
         logger.info("in getPostsByUserIdSuccess");
-        User user2 = (User) userDao.getById(2);
+        User user2 = userDao.getById(2);
 
         List<Post> user2Posts = postDao.getByUser(user2);
         assertEquals(2, user2Posts.size());
@@ -67,18 +64,18 @@ public class PostTest {
 
     @Test
     public void updatePostSuccess() {
-        Post testPost = (Post) postDao.getById(1);
+        Post testPost = postDao.getById(1);
         testPost.setTitle("new title");
         postDao.saveOrUpdate(testPost);
 
-        Post editedPost = (Post) postDao.getById(1);
+        Post editedPost = postDao.getById(1);
         assertEquals("new title", editedPost.getTitle());
     }
 
     @Test
     public void deletePostSuccess() {
         logger.info("in deletePostSuccess");
-        Post testPost = (Post) postDao.getById(1);
+        Post testPost = postDao.getById(1);
         postDao.delete(testPost);
 
         assertEquals(5, postDao.getAll().size());
