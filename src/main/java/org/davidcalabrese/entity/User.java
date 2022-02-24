@@ -45,6 +45,9 @@ public class User {
     @Column(name = "profile_image")
     private String profileImage;
 
+    @Column(name = "summary")
+    private String summary;
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Post> posts = new HashSet<>();
 
@@ -233,6 +236,42 @@ public class User {
      */
     public void setProfileImage(String profileImage) {
         this.profileImage = profileImage;
+    }
+
+    /**
+     * Gets the value of <code>summary</code>
+     *
+     * @return value of <code>summary</code>
+     */
+    public String getSummary() {
+        return summary;
+    }
+
+    /**
+     * Sets the value of <code>summary</code>
+     *
+     * @param summary the value of <code>summary</code>
+     */
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
+    /**
+     * Gets the value of <code>posts</code>
+     *
+     * @return value of <code>posts</code>
+     */
+    public Set<Post> getPosts() {
+        return posts;
+    }
+
+    /**
+     * Sets the value of <code>posts</code>
+     *
+     * @param posts the value of <code>posts</code>
+     */
+    public void setPosts(Set<Post> posts) {
+        this.posts = posts;
     }
 
     @Override
