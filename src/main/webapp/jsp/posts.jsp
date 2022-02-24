@@ -55,7 +55,7 @@
                                 <div class="mb-1 text-muted">
                                     <tags:localDate date="${post.dateCreated}" pattern='${"MMM d, yyyy \'at\' h:mm a"}'/>
                                 </div>
-                                <p class="card-text mb-auto">${post.content}</p>
+                                <p class="card-text mb-auto">${post.summary}</p>
                                 <a href="#" class="link-primary">${post.user.getUserName()}</a>
                                 <a href="#" class="stretched-link">Continue reading</a>
                             </div> <!-- end .col -->
