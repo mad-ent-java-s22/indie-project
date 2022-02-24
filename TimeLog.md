@@ -28,11 +28,12 @@
 | 2/17 | Ex 5, IP      | 6 |                |
 | 2/18 | Indie Project | 2 | Redesign database |
 | 2/19 | Indie Project | 4 | CRUD Unit tests, many-to-many annotations|
-| 2/20 | peer review   | 1 |                 |
+| 2/20 | peer review   | 1 | live session   |
 | 2/21 | Indie project | 7 | unit tests, display jsps, custom tag lib |
-| 2/22 |               |   |                |
-| 2/23 |               |   |                |
-| 2/24 |               |   |                |
+| 2/22 | peer reviews  | 2 | Left feedback  |
+| 2/22 | Indie project | 2 | troubleshooting db model  |
+| 2/23 | Indie project | 4 | got orm working, built posts page|
+| 2/24 | AWS Elastic Beanstalk |   |                |
 | 2/25 |               |   |                |
 | 2/26 |               |   |                |
 | 2/27 |               |   |                |
