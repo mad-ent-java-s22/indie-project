@@ -73,22 +73,25 @@ INSERT INTO `blog`.`tag` (`name`) VALUES ('technology');
 INSERT INTO `blog`.`tag` (`name`) VALUES ('funny');
 INSERT INTO `blog`.`tag` (`name`) VALUES ('sports');
 
--- inserts 5 test posts, each with a tag
-INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post1', 'This is post 1, it is about politics and education', 1);
+-- inserts 5 test posts, each with a tag or two
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('Post 1', 'This is post 1, it is about politics and education', 1);
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (1, last_insert_id());
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (2, last_insert_id());
 
-INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post2', 'This is post 2, it is about education', 2);
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('Post 2', 'This is post 2, it is about education', 2);
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (2, last_insert_id());
 
-INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post3', 'This is post 3, it is about movies', 3);
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('Post 3', 'This is post 3, it is about movies', 3);
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (3, last_insert_id());
 
-INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post4', 'This is post 4, it is about literature', 2);
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('Post 4', 'This is post 4, it is about literature', 2);
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (4, last_insert_id());
 
-INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('post5', 'This is post 5, it is about entertainment and sports', 4);
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('Post 5', 'This is post 5, it is about entertainment and sports', 4);
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (5, last_insert_id());
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (10, last_insert_id());
+
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`) VALUES ('Post 6', 'This is post 6, it is about politics', 4);
+INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (1, last_insert_id());
 
 -- End of file.
