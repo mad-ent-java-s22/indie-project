@@ -34,7 +34,7 @@ public class PostTest {
         Post testPost = new Post("Test title", "post content here");
         testPost.setUser(user1);
 
-        assertEquals(7, postDao.getAll().size());
+        assertEquals(6, postDao.getAll().size());
     }
 
     @Test
