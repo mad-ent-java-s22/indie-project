@@ -107,14 +107,14 @@ INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (2, last_insert_id())
 INSERT INTO `blog`.`post` (`title`, `content`, `user_id`, `summary`) VALUES ('Post 3', 'This is post 3, it is about movies', 3, 'This is post 3, it is about movies');
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (3, last_insert_id());
 
-INSERT INTO `blog`.`post` (`title`, `content`, `user_id`, `summary`) VALUES ('Post 4', 'This is post 4, it is about literature', 2, 'This is post 4, it is about literature');
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`, `summary`) VALUES ('Post 4', 'This is post 4, it is about literature', 5, 'This is post 4, it is about literature');
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (4, last_insert_id());
 
 INSERT INTO `blog`.`post` (`title`, `content`, `user_id`, `summary`) VALUES ('Post 5', 'This is post 5, it is about entertainment and sports', 4, 'This is post 5, it is about entertainment and sports');
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (5, last_insert_id());
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (10, last_insert_id());
 
-INSERT INTO `blog`.`post` (`title`, `content`, `user_id`, `summary`) VALUES ('Post 6', 'This is post 6, it is about politics', 4, 'This is post 6, it is about politics');
+INSERT INTO `blog`.`post` (`title`, `content`, `user_id`, `summary`) VALUES ('Post 6', 'This is post 6, it is about politics', 5, 'This is post 6, it is about politics');
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (1, last_insert_id());
 
 -- End of file.
