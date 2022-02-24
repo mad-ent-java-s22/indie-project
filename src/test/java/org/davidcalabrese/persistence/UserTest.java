@@ -32,7 +32,7 @@ public class UserTest {
     public void getAllUsersSuccess() {
         logger.info("in getAllUsersSuccess");
         List<User> users = userDao.getAll();
-        assertEquals(4, users.size());
+        assertEquals(5, users.size());
     }
 
     @Test
