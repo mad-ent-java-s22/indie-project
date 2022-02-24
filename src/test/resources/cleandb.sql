@@ -40,6 +40,7 @@ CREATE TABLE user (
                       password varchar(255) NOT NULL,
                       access_privileges varchar(5) NOT NULL DEFAULT 'user',
                       profile_image varchar(255) NOT NULL DEFAULT 'https://www.personality-insights.com/wp-content/uploads/2017/12/default-profile-pic-e1513291410505.jpg',
+                      summary text NOT NULL,
                       CONSTRAINT user_pk PRIMARY KEY (id)
 );
 
@@ -57,10 +58,10 @@ ALTER TABLE post_tag ADD CONSTRAINT post_tag_tag FOREIGN KEY post_tag_tag (tag_i
     REFERENCES tag (id);
 
 -- inserts 4 test users
-INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`, `profile_image`) VALUES ('user1', 'Pam', 'Smith', 'pam@gmail.com', 'password', 'generated_photo_1.jpg');
-INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`, `profile_image`) VALUES ('user2', 'Dave', 'Johnson', 'dave@gmail.com', 'password', 'generated_photo_2.jpg');
-INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`, `profile_image`) VALUES ('user3', 'Gina', 'Lucas', 'gina@gmail.com', 'password', 'generated_photo_3.jpg');
-INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`, `profile_image`) VALUES ('user4', 'Tony', 'Davis', 'tony@gmail.com', 'password', 'generated_photo_4.jpg');
+INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`, `profile_image`, `summary`) VALUES ('user1', 'Pam', 'Smith', 'pam@gmail.com', 'password', 'generated_photo_1.jpg', 'Pam is a journalist at Spry');
+INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`, `profile_image`, `summary`) VALUES ('user2', 'Dave', 'Johnson', 'dave@gmail.com', 'password', 'generated_photo_2.jpg', 'David is the Los Angeles correspondent at Spry. He began his career covering the 2004 elections and later worked in the White House during the Obama Administration.');
+INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`, `profile_image`, `summary`) VALUES ('user3', 'Gina', 'Lucas', 'gina@gmail.com', 'password', 'generated_photo_3.jpg', 'Gina is a journalist at Spry');
+INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`, `profile_image`, `summary`) VALUES ('user4', 'Tony', 'Davis', 'tony@gmail.com', 'password', 'generated_photo_4.jpg', 'Tony is a journalist at Spry');
 
 -- inserts 10 tags
 INSERT INTO `blog`.`tag` (`name`) VALUES ('politics');
