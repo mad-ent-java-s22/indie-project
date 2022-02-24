@@ -30,6 +30,9 @@ public class Post {
     @Column(name = "date_created")
     private LocalDate dateCreated;
 
+    @Column(name = "summary")
+    private String summary;
+
     @ManyToOne
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "post_user"))
     private User user;
@@ -144,6 +147,24 @@ public class Post {
      */
     public void setDateCreated(LocalDate dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    /**
+     * Gets the value of <code>summary</code>
+     *
+     * @return value of <code>summary</code>
+     */
+    public String getSummary() {
+        return summary;
+    }
+
+    /**
+     * Sets the value of <code>summary</code>
+     *
+     * @param summary the value of <code>summary</code>
+     */
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
     /**
