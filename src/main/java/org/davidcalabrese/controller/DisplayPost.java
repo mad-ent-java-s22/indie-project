@@ -11,11 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "DisplayArticle", urlPatterns = { "/article" })
-public class DisplayArticle extends HttpServlet {
+@WebServlet(name = "DisplayPost", urlPatterns = { "/posts/*" })
+public class DisplayPost extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String url = "/jsp/article.jsp";
+        String pathInfo = req.getPathInfo();
+
+        String url = "/jsp/post/.jsp";
         GenericDao<Post> postDao = new GenericDao<>(Post.class);
 
         Post post = postDao.getById(2);

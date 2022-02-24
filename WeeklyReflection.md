@@ -28,15 +28,33 @@ I found an interesting solution to a problem I was having formatting the dates o
 
 ### Week 6
 Got some helpful advice from Carson and Quinn on how to solve some problems I was running into. 
-* 2/22 - adjusted the data model to make the many-to-many relationship work. I had found some stuff online that mapped a many-to-many relationship with @ManyToMany hibernate annotations. However, I couldn't get this to work. I had overlooked the week 5 video on many to many, so I went and watched it. Then I decided to implement the relationship as two one-to-many relationships and actually creating an entity for the bridging/joining table (post_tag). Originally my joining table only had two columns, one for the post_id (fk to post.id) and one for the tag_id (fk to tag.id). In the video Paula says that its possible to implement the relationship with a table like this but then I would need to make another entity that represented the composite key or something like that. I felt it would be easier to follow her example and add a surrogate pk to the post_tag table. The new ERD can be found in DesignDocuments directory in database_model.PNG file.
+#### "Twosday" 2/22
+* Adjusted the data model to make the many-to-many relationship work. I had found some stuff online that mapped a many-to-many relationship with @ManyToMany hibernate annotations. However, I couldn't get this to work. I had overlooked the week 5 video on many to many, so I went and watched it. Then I decided to implement the relationship as two one-to-many relationships and actually creating an entity for the bridging/joining table (post_tag). Originally my joining table only had two columns, one for the post_id (fk to post.id) and one for the tag_id (fk to tag.id). In the video Paula says that its possible to implement the relationship with a table like this but then I would need to make another entity that represented the composite key or something like that. I felt it would be easier to follow her example and add a surrogate pk to the post_tag table. The new ERD can be found in DesignDocuments directory in database_model.PNG file.
 
-I'm getting this error when I try to run tests with the new data model:
+* I'm getting this error when I try to run tests with the new data model:
 
-```aidl
+```
 org.hibernate.exception.DataException: Could not read entity state from ResultSet : EntityKey[org.davidcalabrese.entity.Tag#1]
 ...
 Caused by: java.sql.SQLDataException: Cannot determine value type from string 'politics'
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:114)
 ```
 
-Looks like maybe this is because I the tag name type in the db is string, but the java entity is of type `Set<PostTag> tags`. I did this because I want to be able to have each post have multiple tags. And each individual tag is a string in the database. Not sure what to do now.  
+* Looks like maybe this is because I the tag name type in the db is string, but the java entity is of type `Set<PostTag> tags`. I did this because I want to be able to have each post have multiple tags. And each individual tag is a string in the database. Not sure what to do now.  
+
+#### Wednesday 2/23
+* Asked a bunch of questions in class. Was able to figure out solution to all the issues I was having. Data model works well now. I am going with the @ManyToMany annotation rather than the @OneToMany. Not sure what the difference is anyway, I still have the bridging entity in org.davidcalabrese.entity
+
+* Following Paula's advice I am looping through and displaying every tag associated with a post. I initially was just trying to display a single tag and then work on displaying multiples but might as well start doing the right thing from the start. I got the tags to display, messed with the css so that they display side by side rather than in rows. Also used JSTL to color the tag name dynamically, so "politics" is always blue, "sports" is always green, etc. 
+
+#### Thursday 2/24
+* Got some AI-generated faces to serve as profile pictures for the blog post authors. Right now I am storing the name of the img file as a column in the blog.user table and storing the picture itself in and img directory under src/main/webapp. This is working but ideally I will have it so the db stores a url hosted elsewhere or, even better, using a AWS s3 to store and serve the images. Paula reminded me that, if using s3, I can also take advantage of features such as resizing/optimizing the image and also filter out inappropriate pictures. 
+
+* Started building a jsp template that will display articles. 
+* Made several small tweaks to data model:
+  * "content" column in blog.post is now type "TEXT" rather than varchar(255) so I am not limited to very short articles. I believe I will end up storing the articles as HTML so they display nicely, unless I find a better way to do that. 
+  * added "summary" column in blog.post. the post summary will contain a short summary of the article to be displayed on the main page of the application. I was originally thinking of just taking a substring of the first 150 or characters of the article and using that as a summary, but this frequently wouldn't look good so I decided against it.
+  * added "summary" column in blog.user - this holds a short background on the user, to be displayed to the side of the user's posts. Ideally I will also create pages for each author as well, and in that case I will want the user summary displayed there as well. 
+* working on creating dynamic url patterns for the posts so one servlet can route the any number of posts. I found [this article](https://stackoverflow.com/questions/6678029/dynamic-urls-in-java-web-application-like-in-rails) to help.
+#### Friday 2/25
+#### Saturday 2/26
