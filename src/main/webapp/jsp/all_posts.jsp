@@ -24,7 +24,7 @@
             <div class="row mb-2">
                 <c:forEach var="post" items="${posts}">
 
-                    <div class="col-md-6">
+                    <div class="col-12 col-xl-6">
                         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                             <div class="col p-4 d-flex flex-column position-static">
                                 <div id="tags">
@@ -57,9 +57,9 @@
                                 </div>  <!-- end .mb-1 -->
                                 <p class="card-text mb-auto">${post.summary}</p>
                                 <a href="#" class="link-primary">${post.user.getUserName()}</a>
-                                <a href="#" class="stretched-link">Continue reading</a>
+                                <a href="/posts/${post.id}" class="stretched-link"></a>
                             </div> <!-- end .col -->
-                            <div class="col-auto d-none d-lg-block" id="post-img">
+                            <div class="col-auto d-none d-md-block" id="post-img">
                                 <img class="bd-placeholder-img" width="200" height="250" src="img/${post.user.profileImage}" alt="profile pic">
                             </div> <!-- end #post-img -->
                         </div> <!-- end .row -->
