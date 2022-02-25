@@ -23,7 +23,7 @@
                 <div class="col-md-8">
                     <article class="blog-post">
                         <h2 class="blog-post-title">${post.title}</h2>
-                        <p class="blog-post-meta">${post.dateCreated} by <a href="#">${post.user.firstName}</a></p>
+                        <p class="blog-post-meta">${post.dateCreated} by <a href="#">${post.user.firstName} ${post.user.lastName}</a></p>
                         <p class="display-6" id="summary">${post.summary}</p>
                         <hr>
                         <p id="content">${post.content}</p>
