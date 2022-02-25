@@ -57,7 +57,7 @@
                                 </div>  <!-- end .mb-1 -->
                                 <p class="card-text mb-auto">${post.summary}</p>
                                 <a href="#" class="link-primary">${post.user.getUserName()}</a>
-                                <a href="/posts/${post.id}" class="stretched-link"></a>
+                                <a href="indie_project_war/posts/${post.id}" class="stretched-link"></a>
                             </div> <!-- end .col -->
                             <div class="col-auto d-none d-md-block" id="post-img">
                                 <img class="bd-placeholder-img" width="200" height="250" src="img/${post.user.profileImage}" alt="profile pic">
