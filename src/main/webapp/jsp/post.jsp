@@ -30,15 +30,20 @@
                     </article>
                 </div>  <!-- end .col-md-8 -->
                 <div class="col-md-4">
-                    <section id="user-summary" class="d-flex flex-column align-items-center justify-content-center">
-                        <img class="rounded" width="200" height="250" src="img/${post.user.profileImage}" alt="">
+                    <section
+                            id="user-summary"
+                            class="d-flex flex-column align-items-center justify-content-center">
+                        <img
+                             class="rounded"
+                             width="200" height="250"
+                             src="img/${post.user.profileImage}"
+                             alt="profile pic">
                         <h4 class="display-6 fw-normal mt-2">${post.user.firstName} ${post.user.lastName}</h4>
                         <p class="mx-5 fst-italic">${post.user.summary}</p>
                     </section> <!-- end .d-flex -->
                 </div>  <!-- end .col-md-4 -->
             </div>  <!-- end .row g-5 -->
         </main>
-
     </div> <!-- end #outer-container -->
     <jsp:include page="/jsp/components/footer.jsp" />
 </div>  <!-- end #inner-container -->
