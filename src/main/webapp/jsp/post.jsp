@@ -37,7 +37,7 @@
                         <img
                              class="rounded"
                              width="200" height="250"
-                             src="img/${post.user.profileImage}"
+                             src="../img/${post.user.profileImage}"
                              alt="profile pic">
                         <h4 class="display-6 fw-normal mt-2">${post.user.firstName} ${post.user.lastName}</h4>
                         <p class="mx-5 fst-italic">${post.user.summary}</p>
