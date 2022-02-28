@@ -19,7 +19,7 @@
     <div class="container" id="inner-container">
         <jsp:include page = "/jsp/components/nav.jsp" />
         <main class="container">
-            <div class="row g-5">
+            <div class="row g-5 mb-4">
                 <div class="col-4 col-lg-2">
                     <section id="user-summary" class="">
                         <img class="rounded" width="200" height="250" src="../img/${user.profileImage}" alt="">
@@ -27,7 +27,7 @@
                 </div> <!-- end .col-4 -->
                 <div class="col-8 col-lg-10">
                     <h4 class="display-6 fw-normal mt-2 text-center">${user.firstName} ${user.lastName}</h4>
-                    <p class="mx-5 fst-italic">${user.summary}</p>
+                    <p class="p-3 mx-5 fst-italic">${user.summary}</p>
                 </div>
             </div>  <!-- end .row g-5 -->
             <div class="row mb-2">
