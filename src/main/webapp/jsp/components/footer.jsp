@@ -9,6 +9,6 @@
 <div id="footer" class="footer">
     <div class="container theme-showcase" role="main">
         &copy; Copyright 2022
-        Spry LLC. All rights reserved.
+        Otter LLC. All rights reserved.
     </div>
 </div>
