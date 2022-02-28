@@ -4,6 +4,7 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/jsp/components/jumbotron.jsp" value="file://$PROJECT_DIR$/src/main/webapp/jsp/components" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/jsp/post.jsp" value="file://$PROJECT_DIR$/src/main/webapp/jsp" />
       </map>
     </option>
   </component>
