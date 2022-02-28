@@ -31,9 +31,9 @@
                 </div>
             </div>  <!-- end .row g-5 -->
             <div class="row mb-2">
+                <h2 class="display-6">${user.firstName}'s Recent Posts</h2>
                 <c:forEach var="post" items="${user.posts}">
-
-                    <div class="col-12 col-xl-6">
+                    <section class="col-12 col-xl-6">
                         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                             <div class="col p-4 d-flex flex-column position-static">
                                 <div id="tags">
@@ -65,18 +65,18 @@
                                     <tags:localDate date="${post.dateCreated}" pattern='${"MMM d, yyyy \'at\' h:mm a"}'/>
                                 </div>  <!-- end .mb-1 -->
                                 <p class="card-text mb-auto">${post.summary}</p>
-                                <a href="users/${post.user.id}" class="link-primary">${post.user.getUserName()}</a>
-                                <a href="posts/${post.id}" class="stretched-link"></a>
+                                <a href="../posts/${post.id}" class="link-secondary">Read More</a>
                             </div> <!-- end .col -->
                             <div class="col-auto d-none d-md-block" id="post-img">
-                                <img
-                                        class="bd-placeholder-img"
-                                        width="200" height="250"
-                                        src="../img/${post.user.profileImage}"
-                                        alt="profile pic">
+                                    <img
+                                            class="bd-placeholder-img"
+                                            width="200" height="250"
+                                            src="../img/${post.user.profileImage}"
+                                            alt="profile pic">
+
                             </div> <!-- end #post-img -->
                         </div> <!-- end .row -->
-                    </div> <!-- end .col-md-6 -->
+                    </section> <!-- end .col-md-6 -->
                 </c:forEach>
             </div> <!-- end .row mb-2 -->
         </main>
