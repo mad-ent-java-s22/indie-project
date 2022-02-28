@@ -34,8 +34,8 @@
 | 2/22 | Indie project | 2 | troubleshooting db model  |
 | 2/23 | Indie project | 4 | got orm working, built posts page|
 | 2/24 | AWS Elastic Beanstalk |   |                |
-| 2/25 |               |   |                |
-| 2/26 |               |   |                |
-| 2/27 |               |   |                |
+| 2/25 | Indie project | 4 | stored photos, created  jsp for individual post |
+| 2/26 | IP            | 2 | more data model adjustments. jsp layout |
+| 2/27 | IP            | 1 | fixed relative image link issue |
 | 2/28 |               |   |                |
 
