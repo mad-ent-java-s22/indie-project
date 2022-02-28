@@ -1,5 +1,8 @@
 package org.davidcalabrese.testUtil;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Properties;
 
 /**
@@ -9,6 +12,8 @@ import java.util.Properties;
  *
  */
 public interface PropertiesLoaderUtil {
+    public final Logger logger = LogManager.getLogger(this.getClass());
+
     /**
      * This default method will load a properties file into a Properties instance
      * and return it.
@@ -23,7 +28,7 @@ public interface PropertiesLoaderUtil {
         try {
             properties.load(this.getClass().getResourceAsStream(propertiesFilePath));
         } catch (Exception ioException) {
-            ioException.printStackTrace();
+            logger.info("ioException: ", ioException);
             throw ioException;
         }
         return properties;
