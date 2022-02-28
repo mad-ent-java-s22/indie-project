@@ -37,11 +37,11 @@ The application will be designed so a user can get caught up on the latest news 
 * does not amplify harmful or misleading info
 
 ### User stories
-* as a social media user, I do not want my data to be collected so that I do not have a creepy feeling of being watched every time I log in 
-* as an app user, I do not want to be treated as a resource by the app creator
-* I do not want to be fed controversial or misleading content
-* I do not want to be distracted from meaningful issues
-* I do not want to be a part of a system that energizes hatred and bigotry
+* As a private person, I do not want my data to be collected so that I do not have a creepy feeling of being watched every time I log in 
+* As a dignified human, I do not want to be treated as a resource by the app creator
+* As a consumer of quality journalism, I do not want to be fed controversial or misleading content
+* As an engaged member of society, I do not want to be distracted from meaningful issues
+* As a lover of peace kindness, I do not want to be a part of a system that energizes hatred and bigotry
 
 ### Links
 [Project Plan](/ProjectPlan.md)
