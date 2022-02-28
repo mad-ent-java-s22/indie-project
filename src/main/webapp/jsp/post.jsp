@@ -1,3 +1,4 @@
+<jsp:useBean id="post" scope="request" type="org.davidcalabrese.entity.Post"/>
 <%--
   Created by IntelliJ IDEA.
   User: david
