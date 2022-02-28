@@ -56,7 +56,7 @@
                                     <tags:localDate date="${post.dateCreated}" pattern='${"MMM d, yyyy \'at\' h:mm a"}'/>
                                 </div>  <!-- end .mb-1 -->
                                 <p class="card-text mb-auto">${post.summary}</p>
-                                <a href="#" class="link-primary">${post.user.getUserName()}</a>
+                                <a href="users/${post.user.id}" class="link-primary">${post.user.getUserName()}</a>
                                 <a href="posts/${post.id}" class="stretched-link"></a>
                             </div> <!-- end .col -->
                             <div class="col-auto d-none d-md-block" id="post-img">
