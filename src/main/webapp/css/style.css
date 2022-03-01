@@ -2,6 +2,12 @@
     background-image: url("../img/otters.jpg");
     background-size: cover;
     background-position: 60% 50%;
-    background-attachment: fixed;
-    height: 800px;
+    height: 750px;
+}
+
+.o-glyph {
+    font-family: 'Allura', cursive;
+    letter-spacing: 2px;
+    position: relative;
+    bottom: 3px;
 }
