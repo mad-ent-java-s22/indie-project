@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: david
-  Date: 2/21/2022
-  Time: 4:33 PM
+  Date: 2/28/2022
+  Time: 11:49 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -19,12 +19,21 @@
     <div class="container" id="inner-container">
         <jsp:include page = "/jsp/components/nav.jsp" />
         <main class="container">
-            <jsp:include page="/jsp/components/leading_story.jsp" />
-
+            <div class="row g-5 mb-4">
+                <div class="col-4 col-lg-2">
+                    <section id="user-summary" class="">
+                        <img class="rounded" width="200" height="250" src="../img/${user.profileImage}" alt="">
+                    </section>
+                </div> <!-- end .col-4 -->
+                <div class="col-8 col-lg-10">
+                    <h4 class="display-6 fw-normal mt-2 text-center">${user.firstName} ${user.lastName}</h4>
+                    <p class="p-3 mx-5 fst-italic">${user.summary}</p>
+                </div>
+            </div>  <!-- end .row g-5 -->
             <div class="row mb-2">
-                <c:forEach var="post" items="${posts}">
-
-                    <div class="col-12 col-xxl-6">
+                <h2 class="display-6">${user.firstName}'s Recent Posts</h2>
+                <c:forEach var="post" items="${user.posts}">
+                    <section class="col-12 col-xl-6">
                         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                             <div class="col p-4 d-flex flex-column position-static">
                                 <div id="tags">
@@ -56,24 +65,21 @@
                                     <tags:localDate date="${post.dateCreated}" pattern='${"MMM d, yyyy \'at\' h:mm a"}'/>
                                 </div>  <!-- end .mb-1 -->
                                 <p class="card-text mb-auto">${post.summary}</p>
-                                <a href="posts/${post.id}" class="link-secondary">Read More</a>
+                                <a href="../posts/${post.id}" class="link-secondary">Read More</a>
                             </div> <!-- end .col -->
                             <div class="col-auto d-none d-md-block" id="post-img">
-                                <a href="users/${post.user.id}">
                                     <img
                                             class="bd-placeholder-img"
                                             width="200" height="250"
-                                            src="img/${post.user.profileImage}"
+                                            src="../img/${post.user.profileImage}"
                                             alt="profile pic">
-                                </a>
 
                             </div> <!-- end #post-img -->
                         </div> <!-- end .row -->
-                    </div> <!-- end .col-md-6 -->
+                    </section> <!-- end .col-md-6 -->
                 </c:forEach>
             </div> <!-- end .row mb-2 -->
         </main>
-
     </div> <!-- end #outer-container -->
     <jsp:include page="/jsp/components/footer.jsp" />
 </div>  <!-- end #inner-container -->

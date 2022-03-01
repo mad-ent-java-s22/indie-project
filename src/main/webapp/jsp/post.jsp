@@ -1,3 +1,4 @@
+<jsp:useBean id="post" scope="request" type="org.davidcalabrese.entity.Post"/>
 <%--
   Created by IntelliJ IDEA.
   User: david
@@ -10,7 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Spry</title>
+    <title>Otter</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
@@ -23,7 +24,7 @@
                 <div class="col-md-8">
                     <article class="blog-post">
                         <h2 class="blog-post-title">${post.title}</h2>
-                        <p class="blog-post-meta">${post.dateCreated} by <a href="#">${post.user.firstName} ${post.user.lastName}</a></p>
+                        <p class="blog-post-meta">${post.dateCreated} by <a href="../users/${post.user.id}">${post.user.firstName} ${post.user.lastName}</a></p>
                         <p class="display-6" id="summary">${post.summary}</p>
                         <hr>
                         <p id="content">${post.content}</p>
@@ -36,7 +37,7 @@
                         <img
                              class="rounded"
                              width="200" height="250"
-                             src="img/${post.user.profileImage}"
+                             src="../img/${post.user.profileImage}"
                              alt="profile pic">
                         <h4 class="display-6 fw-normal mt-2">${post.user.firstName} ${post.user.lastName}</h4>
                         <p class="mx-5 fst-italic">${post.user.summary}</p>

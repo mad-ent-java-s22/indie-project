@@ -1,5 +1,8 @@
 package org.davidcalabrese.testUtil;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Properties;
 
 /**
@@ -23,7 +26,6 @@ public interface PropertiesLoaderUtil {
         try {
             properties.load(this.getClass().getResourceAsStream(propertiesFilePath));
         } catch (Exception ioException) {
-            ioException.printStackTrace();
             throw ioException;
         }
         return properties;

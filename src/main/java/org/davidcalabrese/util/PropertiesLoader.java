@@ -23,7 +23,6 @@ public interface PropertiesLoader {
         try {
             properties.load(this.getClass().getResourceAsStream(propertiesFilePath));
         } catch (Exception ioException) {
-            ioException.printStackTrace();
             throw ioException;
         }
         return properties;
