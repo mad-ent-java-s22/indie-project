@@ -37,5 +37,7 @@
 | 2/25 | Indie project | 4 | stored photos, created  jsp for individual post |
 | 2/26 | IP            | 2 | more data model adjustments. jsp layout |
 | 2/27 | IP            | 1 | fixed relative image link issue |
-| 2/28 |               |   |                |
+| 2/28 | IP            | 4 | design stuff  |
+| 3/1  | IP & week 7 exercise| 5 |                |
+
 
