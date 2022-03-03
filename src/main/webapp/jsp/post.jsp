@@ -25,6 +25,30 @@
                     <article class="blog-post">
                         <h2 class="blog-post-title">${post.title}</h2>
                         <p class="blog-post-meta">${post.dateCreated} by <a href="../users/${post.user.id}">${post.user.firstName} ${post.user.lastName}</a></p>
+                        <p class="blog-post-meta" id="tags">
+                            <c:forEach var="tag" items="${post.tags}">
+                                <c:choose>
+                                    <c:when test="${tag.getName() == 'politics'}">
+                                        <strong class="d-inline mb-2 text-primary">${tag.getName()}</strong> &nbsp;
+                                    </c:when>
+                                    <c:when test="${tag.getName() == 'entertainment'}">
+                                        <strong class="d-inline mb-2 text-warning">${tag.getName()}</strong> &nbsp;
+                                    </c:when>
+                                    <c:when test="${tag.getName() == 'sports'}">
+                                        <strong class="d-inline mb-2 text-success">${tag.getName()}</strong> &nbsp;
+                                    </c:when>
+                                    <c:when test="${tag.getName() == 'movies'}">
+                                        <strong class="d-inline mb-2 text-secondary">${tag.getName()}</strong> &nbsp;
+                                    </c:when>
+                                    <c:when test="${tag.getName() == 'education'}">
+                                        <strong class="d-inline mb-2 text-info">${tag.getName()}</strong> &nbsp;
+                                    </c:when>
+                                    <c:otherwise>
+                                        <strong class="d-inline mb-2 text-danger">${tag.getName()}</strong> &nbsp;
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+                        </p>
                         <p class="display-6" id="summary">${post.summary}</p>
                         <hr>
                         <p id="content">${post.content}</p>
