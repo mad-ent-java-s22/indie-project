@@ -10,6 +10,6 @@
     <div class="col-md-6 px-0">
         <h1 class="display-4 fst-italic">Ethical Design in Social Media</h1>
         <p class="lead my-3">The story behind social media's evolution toward addictive design, and how to use technology to counter this progression.</p>
-        <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
+        <p class="lead mb-0"><a href="posts/7" class="text-white fw-bold">Continue reading...</a></p>
     </div>
 </div>
