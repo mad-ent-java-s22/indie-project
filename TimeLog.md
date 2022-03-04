@@ -39,5 +39,9 @@
 | 2/27 | IP            | 1 | fixed relative image link issue |
 | 2/28 | IP            | 4 | design stuff  |
 | 3/1  | IP & week 7 exercise| 5 |                |
+| 3/2  | IP & week 7 exercise| 6 |                |
+| 3/3  | IP | 1 |                |
+| 3/4  | IP - cognito | 1 |                |
+
 
 
