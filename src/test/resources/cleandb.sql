@@ -27,6 +27,7 @@ CREATE TABLE post_tag (
 CREATE TABLE tag (
                      id int NOT NULL AUTO_INCREMENT,
                      name varchar(50) NOT NULL,
+                     color varchar(50) NOT NULL,
                      CONSTRAINT tag_pk PRIMARY KEY (id)
 );
 
@@ -66,16 +67,21 @@ INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `pas
 INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `password`, `profile_image`, `summary`) VALUES ('user5', 'Megan', 'Qualley', 'megan@gmail.com', 'password', 'qualley.jpg', 'Maggie has been a reporter at Otter since 2013. She covers a broad range of issues, from the latest developments out of the Middle East to science research news. She started her journalism career at the beginning of the Egyptian uprising in 2011 and chronicled the ousting of two presidents, eight rounds of elections, and numerous major outbreaks of violence for Otter and other outlets.');
 
 -- inserts 10 tags
-INSERT INTO `blog`.`tag` (`name`) VALUES ('politics');
-INSERT INTO `blog`.`tag` (`name`) VALUES ('education');
-INSERT INTO `blog`.`tag` (`name`) VALUES ('movies');
-INSERT INTO `blog`.`tag` (`name`) VALUES ('literature');
-INSERT INTO `blog`.`tag` (`name`) VALUES ('entertainment');
-INSERT INTO `blog`.`tag` (`name`) VALUES ('food');
-INSERT INTO `blog`.`tag` (`name`) VALUES ('personal');
-INSERT INTO `blog`.`tag` (`name`) VALUES ('technology');
-INSERT INTO `blog`.`tag` (`name`) VALUES ('funny');
-INSERT INTO `blog`.`tag` (`name`) VALUES ('sports');
+INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('politics', 'red');
+INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('education', 'pink');
+INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('movies', 'purple');
+INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('books', 'indigo');
+INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('entertainment', 'blue');
+INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('food', 'cyan');
+INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('personal', 'teal');
+INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('technology', 'green');
+INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('business', 'lime');
+INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('sports', 'yellow');
+INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('opinion', 'amber');
+INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('science', 'orange');
+INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('health', 'brown');
+INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('travel', 'grey');
+INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('art', 'blue-grey');
 
 -- inserts 5 test posts, each with a tag or two
 INSERT INTO `blog`.`post` (`title`, `content`, `user_id`, `summary`) VALUES ('Post 1', 'This is post 1, it is about politics and education', 1, 'This is post 1, it is about politics and education');
