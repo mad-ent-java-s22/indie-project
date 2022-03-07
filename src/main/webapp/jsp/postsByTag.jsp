@@ -36,7 +36,7 @@
               <div class="col p-4 d-flex flex-column position-static">
                 <div id="tags">
                   <c:forEach var="tag" items="${post.tags}">
-                    <strong class="d-inline mb-2 text-color-${tag.color}">${tag.name}</strong>
+                    <strong class="d-inline mb-2 text-color-${tag.color}">${tag.name} &nbsp;</strong>
                   </c:forEach>
                 </div>  <!-- end #tags -->
                 <h3 class="mb-0">${post.title}</h3>

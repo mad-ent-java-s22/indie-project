@@ -22,14 +22,14 @@
         <jsp:include page = "/jsp/components/nav.jsp" />
         <main class="container">
             <div class="row g-5">
-                <div class="col-md-8">
+                <div class="col-lg-8">
                     <article class="blog-post">
                         <h2 class="blog-post-title">${post.title}</h2>
                         <p class="blog-post-meta">${post.dateCreated} by <a href="../users/${post.user.id}">${post.user.firstName} ${post.user.lastName}</a></p>
                         <p class="blog-post-meta" id="tags">
                             <c:forEach var="tag" items="${post.tags}">
                                 <a href="<%=request.getContextPath()%>/tags/${tag.id}" class="tag-link text-color-${tag.color}">
-                                    <strong class="d-inline mb-2">${tag.name}</strong>
+                                    <strong class="d-inline mb-2">${tag.name} &nbsp;</strong>
                                 </a>
                             </c:forEach>
                         </p>
@@ -38,7 +38,7 @@
                         <p id="content">${post.content}</p>
                     </article>
                 </div>  <!-- end .col-md-8 -->
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <section
                             id="user-summary"
                             class="d-flex flex-column align-items-center justify-content-center">
