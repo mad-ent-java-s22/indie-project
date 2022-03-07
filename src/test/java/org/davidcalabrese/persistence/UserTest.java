@@ -46,5 +46,6 @@ public class UserTest {
     public void getUserFromPostSuccess() {
         Post post1 = postDao.getById(1);
         assertEquals("Pam", post1.getUser().getFirstName());
+        assertEquals("Smith", post1.getUser().getLastName());
     }
 }
