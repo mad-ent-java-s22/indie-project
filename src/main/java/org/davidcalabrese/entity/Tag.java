@@ -17,6 +17,9 @@ public class Tag {
     @NaturalId
     private String name;
 
+    @Column(name = "color")
+    private String color;
+
     @ManyToMany(mappedBy = "tags", fetch = FetchType.EAGER)
     private Set<Post> posts = new HashSet<>();
 
@@ -80,16 +83,34 @@ public class Tag {
         this.posts = posts;
     }
 
+    /**
+     * Gets the value of <code>color</code>
+     *
+     * @return value of <code>color</code>
+     */
+    public String getColor() {
+        return color;
+    }
+
+    /**
+     * Sets the value of <code>color</code>
+     *
+     * @param color the value of <code>color</code>
+     */
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Tag)) return false;
         Tag tag = (Tag) o;
-        return name == tag.name;
+        return id == tag.id && name.equals(tag.name) && color.equals(tag.color);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(id, name, color);
     }
 }
