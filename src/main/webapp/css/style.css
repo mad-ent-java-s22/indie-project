@@ -14,18 +14,33 @@
 
 .tag-link { text-decoration: none; }
 .text-color-red {color: #d32f2f }           /* politics */
+.text-color-red:active, .text-color-red:hover { color: #942222 }
 .text-color-pink {color: #f1709f }          /* education */
+.text-color-pink:active, .text-color-pink:hover { color: #9d4f6b }
 .text-color-purple {color: #8e24aa }        /* movies */
+.text-color-purple:active, .text-color-purple:hover { color: #651c79 }
 .text-color-indigo {color: #3949ab }        /* books */
+.text-color-indigo:active, .text-color-indigo:hover {color: #20295e }
 .text-color-blue {color: #2196f3 }          /* entertainment */
+.text-color-blue:active, .text-color-blue:hover {color: #1970b2 }
 .text-color-cyan {color: #00bcd4 }          /* food */
+.text-color-cyan:active, .text-color-cyan:hover {color: #018798 }
 .text-color-teal {color: #009688 }          /* personal */
+.text-color-teal:active, .text-color-teal:hover {color: #01594f }
 .text-color-green {color: #4caf50 }         /* technology */
+.text-color-green:active, .text-color-green:hover {color: #306934 }
 .text-color-lime {color: #cddc39 }          /* business */
+.text-color-lime:active, .text-color-lime:hover {color: #879126 }
 /*.text-color-yellow {color: #ffff00 }        !* sports *!*/
 .text-color-yellow {color: #ffc400 }        /* sports */
+.text-color-yellow:active, .text-color-yellow:hover {color: #8a6b01 }
 .text-color-amber {color: #ffc400 }         /* opinion */
+.text-color-amber:active, .text-color-amber:hover {color: #917101 }
 .text-color-orange {color: #fb8c00 }        /* science */
+.text-color-orange:active, .text-color-orange:hover {color: #bb6a01 }
 .text-color-brown {color: #795548 }         /* health */
+.text-color-brown:active, .text-color-brown:hover {color: #463229 }
 .text-color-grey {color: #9e9e9e }          /* travel */
+.text-color-grey:active, .text-color-grey:hover {color: #5d5d5d }
 .text-color-blue-grey {color: #607d8b }     /* art  */
+.text-color-blue-grey:active, .text-color-blue-grey:hover {color: #394852 }
