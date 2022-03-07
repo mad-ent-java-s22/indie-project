@@ -13,16 +13,16 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UserTest {
-    GenericDao userDao;
-    GenericDao postDao;
+    GenericDao<User> userDao;
+    GenericDao<Post> postDao;
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @BeforeEach
     void setUp() {
         logger.info("setting up new user test");
-        userDao = new GenericDao<User>(User.class);
-        postDao = new GenericDao<Post>(Post.class);
+        userDao = new GenericDao<>(User.class);
+        postDao = new GenericDao<>(Post.class);
 
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
@@ -38,13 +38,13 @@ public class UserTest {
     @Test
     public void getUserByIdSuccess() {
         logger.info("in getUserByIdSuccess");
-        User user1 = (User) userDao.getById(1);
+        User user1 = userDao.getById(1);
         assertEquals("Pam", user1.getFirstName());
     }
 
     @Test
     public void getUserFromPostSuccess() {
-        Post post1 = (Post) postDao.getById(1);
+        Post post1 = postDao.getById(1);
         assertEquals("Pam", post1.getUser().getFirstName());
     }
 }
