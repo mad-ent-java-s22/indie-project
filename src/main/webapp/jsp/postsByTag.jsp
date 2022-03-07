@@ -20,7 +20,14 @@
   <div class="container" id="inner-container">
     <jsp:include page = "/jsp/components/nav.jsp" />
     <main class="container">
-
+      <section class="py-3 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Articles on <span style="text-transform: capitalize">${tag.name}</span></h1>
+            <p class="lead text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic amet neque vero enim quam quisquam cumque veniam ducimus eius facilis accusamus rem eveniet natus obcaecati in, fugit alias eligendi magnam.</p>
+          </div>
+        </div>
+      </section>
       <div class="row mb-2">
         <c:forEach var="post" items="${posts}">
 
