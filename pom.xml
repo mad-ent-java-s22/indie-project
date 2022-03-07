@@ -18,7 +18,7 @@
     <hibernate-version>5.4.4.Final</hibernate-version>
     <javax.version>8.0.1</javax.version>
     <jstl-version>1.2</jstl-version>
-    <junit-platform-runner-version>1.0.0</junit-platform-runner-version>
+    <junit-platform-runner-version>1.8.2</junit-platform-runner-version>
     <junit.version>4.12</junit.version>
     <junit-vintage-version>4.12.0</junit-vintage-version>
     <jupiter-version>5.0.0</jupiter-version>
@@ -30,6 +30,7 @@
     <java-jwt-version>3.18.3</java-jwt-version>
     <org-json-version>20211205</org-json-version>
     <commons-io-version>2.11.0</commons-io-version>
+    <jackson-version>2.13.2</jackson-version>
   </properties>
 
   <dependencies>
@@ -57,11 +58,13 @@
       <artifactId>log4j-core</artifactId>
       <version>${log4j-version}</version>
     </dependency>
+
     <dependency>
       <groupId>javax</groupId>
       <artifactId>javaee-web-api</artifactId>
       <version>${javax.version}</version>
     </dependency>
+
     <dependency>
       <groupId>org.junit.platform</groupId>
       <artifactId>junit-platform-runner</artifactId>
@@ -113,6 +116,28 @@
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
       <version>${commons-io-version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>${jackson-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>${jackson-version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.jaxrs</groupId>
+      <artifactId>jackson-jaxrs-json-provider</artifactId>
+      <version>${jackson-version}</version>
     </dependency>
   </dependencies>
 
