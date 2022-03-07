@@ -31,7 +31,7 @@
                                 <div id="tags">
                                     <c:forEach var="tag" items="${post.tags}">
                                         <a href="<%=request.getContextPath()%>/tags/${tag.id}" class="tag-link text-color-${tag.color}">
-                                            <strong class="d-inline mb-2">${tag.name}</strong>
+                                            <strong class="d-inline mb-2">${tag.name} &nbsp; </strong>
                                         </a>
                                     </c:forEach>
                                 </div>  <!-- end #tags -->
