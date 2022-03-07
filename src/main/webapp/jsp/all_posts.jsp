@@ -29,26 +29,7 @@
                             <div class="col p-4 d-flex flex-column position-static">
                                 <div id="tags">
                                     <c:forEach var="tag" items="${post.tags}">
-                                        <c:choose>
-                                            <c:when test="${tag.getName() == 'politics'}">
-                                                <strong class="d-inline mb-2 text-primary">${tag.getName()}</strong> &nbsp;
-                                            </c:when>
-                                            <c:when test="${tag.getName() == 'entertainment'}">
-                                                <strong class="d-inline mb-2 text-warning">${tag.getName()}</strong> &nbsp;
-                                            </c:when>
-                                            <c:when test="${tag.getName() == 'sports'}">
-                                                <strong class="d-inline mb-2 text-success">${tag.getName()}</strong> &nbsp;
-                                            </c:when>
-                                            <c:when test="${tag.getName() == 'movies'}">
-                                                <strong class="d-inline mb-2 text-secondary">${tag.getName()}</strong> &nbsp;
-                                            </c:when>
-                                            <c:when test="${tag.getName() == 'education'}">
-                                                <strong class="d-inline mb-2 text-info">${tag.getName()}</strong> &nbsp;
-                                            </c:when>
-                                            <c:otherwise>
-                                                <strong class="d-inline mb-2 text-danger">${tag.getName()}</strong> &nbsp;
-                                            </c:otherwise>
-                                        </c:choose>
+                                        <strong class="d-inline mb-2 text-color-${tag.color}">${tag.name}</strong>
                                     </c:forEach>
                                 </div>  <!-- end #tags -->
                                 <h3 class="mb-0">${post.title}</h3>
