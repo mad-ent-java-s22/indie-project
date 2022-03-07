@@ -42,6 +42,7 @@
 | 3/2  | IP & week 7 exercise| 6 |                |
 | 3/3  | IP | 1 |                |
 | 3/4  | IP - cognito | 1 |                |
+| 3/5  | watch videos, deploying cognito to beanstalk, SSL research  | 2 |                |
 
 
 
