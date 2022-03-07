@@ -12,6 +12,7 @@
     bottom: 3px;
 }
 
+.tag-link { text-decoration: none; }
 .text-color-red {color: #d32f2f }           /* politics */
 .text-color-pink {color: #f1709f }          /* education */
 .text-color-purple {color: #8e24aa }        /* movies */
@@ -21,7 +22,8 @@
 .text-color-teal {color: #009688 }          /* personal */
 .text-color-green {color: #4caf50 }         /* technology */
 .text-color-lime {color: #cddc39 }          /* business */
-.text-color-yellow {color: #ffff00 }        /* sports */
+/*.text-color-yellow {color: #ffff00 }        !* sports *!*/
+.text-color-yellow {color: #ffc400 }        /* sports */
 .text-color-amber {color: #ffc400 }         /* opinion */
 .text-color-orange {color: #fb8c00 }        /* science */
 .text-color-brown {color: #795548 }         /* health */
