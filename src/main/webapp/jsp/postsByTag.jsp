@@ -47,7 +47,7 @@
                 <a href="<%=request.getContextPath()%>/posts/${post.id}" class="link-secondary">Read More</a>
               </div> <!-- end .col -->
               <div class="col-auto d-none d-md-block" id="post-img">
-                <a href="users/${post.user.id}">
+                <a href="<%=request.getContextPath()%>/users/${post.user.id}">
                   <img
                       class="bd-placeholder-img"
                       width="200" height="250"
