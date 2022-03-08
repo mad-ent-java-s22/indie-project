@@ -1,5 +1,6 @@
 # Time Log
 
+### January
 | Date | Task | Hours | Notes|
 |------|------|-------|------|
 | 1/27| Set up | 1 | Did I do this right? |
@@ -7,6 +8,10 @@
 | 1/30 | Exercise 3 | 2 | |
 | 1/30 | Week 3 videos | 1 | |
 | 1/31 | Ex 3 | 2 | Just about finished exercise 3. |
+
+### February
+| Date | Task | Hours | Notes|
+|------|------|-------|------|
 | 2/1  | Project | .25 | Problem statement |
 | 2/1  | Ex 4 | 1 | Got exercise configured |
 | 2/1  | Ex 4 | 1 | Tried getting demo to work |
@@ -38,11 +43,16 @@
 | 2/26 | IP            | 2 | more data model adjustments. jsp layout |
 | 2/27 | IP            | 1 | fixed relative image link issue |
 | 2/28 | IP            | 4 | design stuff  |
+
+
+
+### March
+| Date | Task | Hours | Notes|
+|------|------|-------|------|
 | 3/1  | IP & week 7 exercise| 5 |                |
 | 3/2  | IP & week 7 exercise| 6 |                |
 | 3/3  | IP | 1 |                |
 | 3/4  | IP - cognito | 1 |                |
 | 3/5  | watch videos, deploying cognito to beanstalk, SSL research  | 2 |                |
-
-
-
+| 3/6  | cognito exercise  | 2 | troubleshooting               |
+| 3/7  | IP  | 7 | updated data model, created tags servlet, improved design |
