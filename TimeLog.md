@@ -8,6 +8,7 @@
 | 1/30 | Exercise 3 | 2 | |
 | 1/30 | Week 3 videos | 1 | |
 | 1/31 | Ex 3 | 2 | Just about finished exercise 3. |
+| Total |  | 35 |  |
 
 ### February
 | Date | Task | Hours | Notes|
@@ -38,12 +39,12 @@
 | 2/22 | peer reviews  | 2 | Left feedback  |
 | 2/22 | Indie project | 2 | troubleshooting db model  |
 | 2/23 | Indie project | 4 | got orm working, built posts page|
-| 2/24 | AWS Elastic Beanstalk |   |                |
+| 2/24 | AWS Beanstalk | 6 |                |
 | 2/25 | Indie project | 4 | stored photos, created  jsp for individual post |
 | 2/26 | IP            | 2 | more data model adjustments. jsp layout |
 | 2/27 | IP            | 1 | fixed relative image link issue |
 | 2/28 | IP            | 4 | design stuff  |
-
+| Total |  | 93.75 |  |
 
 
 ### March
@@ -56,3 +57,5 @@
 | 3/5  | watch videos, deploying cognito to beanstalk, SSL research  | 2 |                |
 | 3/6  | cognito exercise  | 2 | troubleshooting               |
 | 3/7  | IP  | 7 | updated data model, created tags servlet, improved design |
+| 3/8  |     |   |       |
+| Total |  |  |  |
