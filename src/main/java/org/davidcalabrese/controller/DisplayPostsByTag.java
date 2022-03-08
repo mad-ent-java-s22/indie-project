@@ -2,7 +2,6 @@ package org.davidcalabrese.controller;
 
 import org.davidcalabrese.entity.Post;
 import org.davidcalabrese.entity.Tag;
-import org.davidcalabrese.entity.User;
 import org.davidcalabrese.persistence.GenericDao;
 
 import javax.servlet.RequestDispatcher;
@@ -12,9 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import static org.davidcalabrese.util.Util.getId;
 
