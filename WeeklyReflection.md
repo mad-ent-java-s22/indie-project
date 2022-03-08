@@ -56,5 +56,12 @@ Caused by: java.sql.SQLDataException: Cannot determine value type from string 'p
   * added "summary" column in blog.post. the post summary will contain a short summary of the article to be displayed on the main page of the application. I was originally thinking of just taking a substring of the first 150 or characters of the article and using that as a summary, but this frequently wouldn't look good so I decided against it.
   * added "summary" column in blog.user - this holds a short background on the user, to be displayed to the side of the user's posts. Ideally I will also create pages for each author as well, and in that case I will want the user summary displayed there as well. 
 * working on creating dynamic url patterns for the posts so one servlet can route the any number of posts. I found [this article](https://stackoverflow.com/questions/6678029/dynamic-urls-in-java-web-application-like-in-rails) to help.
-#### Friday 2/25
-#### Saturday 2/26
+
+### Week 7
+* Blog is looking good! I have made it so a user can view all posts, view posts by author or view posts by tag. 
+* Made some changes to data model - added color column in blog.tag to simplify the styling.
+* Cognito exercise completed, I have not integrated that into the app yet.
+  * I first plan to deploy week 7 exercise to beanstalk and then try with my app
+
+
+### Week 8
