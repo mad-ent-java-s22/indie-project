@@ -16,7 +16,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <hibernate-version>5.4.4.Final</hibernate-version>
-    <javax.version>8.0.1</javax.version>
+    <javax.version>7.0</javax.version>
     <jstl-version>1.2</jstl-version>
     <junit-platform-runner-version>1.0.0</junit-platform-runner-version>
     <junit.version>4.12</junit.version>
@@ -89,17 +89,20 @@
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>jstl</groupId>
       <artifactId>jstl</artifactId>
       <version>${jstl-version}</version>
     </dependency>
+
     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>${mysql-version}</version>
     </dependency>
+
     <!-- for parsing access token -->
     <dependency>
       <groupId>com.auth0</groupId>
@@ -165,6 +168,20 @@
         <plugin>
           <artifactId>maven-war-plugin</artifactId>
           <version>3.2.2</version>
+          <configuration>
+            <webResources>
+              <resource>
+                <directory>src/main/.platform</directory>
+                <targetPath>.platform</targetPath>
+                <filtering>true</filtering>
+              </resource>
+              <resource>
+                <directory>src/main/.ebextensions</directory>
+                <targetPath>.ebextensions</targetPath>
+                <filtering>true</filtering>
+              </resource>
+            </webResources>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
