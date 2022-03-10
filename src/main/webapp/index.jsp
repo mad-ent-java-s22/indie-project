@@ -20,7 +20,15 @@
     <div class="container-xxl" id="inner-container">
     <jsp:include page = "/jsp/components/nav.jsp" />
     <main class="container-xxl d-flex justify-content-center align-items-lg-center" id="otters">
-        <jsp:include page="/jsp/components/jumbotron.jsp" />
+        <div class="px-5 mb-4 rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-4 text-white">Welcome to <span class="o-glyph">O</span>tter</h1>
+                <p class="col-md-8 fs-4 text-white">Ethical social media.</p>
+                <%--        <a href="all_posts" class="btn btn-primary btn-lg" type="button">View posts</a>--%>
+                <a href="logIn" class="btn btn-primary btn-lg" type="button">Sign in</a>
+                <a href="all_posts" class="btn btn-success btn-lg" type="button">Sign up</a>
+            </div>
+        </div>
     </main>
     </div> <!-- end #outer-container -->
     <jsp:include page="/jsp/components/footer.jsp" />
