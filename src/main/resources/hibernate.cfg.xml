@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
 <!--        <property name="connection.url">jdbc:mysql://localhost:3306/blog</property>-->
-        <property name="connection.url">jdbc:mysql://aa2k5idm33ieyt.ckimmkrfg84q.us-east-2.rds.amazonaws.com:3306/blog</property>
+        <property name="connection.url">jdbc:mysql://aa1pnn13d21q8km.ckimmkrfg84q.us-east-2.rds.amazonaws.com:3306/blog</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 
         <property name="connection.username">root</property>
