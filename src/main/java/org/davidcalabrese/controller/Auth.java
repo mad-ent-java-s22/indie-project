@@ -10,7 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.davidcalabrese.auth.*;
 import org.davidcalabrese.util.PropertiesLoader;
-import java.util.Base64;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -140,10 +140,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
         // todo pick proper key from the two - it just so happens that the first one works for my case
         // Use Key's N and E
-//        BigInteger modulus = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getN()));
-        BigInteger modulus = new BigInteger(1, Base64.getDecoder().decode(jwks.getKeys().get(0).getN()));
-//        BigInteger exponent = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getE()));
-        BigInteger exponent = new BigInteger(1, Base64.getDecoder().decode(jwks.getKeys().get(0).getE()));
+        BigInteger modulus = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getN()));
+        BigInteger exponent = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getE()));
 
         // TODO the following is "happy path", what if the exceptions are caught?
         // Create a public key
