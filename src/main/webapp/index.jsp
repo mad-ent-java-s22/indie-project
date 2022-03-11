@@ -30,8 +30,10 @@
                         <a href="logIn" class="btn btn-success btn-lg" type="button">Sign up</a>
                     </c:when>
                     <c:otherwise>
-                        <h3 class="display-5 text-white">Welcome ${userName}!</h3>
-                        <a href="all_posts" class="btn btn-success btn-lg" type="button">View Posts</a>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <h3 class="display-5 text-white">Welcome ${userName}!</h3>
+                            <a href="all_posts" class="btn btn-success btn-lg" type="button">View Posts</a>
+                        </div>
                     </c:otherwise>
                 </c:choose>
             </div>
