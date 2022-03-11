@@ -21,7 +21,7 @@
     <jsp:include page = "/jsp/components/nav.jsp" />
     <main class="container-xxl d-flex justify-content-center align-items-lg-center" id="otters">
         <div class="px-5 mb-4 rounded-3">
-            <div class="container-fluid py-5">
+            <div class="container-fluid py-5 above">
                 <h1 class="display-4 text-white">Welcome to <span class="o-glyph">O</span>tter</h1>
                 <p class="col-md-8 fs-4 text-white">Ethical social media.</p>
                 <c:choose>
@@ -30,7 +30,7 @@
                         <a href="logIn" class="btn btn-success btn-lg" type="button">Sign up</a>
                     </c:when>
                     <c:otherwise>
-                        <div class="d-flex justify-content-center align-items-center">
+                        <div class="d-flex justify-content-center align-items-center flex-column">
                             <h3 class="display-5 text-white">Welcome ${userName}!</h3>
                             <a href="all_posts" class="btn btn-success btn-lg" type="button">View Posts</a>
                         </div>
