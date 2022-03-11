@@ -65,3 +65,11 @@ Caused by: java.sql.SQLDataException: Cannot determine value type from string 'p
 
 
 ### Week 8
+I thought I had fixed my issue with the Cannot resolve symbol 'Base64' problem but the fix is no good. The code compiles fine, but it leads to an error later on when the user tries logging in.
+
+When Paula tried logging in she got this error:
+java.lang.IllegalArgumentException: Illegal base64 character 5f
+
+So theBase64.getDecoder().decode() method is not a good substitute for Base64.decodeBase64(). According to [this SO post](https://stackoverflow.com/questions/7688644/java-lang-nosuchmethoderror-org-apache-commons-codec-binary-base64-encodebase64),  someone fixed the same issue by adding the commons-codec.jar dependency.
+
+This worked for me. I still have no idea why the Base64 method was working fine in the week-7 exercise. The commons-codec dependency is not included in the pom.xml there. Maybe I have a conflicting dependency in my indie-project classpath that got precedence in classloading. 
