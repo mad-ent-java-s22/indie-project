@@ -9,6 +9,8 @@ import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.davidcalabrese.auth.*;
+import org.davidcalabrese.entity.User;
+import org.davidcalabrese.persistence.GenericDao;
 import org.davidcalabrese.util.PropertiesLoader;
 
 
@@ -36,6 +38,7 @@ import java.security.spec.InvalidKeySpecException;
 import java.security.spec.RSAPublicKeySpec;
 import java.util.Base64;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
@@ -84,6 +87,13 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 TokenResponse tokenResponse = getToken(authRequest);
                 userName = validate(tokenResponse);
                 req.setAttribute("userName", userName);
+                if (userExists(userName)) {
+                    RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+                    dispatcher.forward(req, resp);
+                } else {
+                    RequestDispatcher dispatcher = req.getRequestDispatcher("profile.jsp");
+                    dispatcher.forward(req, resp);
+                }
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
                 //TODO forward to an error page
@@ -92,8 +102,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 //TODO forward to an error page
             }
         }
-        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
-        dispatcher.forward(req, resp);
+
     }
 
     /**
@@ -251,6 +260,12 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         } catch (Exception e) {
             logger.error("Error loading properties" + e.getMessage(), e);
         }
+    }
+
+    public boolean userExists(String userName) {
+        GenericDao<User> userDao = new GenericDao<>(User.class);
+        List<User> users = userDao.findByPropertyEqual("userName", userName);
+        return (users.size() == 0);
     }
 }
 
