@@ -48,4 +48,10 @@ public class UserTest {
         assertEquals("Pam", post1.getUser().getFirstName());
         assertEquals("Smith", post1.getUser().getLastName());
     }
+
+    @Test
+    public void getUserByUserNameSuccess() {
+        List<User> users = userDao.findByPropertyEqual("userName", "user1");
+        assertEquals("Pam", users.get(0).getFirstName());
+    }
 }
