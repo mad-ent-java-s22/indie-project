@@ -53,5 +53,9 @@ public class UserTest {
     public void getUserByUserNameSuccess() {
         List<User> users = userDao.findByPropertyEqual("userName", "user1");
         assertEquals("Pam", users.get(0).getFirstName());
+        assertEquals(users.size(), 1);
+
+        List<User> noUsers = userDao.findByPropertyEqual("userName", "user100");
+        assertEquals(noUsers.size(), 0);
     }
 }
