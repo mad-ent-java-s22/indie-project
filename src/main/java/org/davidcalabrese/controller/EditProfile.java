@@ -1,2 +1,16 @@
-package org.davidcalabrese.controller;public class EditProfile {
+package org.davidcalabrese.controller;
+
+import org.davidcalabrese.entity.User;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+public class EditProfile extends HttpServlet  {
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        User newUser = new User();
+    }
 }

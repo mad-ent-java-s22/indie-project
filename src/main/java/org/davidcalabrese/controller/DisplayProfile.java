@@ -1,2 +1,4 @@
-package org.davidcalabrese.controller;public class DisplayProfile {
+package org.davidcalabrese.controller;
+
+public class DisplayProfile {
 }
