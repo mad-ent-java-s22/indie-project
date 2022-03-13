@@ -33,15 +33,14 @@
                             class="d-flex justify-content-center align-items-center rounded"
                             style="height: 140px; background-color: rgb(233, 236, 239)"
                         >
-                          <img src="img/default_profile_pic.jpg" style="height: 140px; width: 120px"  alt="">
-
+                          <img src="../img/default_profile_pic.jpg" style="height: 140px; width: 120px" alt="" />
                         </div>
                       </div>
                     </div>
                     <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                       <div class="text-center text-sm-left mb-2 mb-sm-0">
                         <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">John Smith</h4>
-                        <p class="mb-0">@johnny.s</p>
+                        <p class="mb-0">@${userName}</p>
                         <div class="mt-2">
                           <button class="btn btn-primary" type="button">
                             <i class="fa fa-fw fa-camera"></i>
@@ -55,62 +54,58 @@
                       </div>
                     </div>
                   </div>
-                  <div class="tab-content pt-3">
-                    <div class="tab-pane active">
-                      <form class="form" novalidate="">
-                        <div class="row">
+                  <div class="pt-3">
+                    <form class="form" novalidate="">
+                      <div class="row">
+                        <div class="col">
+                          <input
+                              type="text"
+                              name="first_name"
+                              class="form-control"
+                              placeholder="First name"
+                              aria-label="First name"
+                          />
+                        </div>
+                        <div class="col">
+                          <input
+                              name="last_name"
+                              type="text"
+                              class="form-control"
+                              placeholder="Last name"
+                              aria-label="Last name"
+                          />
+                        </div>
+                      </div>
+                      <fieldset disabled="disabled">
+                        <div class="row mt-3">
                           <div class="col">
-                            <div class="row">
-                              <div class="col">
-                                <div class="form-group">
-                                  <label>Full Name</label>
-                                  <input
-                                      class="form-control"
-                                      type="text"
-                                      name="name"
-                                      placeholder="John Smith"
-                                      value="John Smith"
-                                  />
-                                </div>
-                              </div>
-                              <div class="col">
-                                <div class="form-group">
-                                  <label>Username</label>
-                                  <input
-                                      class="form-control"
-                                      type="text"
-                                      name="username"
-                                      placeholder="johnny.s"
-                                      value="johnny.s"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col">
-                                <div class="form-group">
-                                  <label>Email</label>
-                                  <input class="form-control" type="text" placeholder="user@example.com" />
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col mb-3">
-                                <div class="form-group">
-                                  <label>About</label>
-                                  <textarea class="form-control" rows="5" placeholder="My Bio"></textarea>
-                                </div>
-                              </div>
-                            </div>
+                            <input name="userName" type="text" class="form-control" placeholder="username" value="${userName}" />
+                          </div>
+                          <div class="col">
+                            <input
+                                value="${email}"
+                                name="email"
+                                type="email"
+                                class="form-control"
+                                placeholder="email"
+                                aria-label="email"
+                            />
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="col d-flex justify-content-end">
-                            <button class="btn btn-primary" type="submit">Save Changes</button>
-                          </div>
+                      </fieldset>
+                      <div class="row mt-3">
+                        <div class="col">
+                          <label for="about">User Summary</label>
+                          <textarea name="about" id="about" cols="30" rows="10" class="form-control"></textarea>
                         </div>
-                      </form>
-                    </div>
+                      </div>
+
+                      <div class="row mt-3">
+                        <div class="col d-flex justify-content-end">
+                          <button class="btn btn-primary" type="submit">Save Changes</button>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
