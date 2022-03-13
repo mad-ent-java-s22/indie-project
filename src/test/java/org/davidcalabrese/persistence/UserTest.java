@@ -58,4 +58,19 @@ public class UserTest {
         List<User> noUsers = userDao.findByPropertyEqual("userName", "user100");
         assertEquals(noUsers.size(), 0);
     }
+
+    @Test void createUserSuccess() {
+        User newUser = new User("user6", "user6@gmail.com");
+        newUser.setFirstName("Meadow");
+        newUser.setLastName("Soprano");
+        newUser.setSummary("Meadow is a writer.");
+
+        int id = userDao.insert(newUser);
+        User insertedUser = userDao.getById(id);
+
+        assertEquals("Meadow", insertedUser.getFirstName());
+        assertEquals(insertedUser, newUser);
+        List<User> users = userDao.getAll();
+        assertEquals(6, users.size());
+    }
 }
