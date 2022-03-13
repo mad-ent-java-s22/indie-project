@@ -93,6 +93,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
                 if (userExists(userName)) {
                     logger.info("User " + userName + "exists in db...dispatching to index.jsp");
+                    User user = getUser(userName);
+                    session.setAttribute("user", user);
                     RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
                     dispatcher.forward(req, resp);
                 } else {
@@ -275,6 +277,12 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         GenericDao<User> userDao = new GenericDao<>(User.class);
         List<User> users = userDao.findByPropertyEqual("userName", userName);
         return (users.size() == 1);
+    }
+
+    public User getUser(String userName) {
+        GenericDao<User> userDao = new GenericDao<>(User.class);
+        List<User> users = userDao.findByPropertyEqual("userName", userName);
+        return users.get(0);
     }
 }
 
