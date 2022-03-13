@@ -31,6 +31,7 @@
           </div>
         </div>
       </div>  <!-- end .row g-5 -->
+      <c:if test="${not empty user.posts}">
       <div class="row mb-2">
         <h2 class="display-6 text-center p-2">${user.firstName}'s Recent Posts</h2>
         <c:forEach var="post" items="${user.posts}">
@@ -55,6 +56,7 @@
           </section> <!-- end .col-md-6 -->
         </c:forEach>
       </div> <!-- end .row mb-2 -->
+      </c:if>
     </main>
   </div> <!-- end #outer-container -->
   <jsp:include page="/jsp/components/footer.jsp" />
