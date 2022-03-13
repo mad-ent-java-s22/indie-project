@@ -37,10 +37,10 @@ CREATE TABLE user (
                       user_name varchar(50) NOT NULL,
                       first_name varchar(50) NOT NULL,
                       last_name varchar(75) NOT NULL,
-                      date_created timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                      date_created timestamp DEFAULT CURRENT_TIMESTAMP,
                       email varchar(255) NOT NULL,
-                      access_privileges varchar(5) NOT NULL DEFAULT 'user',
-                      profile_image varchar(255) NOT NULL DEFAULT 'https://www.personality-insights.com/wp-content/uploads/2017/12/default-profile-pic-e1513291410505.jpg',
+                      access_privileges varchar(5) DEFAULT 'user',
+                      profile_image varchar(255) DEFAULT 'default-profile-pic.jpg',
                       summary text NOT NULL,
                       CONSTRAINT user_pk PRIMARY KEY (id)
 );
