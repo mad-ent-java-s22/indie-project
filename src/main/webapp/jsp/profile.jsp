@@ -55,7 +55,7 @@
                     </div>
                   </div>
                   <div class="pt-3">
-                    <form class="form" novalidate="">
+                    <form class="form" method="POST" novalidate="">
                       <div class="row">
                         <div class="col">
                           <input
