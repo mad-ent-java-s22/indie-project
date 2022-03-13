@@ -55,7 +55,7 @@
                     </div>
                   </div>
                   <div class="pt-3">
-                    <form class="form" method="POST" novalidate="">
+                    <form class="form" method="POST" action="/edit_profile" novalidate="">
                       <div class="row">
                         <div class="col">
                           <input
