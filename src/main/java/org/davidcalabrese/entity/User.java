@@ -77,6 +77,17 @@ public class User {
     }
 
     /**
+     * Constructor that takes userName and email
+     *
+     * @param userName string which identifies a user in application
+     * @param email user's email address
+     */
+    public User(String userName, String email) {
+        this.userName = userName;
+        this.email = email;
+    }
+
+    /**
      * Gets the value of <code>id</code>
      *
      * @return value of <code>id</code>
