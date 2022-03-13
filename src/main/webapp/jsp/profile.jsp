@@ -39,7 +39,9 @@
                     </div>
                     <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                       <div class="text-center text-sm-left mb-2 mb-sm-0">
-                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">John Smith</h4>
+                        <c:if test="${not empty user.firstName}">
+                          <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">${user.firstName} ${user.lastName}</h4>
+                        </c:if>
                         <p class="mb-0">@${userName}</p>
                         <div class="mt-2">
                           <button class="btn btn-primary" type="button">
@@ -49,8 +51,14 @@
                         </div>
                       </div>
                       <div class="text-center text-sm-right">
-                        <span class="badge badge-secondary">administrator</span>
-                        <div class="text-muted"><small>Joined 09 Dec 2017</small></div>
+                        <c:if test="${not empty user.dateCreated}">
+                          <div class="text-muted">
+                            <small>Joined
+                              <tags:localDate date="${user.dateCreated}" pattern='${"MMM d, yyyy"}'/>
+                            </small>
+                          </div>
+                        </c:if>
+
                       </div>
                     </div>
                   </div>
