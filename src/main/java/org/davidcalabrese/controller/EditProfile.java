@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.time.LocalDate;
 
 @WebServlet(name = "EditProfile", urlPatterns = { "/edit_profile" })
 public class EditProfile extends HttpServlet  {
@@ -26,6 +27,8 @@ public class EditProfile extends HttpServlet  {
         newUser.setFirstName(req.getParameter("first_name"));
         newUser.setLastName(req.getParameter("last_name"));
         newUser.setSummary(req.getParameter("about"));
+        newUser.setDateCreated(LocalDate.now());
+        newUser.setProfileImage("default_profile_pic.jpg");
 
         // insert user and retrieve from db
         int id = userDao.insert(newUser);
