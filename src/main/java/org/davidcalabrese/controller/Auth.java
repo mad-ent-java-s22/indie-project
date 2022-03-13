@@ -20,6 +20,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -36,10 +37,7 @@ import java.security.PublicKey;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.RSAPublicKeySpec;
-import java.util.Base64;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -77,7 +75,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String authCode = req.getParameter("code");
-        String userName;
+        List<String> userInfo;
+        HttpSession session = req.getSession();
 
         if (authCode == null) {
             //TODO forward to an error page or back to the login
@@ -85,13 +84,20 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             HttpRequest authRequest = buildAuthRequest(authCode);
             try {
                 TokenResponse tokenResponse = getToken(authRequest);
-                userName = validate(tokenResponse);
-                req.setAttribute("userName", userName);
+                userInfo = validate(tokenResponse);
+                String userName = userInfo.get(0);
+                String email = userInfo.get(1);
+
+                session.setAttribute("userName", userName);
+                session.setAttribute("email", email);
+
                 if (userExists(userName)) {
+                    logger.info("User " + userName + "exists in db...dispatching to index.jsp");
                     RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
                     dispatcher.forward(req, resp);
                 } else {
-                    RequestDispatcher dispatcher = req.getRequestDispatcher("profile.jsp");
+                    logger.info("User " + userName + "does not exist in db...dispatching to profile.jsp");
+                    RequestDispatcher dispatcher = req.getRequestDispatcher("/jsp/profile.jsp");
                     dispatcher.forward(req, resp);
                 }
             } catch (IOException e) {
@@ -139,7 +145,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
      * @return the user's username
      * @throws IOException exceptions involving IO
      */
-    private String validate(TokenResponse tokenResponse) throws IOException {
+    private List<String> validate(TokenResponse tokenResponse) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         CognitoTokenHeader tokenHeader = mapper.readValue(CognitoJWTParser.getHeader(tokenResponse.getIdToken()).toString(), CognitoTokenHeader.class);
 
@@ -179,13 +185,16 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         String userName = jwt.getClaim("cognito:username").asString();
         String email = jwt.getClaim("email").asString();
         logger.debug("here's the username: " + userName);
-
         logger.debug("here are all the available claims: " + jwt.getClaims());
+
+        List<String> userInfo = new ArrayList<>();
+        userInfo.add(userName);
+        userInfo.add(email);
 
         // TODO decide what you want to do with the info!
         // for now, I'm just returning username for display back to the browser
 
-        return userName;
+        return userInfo;
     }
 
     /** Create the auth url and use it to build the request.
@@ -265,7 +274,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     public boolean userExists(String userName) {
         GenericDao<User> userDao = new GenericDao<>(User.class);
         List<User> users = userDao.findByPropertyEqual("userName", userName);
-        return (users.size() == 0);
+        return (users.size() == 1);
     }
 }
 
