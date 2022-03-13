@@ -36,9 +36,6 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "password")
-    private String password;
-
     @Column(name = "access_privileges")
     private String accessPrivileges;
 
@@ -62,17 +59,15 @@ public class User {
      * @param lastName user's last name
      * @param dateCreated datetime account was created
      * @param email user's email address
-     * @param password user's password
      * @param accessPrivileges user's access privileges (`user` by default, otherwise `admin`)
      */
-    public User(int id, String userName, String firstName, String lastName, LocalDate dateCreated, String email, String password, String accessPrivileges) {
+    public User(int id, String userName, String firstName, String lastName, LocalDate dateCreated, String email, String accessPrivileges) {
         this.id = id;
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateCreated = dateCreated;
         this.email = email;
-        this.password = password;
         this.accessPrivileges = accessPrivileges;
     }
 
@@ -196,24 +191,6 @@ public class User {
     }
 
     /**
-     * Gets the value of <code>password</code>
-     *
-     * @return value of <code>password</code>
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * Sets the value of <code>password</code>
-     *
-     * @param password the value of <code>password</code>
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    /**
      * Gets the value of <code>accessPrivileges</code>
      *
      * @return value of <code>accessPrivileges</code>
@@ -290,12 +267,12 @@ public class User {
         if (this == o) return true;
         if (!(o instanceof User)) return false;
         User user = (User) o;
-        return id == user.id && userName.equals(user.userName) && firstName.equals(user.firstName) && lastName.equals(user.lastName) && dateCreated.equals(user.dateCreated) && email.equals(user.email) && password.equals(user.password) && accessPrivileges.equals(user.accessPrivileges) && profileImage.equals(user.profileImage);
+        return id == user.id && Objects.equals(userName, user.userName) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(dateCreated, user.dateCreated) && Objects.equals(email, user.email) && Objects.equals(accessPrivileges, user.accessPrivileges) && Objects.equals(profileImage, user.profileImage) && Objects.equals(summary, user.summary);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userName, firstName, lastName, dateCreated, email, password, accessPrivileges, profileImage);
+        return Objects.hash(id, userName, firstName, lastName, dateCreated, email, accessPrivileges, profileImage, summary);
     }
 
     @Override
@@ -307,9 +284,9 @@ public class User {
                 ", lastName='" + lastName + '\'' +
                 ", dateCreated=" + dateCreated +
                 ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
                 ", accessPrivileges='" + accessPrivileges + '\'' +
                 ", profileImage='" + profileImage + '\'' +
+                ", summary='" + summary + '\'' +
                 '}';
     }
 }
