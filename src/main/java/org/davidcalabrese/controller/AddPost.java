@@ -41,7 +41,8 @@ public class AddPost extends HttpServlet  {
 
         // for each tag selected, create tag object and add to tagSet
         for (String tagName : tagArray) {
-            Tag newTag = new Tag(tagName);
+            String color = Util.getCorrespondingTagColor(tagName);
+            Tag newTag = new Tag(tagName, color);
             tagDao.saveOrUpdate(newTag);
             tagSet.add(newTag);
         }
