@@ -28,17 +28,38 @@
         </div>
         <form class="px-lg-5" id="form" method="POST" action="/add_post">
           <div class="mb-3">
-            <label for="title" class="form-label">Post Title</label>
+            <label for="title" class="form-label">Title</label>
             <input type="text" name="title" class="form-control" id="title">
           </div>
           <div class="mb-3">
-            <label for="summary" class="form-label">Post Summary</label>
+            <label for="summary" class="form-label">Summary</label>
             <input type="text" name="summary" class="form-control" id="summary">
             <div id="summaryHelp" class="form-text">Enter a sentence that sums up the post</div>
           </div>
           <div class="mb-3">
             <label for="content" class="form-label">Post Content</label>
             <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="tags" class="form-label">Tags</label>
+            <div id="tagsHelp" class="form-text">Hold control to select multiple tags</div>
+            <select name="tags" id="tags" multiple class="form-select">
+              <option value="politics">Politics</option>
+              <option value="education">Education</option>
+              <option value="movies">Movies</option>
+              <option value="books">Books</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="food">Food</option>
+              <option value="personal">Personal</option>
+              <option value="technology">Technology</option>
+              <option value="business">Business</option>
+              <option value="sports">Sports</option>
+              <option value="opinion">Opinion</option>
+              <option value="science">Science</option>
+              <option value="health">Health</option>
+              <option value="travel">Travel</option>
+              <option value="art">Art</option>
+            </select>
           </div>
           <button id="submit" type="submit" class="btn btn-outline-primary">Submit</button>
         </form>
