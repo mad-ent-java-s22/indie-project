@@ -13,7 +13,7 @@
   <title>Otter | Create a new post</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="tinymce/js/tinymce/tinymce.min.js"></script>
+  <script src="https://cdn.tiny.cloud/1/ch7hhaghzsm59cexygats2yb8ubtn6luns6exx0fejxi28v4/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   <script>tinymce.init({ selector: 'textarea#content', });</script>
   <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
 </head>
@@ -26,7 +26,7 @@
         <div class="container">
           <h1 class="display-6 text-center">Create a new blog post</h1>
         </div>
-        <form class="px-lg-5" id="form">
+        <form class="px-lg-5" id="form" method="POST" action="/add_post">
           <div class="mb-3">
             <label for="title" class="form-label">Post Title</label>
             <input type="text" name="title" class="form-control" id="title">
