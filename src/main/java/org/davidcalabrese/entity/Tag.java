@@ -29,6 +29,11 @@ public class Tag {
     public Tag() {
     }
 
+    /** Constructor taking only the tag name */
+    public Tag(String name) {
+        this.name = name;
+    }
+
     /**
      * Gets the value of <code>id</code>
      *
