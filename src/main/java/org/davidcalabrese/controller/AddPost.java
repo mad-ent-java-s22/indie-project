@@ -26,6 +26,7 @@ public class AddPost extends HttpServlet  {
         String userName = (String) session.getAttribute("userName");
 
         GenericDao<Post> postDao = new GenericDao<>(Post.class);
+        GenericDao<Tag> tagDao = new GenericDao<>(Tag.class);
 
         Post newPost = new Post();
         newPost.setTitle(req.getParameter("title"));
@@ -41,9 +42,9 @@ public class AddPost extends HttpServlet  {
         // for each tag selected, create tag object and add to tagSet
         for (String tagName : tagArray) {
             Tag newTag = new Tag(tagName);
+            tagDao.saveOrUpdate(newTag);
             tagSet.add(newTag);
         }
-
         newPost.setTags(tagSet);
 
         //get id of newly inserted post and send user to that page to see submission
