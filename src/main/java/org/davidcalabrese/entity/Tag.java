@@ -29,9 +29,10 @@ public class Tag {
     public Tag() {
     }
 
-    /** Constructor taking only the tag name */
-    public Tag(String name) {
+    /** Constructor taking tag name and color */
+    public Tag(String name, String color) {
         this.name = name;
+        this.color = color;
     }
 
     /**
