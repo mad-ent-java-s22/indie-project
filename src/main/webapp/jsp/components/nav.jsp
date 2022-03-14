@@ -22,6 +22,11 @@
                 <li class="nav-item">
                     <a class="nav-link">About</a>
                 </li>
+                <c:if test="${not empty user}">
+                    <li class="nav-item">
+                        <a class="nav-link" id="new_post_link" href="<%=request.getContextPath()%>/jsp/create_post.jsp">New Post</a>
+                    </li>
+                </c:if>
                 <li class="nav-item">
                     <a class="nav-link" href="<%=request.getContextPath()%>/jsp/profile.jsp">My Profile</a>
                 </li>
