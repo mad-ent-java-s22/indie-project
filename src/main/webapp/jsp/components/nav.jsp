@@ -26,22 +26,21 @@
                     <li class="nav-item">
                         <a class="nav-link" id="new_post_link" href="<%=request.getContextPath()%>/jsp/create_post.jsp">New Post</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%=request.getContextPath()%>/jsp/profile.jsp">My Profile</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/jsp/profile.jsp">Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/logOut">Log Out</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                        </ul>
+                    </li>
                 </c:if>
-                <li class="nav-item">
-                    <a class="nav-link" href="<%=request.getContextPath()%>/jsp/profile.jsp">My Profile</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="<%=request.getContextPath()%>/jsp/profile.jsp">Edit Profile</a></li>
-                        <li><a class="dropdown-item" href="<%=request.getContextPath()%>/logOut">Log Out</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                    </ul>
-                </li>
-
             </ul>
             <form class="d-flex mt-3">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
