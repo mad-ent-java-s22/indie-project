@@ -128,7 +128,7 @@
         <!-- otherwise user has been added to db - display user profile -->
         <div class="row flex-lg-nowrap">
           <div class="col">
-            <div class="row">
+            <div class="row container mx-auto">
               <div class="col mb-3">
                 <div class="card">
                   <div class="card-body">
