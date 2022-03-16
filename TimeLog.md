@@ -57,5 +57,13 @@
 | 3/5  | watch videos, deploying cognito to beanstalk, SSL research  | 2 |                |
 | 3/6  | cognito exercise  | 2 | troubleshooting               |
 | 3/7  | IP  | 7 | updated data model, created tags servlet, improved design |
-| 3/8  |     |   |       |
+| 3/8  | IP  | 2 | cognito, forms |
+| 3/9  | IP  | 5 | cognito, forms |
+| 3/10 | IP  | 2 | cognito, forms |
+| 3/11 | IP  | 6 | cognito, forms |
+| 3/12 | IP  | 3 | cognito, forms |
+| 3/13 | IP  | 5 | cognito, forms |
+| 3/14 | IP  | 2 | logs, forms, display logic |
+| 3/15 | IP  | 4 | logs, forms, display logic |
+| 3/16 | IP  |   |       |
 | Total |  |  |  |
