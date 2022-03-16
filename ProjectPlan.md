@@ -57,6 +57,7 @@
 - [ ] escape special characters in forms
 - [ ] deleting a post
 - [ ] get tiny api to work
+- [ ] sort posts by most recent and limit posts coming back (jquery?) 
 
 ### Week 10
 - [ ] implement post filtering logic
