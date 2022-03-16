@@ -51,15 +51,20 @@
 
 ### Week 9
 - [ ] navbar conditional display of icons depending on user log in status
-- [ ] figure out how to do log out
+- [ ] log out
 - [ ] add API service to project
+- [ ] filtering by tag
+- [ ] escape special characters in forms
+- [ ] deleting a post
+- [ ] get tiny api to work
 
 ### Week 10
 - [ ] implement post filtering logic
-- [ ] figure out how to upload picture
-- [ ] escape special characters in forms
+- [ ] upload picture
+
 
 ### Week 11
+- [ ] admin privileges
 
 ### Week 12
 
