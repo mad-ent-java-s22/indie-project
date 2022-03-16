@@ -18,8 +18,8 @@
   - [x] Create user table 
   - [x] Create post table
 - [x] Select Template | Design CSS
-- [ ] Document application flow in text and pictures - figma
-- [ ] Create a home screen
+- [x] Document application flow in text and pictures - figma
+- [x] Create a home screen
 - [ ] Brainstorm some technical components of ethical design 
   - [ ] Tag different kinds of sensitive content (politics, nudity, drugs/alcohol), allow users to filter certain content out 
   - [ ] Include a settings page that gives user options w/r/t how much time they want to spend on the app, what times of day they want to use it, etc
@@ -47,11 +47,16 @@
 - [x] separate sign up and create user logic
 - [x] create form for creating post
 - [x] create form for adding user details to db
-- [x] jsp logic for displaying profile depending on whether or not user is signed in
+- [x] jsp logic for displaying profile depending on whether user is signed in
 
 ### Week 9
+- [ ] navbar conditional display of icons depending on user log in status
+- [ ] figure out how to do log out
+- [ ] add API service to project
 
 ### Week 10
+- [ ] implement post filtering logic
+- [ ] 
 
 ### Week 11
 
