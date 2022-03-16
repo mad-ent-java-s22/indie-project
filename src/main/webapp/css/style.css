@@ -61,3 +61,9 @@
 .text-color-grey:active, .text-color-grey:hover {color: #5d5d5d }
 .text-color-blue-grey {color: #607d8b }     /* art  */
 .text-color-blue-grey:active, .text-color-blue-grey:hover {color: #394852 }
+
+.user-info {
+    background:#f8f8f8;
+    padding: .25rem;
+    border-radius: 5px;
+}
