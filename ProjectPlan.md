@@ -56,7 +56,8 @@
 
 ### Week 10
 - [ ] implement post filtering logic
-- [ ] 
+- [ ] figure out how to upload picture
+- [ ] escape special characters in forms
 
 ### Week 11
 
