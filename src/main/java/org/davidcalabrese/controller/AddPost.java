@@ -2,6 +2,7 @@ package org.davidcalabrese.controller;
 
 import org.davidcalabrese.entity.Post;
 import org.davidcalabrese.entity.Tag;
+import org.davidcalabrese.entity.User;
 import org.davidcalabrese.persistence.GenericDao;
 import org.davidcalabrese.util.Util;
 
@@ -24,6 +25,9 @@ public class AddPost extends HttpServlet  {
         // get userName and email that from cognito, stored in session
         HttpSession session = req.getSession();
         String userName = (String) session.getAttribute("userName");
+        User user = Util.getUser(userName);
+        log("userName: " + userName);
+        log("user: " + user.toString());
 
         GenericDao<Post> postDao = new GenericDao<>(Post.class);
         GenericDao<Tag> tagDao = new GenericDao<>(Tag.class);
@@ -50,7 +54,8 @@ public class AddPost extends HttpServlet  {
 
         //get id of newly inserted post and send user to that page to see submission
         int idOfInsertedPost = postDao.insert(newPost);
-        String url = "/jsp/posts/" + idOfInsertedPost + ".jsp";
+        req.setAttribute("postId", idOfInsertedPost);
+        String url = "/jsp/post_added.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(req, resp);
     }
