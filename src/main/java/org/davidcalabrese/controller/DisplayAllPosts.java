@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 @WebServlet(name = "DisplayAllPosts", urlPatterns = { "/all_posts" })
@@ -19,7 +20,9 @@ public class DisplayAllPosts extends HttpServlet {
         String url = "/jsp/all_posts.jsp";
         GenericDao<Post> postDao = new GenericDao<>(Post.class);
 
-        List posts = postDao.getAll();
+        // get all posts, reverse the list so newest are displayed first
+        List<Post> posts = postDao.getAll();
+        Collections.reverse(posts);
 
         req.setAttribute("posts", posts);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
