@@ -173,26 +173,26 @@
                         <section class="">
                           <div class="row">
                             <div class="col">
-                              <p class="user-info">${user.firstName}</p>
+                              <p class="user-info p-3">${user.firstName}</p>
                             </div>
                             <div class="col">
-                              <p class="user-info">${user.lastName}</p>
+                              <p class="user-info p-3">${user.lastName}</p>
                             </div>
                           </div>
                           <fieldset disabled="disabled">
                             <div class="row mt-3">
                               <div class="col">
-                                <p class="user-info">${user.userName}</p>
+                                <p class="user-info p-3">${user.userName}</p>
                               </div>
                               <div class="col">
-                                <p class="user-info">${user.email}</p>
+                                <p class="user-info p-3">${user.email}</p>
                               </div>
                             </div>
                           </fieldset>
                           <div class="row mt-3">
                             <div class="col">
                               <h3 class="fw-light">User Summary</h3>
-                              <p class="user-info">${user.summary}</p>
+                              <p class="user-info p-3">${user.summary}</p>
                             </div>
                           </div>
 
