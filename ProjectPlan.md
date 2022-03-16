@@ -27,20 +27,27 @@
 - [x] add user and post entities with hibernate annotations
 - [ ] add user and post servlets
 - [x] generic dao class
-- [ ] Weekly reflection
+- [x] Weekly reflection
 
 
 ### Week 6
-- [ ] Work on design
-- [ ] redo db model to accommodate many-to-many relationship
-- [ ] get bridging table to work with hibernate
-- [ ] continue writing unit tests 
-- [ ] fix log4j file appender error
-
+- [x] Work on design
+- [x] redo db model to accommodate many-to-many relationship
+- [x] get bridging table to work with hibernate
+- [x] continue writing unit tests 
+- [x] fix log4j file appender error
 
 ### Week 7
+- [x] servlet and jsp for displaying posts
+- [x] servlet and jsp for displaying posts by tags
+- [x] servlet and jsp for displaying users
+- [x] cognito debugging
 
 ### Week 8
+- [x] separate sign up and create user logic
+- [x] create form for creating post
+- [x] create form for adding user details to db
+- [x] jsp logic for displaying profile depending on whether or not user is signed in
 
 ### Week 9
 
