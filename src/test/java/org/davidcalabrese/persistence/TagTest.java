@@ -9,6 +9,8 @@ import org.davidcalabrese.testUtil.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -83,7 +85,9 @@ public class TagTest {
 //        logger.info("in deleteTagSuccess");
         /* TODO: can I delete a tag? I am getting a constraint violation
                 since there is no post_tag entity I'm not sure how to
-                remove the parent row before removing the tag */
+                remove the parent row before removing the tag
+
+                remove from post */
 //        Tag tagOne = tagDao.getById(1);
 //        tagDao.delete(tagOne);
 //
@@ -97,6 +101,42 @@ public class TagTest {
         Set<Post> politicsPosts = politicsTag.getPosts();
 
         assertEquals(2, politicsPosts.size());
+    }
+
+    /*  TODO: test for inserting post with a politics tag
+     *      assert total posts tagged "politics" == 3
+     */
+    @Test
+    public void addingPostWithTagIncreasesTotalPostsWithThatTag() {
+        // this is the user adding the post
+        User user = userDao.getById(1);
+        // This array represents the tags coming in from form
+        String[] postTags = new String[]{"politics", "education"};
+        // this is the Set of Tag objects associated with a post
+        Set<Tag> tagSet = new HashSet<>();
+
+        for (String tagName : postTags) {
+            List<Tag> tagList = tagDao.findByPropertyEqual("name", tagName);
+            Tag tag = tagList.get(0);
+            tagSet.add(tag);
+        }
+
+        // create the new post object
+        Post newPost = new Post("Post 100", "post content here", LocalDate.now(), user);
+        // set the tags
+        newPost.setTags(tagSet);
+        newPost.setSummary("post summary here");
+        // add post to db
+        postDao.insert(newPost);
+
+        // access politics and edu tags to get their posts
+        Tag politicsTag = tagDao.getById(1);
+        Tag educationTag = tagDao.getById(2);
+
+        // test that added post increased number of posts tagged
+        // edu and politics from 2 to 3
+        assertEquals(3, politicsTag.getPosts().size());
+        assertEquals(3, educationTag.getPosts().size());
     }
 
 
