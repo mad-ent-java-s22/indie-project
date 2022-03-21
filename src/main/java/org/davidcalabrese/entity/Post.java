@@ -46,7 +46,7 @@ public class Post {
         joinColumns = { @JoinColumn(name = "post_id") },
         inverseJoinColumns = { @JoinColumn(name = "tag_id") }
     )
-    private Set<Tag> tags = new HashSet<>();
+    private Set<PostTag> postTags = new HashSet<>();
 
     /** No arg constructor */
     public Post() {}
