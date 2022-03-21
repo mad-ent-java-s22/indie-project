@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @WebServlet(name = "AddPost", urlPatterns = { "/add_post" })
@@ -45,12 +46,9 @@ public class AddPost extends HttpServlet  {
 
         // for each tag selected, create tag object and add to tagSet
         for (String tagName : tagArray) {
-            String color = Util.getCorrespondingTagColor(tagName);
-            Tag newTag = new Tag(tagName, color);
-            // tag filters not working, which of these method to use? both? neither?
-//            tagDao.saveOrUpdate(newTag);
-            tagDao.insert(newTag);
-            tagSet.add(newTag);
+            List<Tag> tagList = tagDao.findByPropertyEqual("name", tagName);
+            Tag tag = tagList.get(0);
+            tagSet.add(tag);
         }
         newPost.setTags(tagSet);
 
