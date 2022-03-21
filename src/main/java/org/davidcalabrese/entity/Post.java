@@ -203,14 +203,22 @@ public class Post {
         this.postTags = postTags;
     }
 
-    public void addTag(Tag tag) {
-        tags.add(tag);
-        tag.getPosts().add(this);
+    /**
+     * Adds a PostTag bridging entity to set of PostTags
+     *
+     * @param postTag - a bridging entity between Post and Tag
+     */
+    public void addPostTag(PostTag postTag) {
+        postTags.add(postTag);
     }
 
-    public void removeTag(Tag tag) {
-        tags.remove(tag);
-        tag.getPosts().remove(this);
+    /**
+     * Removes a PostTag bridging entity from a set of PostTags
+     *
+     * @param postTag - a bridging entity between Post and Tag
+     */
+    public void removePostTag(PostTag postTag) {
+        postTags.remove(postTag);
     }
 
     @Override
