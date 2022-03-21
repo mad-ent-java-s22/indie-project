@@ -90,5 +90,14 @@ public class TagTest {
 //        assertEquals(14, tagDao.getAll().size());
     }
 
+    @Test
+    public void getAllMatchingTagsSuccess() {
+        logger.info("in getAllMatchingTagsSuccess");
+        Tag politicsTag = tagDao.getById(1);
+        Set<Post> politicsPosts = politicsTag.getPosts();
+
+        assertEquals(2, politicsPosts.size());
+    }
+
 
 }
