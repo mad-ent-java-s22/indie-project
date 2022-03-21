@@ -47,7 +47,9 @@ public class AddPost extends HttpServlet  {
         for (String tagName : tagArray) {
             String color = Util.getCorrespondingTagColor(tagName);
             Tag newTag = new Tag(tagName, color);
-            tagDao.saveOrUpdate(newTag);
+            // tag filters not working, which of these method to use? both? neither?
+//            tagDao.saveOrUpdate(newTag);
+            tagDao.insert(newTag);
             tagSet.add(newTag);
         }
         newPost.setTags(tagSet);
