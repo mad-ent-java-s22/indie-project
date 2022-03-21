@@ -186,21 +186,21 @@ public class Post {
     }
 
     /**
-     * Gets the value of <code>tags</code>
+     * Gets the value of <code>postTags</code>
      *
-     * @return value of <code>tags</code>
+     * @return value of <code>postTags</code>
      */
-    public Set<Tag> getTags() {
-        return tags;
+    public Set<PostTag> getPostTags() {
+        return postTags;
     }
 
     /**
-     * Sets the value of <code>tags</code>
+     * Sets the value of <code>postTags</code>
      *
-     * @param tags the value of <code>tags</code>
+     * @param postTags the value of <code>postTags</code>
      */
-    public void setTags(Set<Tag> tags) {
-        this.tags = tags;
+    public void setPostTags(Set<PostTag> postTags) {
+        this.postTags = postTags;
     }
 
     public void addTag(Tag tag) {
