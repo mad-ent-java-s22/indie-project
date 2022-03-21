@@ -78,9 +78,9 @@ public class TagTest {
         assertEquals("purple-rain", tagOneEdited.getColor());
     }
 
-    @Test
-    public void deleteTagSuccess() {
-        logger.info("in deleteTagSuccess");
+//    @Test
+//    public void deleteTagSuccess() {
+//        logger.info("in deleteTagSuccess");
         /* TODO: can I delete a tag? I am getting a constraint violation
                 since there is no post_tag entity I'm not sure how to
                 remove the parent row before removing the tag */
@@ -88,7 +88,7 @@ public class TagTest {
 //        tagDao.delete(tagOne);
 //
 //        assertEquals(14, tagDao.getAll().size());
-    }
+//    }
 
     @Test
     public void getAllMatchingTagsSuccess() {
