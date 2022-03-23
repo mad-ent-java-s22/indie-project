@@ -24,11 +24,11 @@
           <h1 class="display-4 w-100">You have been signed out!</h1>
           <p class="lead my-3 fst-italic">Thank you for using Otter.</p>
         </div>
-        <div class="col-md-12 px-0">
-          <a class="btn btn-outline-info" href="http://blogenv2-env.eba-zg5dcynj.us-east-2.elasticbeanstalk.com/">
-            Go Back Home
-          </a>
-        </div>
+      </div>
+      <div class="col-md-12 px-0">
+        <a class="btn btn-outline-info" href="http://blogenv2-env.eba-zg5dcynj.us-east-2.elasticbeanstalk.com/">
+          Go Back Home
+        </a>
       </div>
     </main>
   </div> <!-- end #outer-container -->
