@@ -30,7 +30,7 @@ public class DisplayPostsByTag extends HttpServlet {
 
         req.setAttribute("tag", searchedTag);
         req.setAttribute("posts", postsWithSearchedTag);
-        String url = "/jsp/postsByTag.jsp";
+        String url = "/jsp/posts_by_tag.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(req, resp);
     }
