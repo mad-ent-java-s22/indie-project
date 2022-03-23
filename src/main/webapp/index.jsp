@@ -26,8 +26,8 @@
                 <p class="col-md-8 fs-4 text-white">Ethical social media.</p>
                 <c:choose>
                     <c:when test="${empty userName}">
-                        <a href="logIn" class="btn btn-primary btn-lg" type="button">Sign in</a>
-                        <a href="logIn" class="btn btn-success btn-lg" type="button">Sign up</a>
+                        <a href="/logIn" class="btn btn-primary btn-lg" type="button">Sign in</a>
+                        <a href="/logIn" class="btn btn-success btn-lg" type="button">Sign up</a>
                     </c:when>
                     <c:otherwise>
                         <div class="d-flex justify-content-center align-items-center flex-column">
