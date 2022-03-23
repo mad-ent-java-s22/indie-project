@@ -65,5 +65,12 @@
 | 3/13 | IP  | 5 | cognito, forms |
 | 3/14 | IP  | 2 | logs, forms, display logic |
 | 3/15 | IP  | 4 | logs, forms, display logic |
-| 3/16 | IP  |   |       |
+| 3/16 | IP  | 3 |      |
+| 3/17 | IP  | 3 |      |
+| 3/18 |     | 0 |      |
+| 3/19 | IP  | 3 | unit tests, other      |
+| 3/20 | Ex 8 | 4  |      |
+| 3/21 |  IP, Ex 8 | Tag filter logic - unit tests |      |
+| 3/22 | Team Project  | 3  | Setup, unit tests      |
+| 3/23 | IP  |  | cognito signout     |
 | Total |  |  |  |
