@@ -50,10 +50,10 @@
 - [x] jsp logic for displaying profile depending on whether user is signed in
 
 ### Week 9
-- [ ] navbar conditional display of icons depending on user log in status
-- [ ] log out
+- [x] navbar conditional display of icons depending on user log in status
+- [x] log out
 - [ ] add API service to project
-- [ ] filtering by tag
+- [x] filtering by tag
 - [ ] escape special characters in forms
 - [ ] deleting a post
 - [ ] get tiny api to work
