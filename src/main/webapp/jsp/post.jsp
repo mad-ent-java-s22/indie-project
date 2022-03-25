@@ -35,8 +35,7 @@
                         </p>
                         <p class="display-6" id="summary">${post.summary}</p>
                         <hr>
-<%--                        <p id="content">${post.content}</p>--%>
-                        <p id="content"> <c:out value="${post.content}" /></p>
+                        <p id="content">${post.content}</p>
                     </article>
                 </div>  <!-- end .col-md-8 -->
                 <div class="col-lg-4">
