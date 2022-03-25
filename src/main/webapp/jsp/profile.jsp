@@ -198,7 +198,7 @@
 
                           <div class="row mt-3">
                             <div class="col d-flex justify-content-end">
-                              <a class="btn btn-primary" href="<%=request.getContextPath()%>/update_profile">Edit Profile</a>
+                              <a class="btn btn-primary" href="<%=request.getContextPath()%>/jsp/edit_profile.jsp">Edit Profile</a>
                             </div>
                           </div>
                         </section>
