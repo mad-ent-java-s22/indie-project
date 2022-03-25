@@ -114,7 +114,16 @@
                       <fieldset disabled="disabled">
                         <div class="row mt-3">
                           <div class="col">
-                            <input name="userName" type="text" class="form-control" placeholder="username" value="${userName}" />
+                            <div class="form-floating mb-3">
+                              <input
+                                  name="userName"
+                                  id="userName"
+                                  type="text"
+                                  class="form-control"
+                                  placeholder="username"
+                                  value="${userName}" />
+                              <label class="form-label" for="userName">username</label>
+                            </div>
                           </div>
                           <div class="col">
                             <div class="form-floating mb-3">
