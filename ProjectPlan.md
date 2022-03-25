@@ -61,6 +61,7 @@
 ### Week 10
 - [ ] implement post filtering logic
 - [ ] implement upload picture logic
+- [ ] allow user to edit profile
 - [ ] add API service to project
 - [ ] post pagination
 
