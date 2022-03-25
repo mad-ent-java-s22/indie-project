@@ -50,8 +50,8 @@
                       <div class="text-center text-sm-left mb-2 mb-sm-0">
                         <c:choose>
                           <c:when test="${empty user}">
-                          </c:when>
                           <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">New User</h4>
+                          </c:when>
                           <c:otherwise>
                             <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">${user.firstName} ${user.lastName}</h4>
                           </c:otherwise>
@@ -79,28 +79,36 @@
                     <form class="form" method="POST" action="/update_profile" novalidate="">
                       <div class="row">
                         <div class="col">
-                          <input
-                              type="text"
-                              name="first_name"
-                              class="form-control"
-                              placeholder="First name"
-                              aria-label="First name"
-                            <c:if test="${not empty user.firstName}">
-                              value="${user.firstName}"
-                            </c:if>
-                          />
+                          <div class="form-floating mb-3">
+                            <input
+                                type="text"
+                                name="first_name"
+                                id="first_name"
+                                class="form-control"
+                                placeholder="First name"
+                                aria-label="First name"
+                                <c:if test="${not empty user.firstName}">
+                                  value="${user.firstName}"
+                                </c:if>
+                            />
+                            <label for="first_name">First name</label>
+                          </div>
                         </div>
                         <div class="col">
-                          <input
-                              name="last_name"
-                              type="text"
-                              class="form-control"
-                              placeholder="Last name"
-                              aria-label="Last name"
-                          <c:if test="${not empty user.lastName}">
-                              value="${user.lastName}"
-                          </c:if>
-                          />
+                          <div class="form-floating mb-3">
+                            <input
+                                type="text"
+                                name="last_name"
+                                id="last_name"
+                                class="form-control"
+                                placeholder="Last name"
+                                aria-label="Last name"
+                                <c:if test="${not empty user.lastName}">
+                                  value="${user.lastName}"
+                                </c:if>
+                            />
+                            <label class="form-label" for="last_name">Last name</label>
+                          </div>
                         </div>
                       </div>
                       <fieldset disabled="disabled">
@@ -109,32 +117,31 @@
                             <input name="userName" type="text" class="form-control" placeholder="username" value="${userName}" />
                           </div>
                           <div class="col">
-                            <input
-                                value="${email}"
-                                name="email"
-                                type="email"
-                                class="form-control"
-                                placeholder="email"
-                                aria-label="email"
-                            />
+                            <div class="form-floating mb-3">
+                              <input
+                                  type="email"
+                                  id="email"
+                                  name="email"
+                                  value="${email}"
+                                  class="form-control"
+                                  placeholder="email"
+                                  aria-label="email"
+                              />
+                              <label class="form-label" for="email">Email</label>
+                            </div>
                           </div>
                         </div>
                       </fieldset>
                       <div class="row mt-3">
                         <div class="col">
-                          <label for="about">User Summary</label>
+                          <label class="form-label" for="about">User Summary</label>
                           <textarea
                               name="about"
                               id="about"
                               cols="30"
                               rows="10"
                               class="form-control"
-                            <c:if test="${not empty user.summary}">
-                              value="${user.summary}"
-                            </c:if>
-                          >
-
-                          </textarea>
+                          ><c:if test="${not empty user.summary}">${user.summary}</c:if></textarea>
                         </div>
                       </div>
 
