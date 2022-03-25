@@ -13,8 +13,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDate;
 
-@WebServlet(name = "EditProfile", urlPatterns = { "/edit_profile" })
-public class EditProfile extends HttpServlet  {
+@WebServlet(name = "CreateProfile", urlPatterns = { "/edit_profile" })
+public class CreateProfile extends HttpServlet  {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // get userName and email that from cognito, stored in session
