@@ -72,4 +72,8 @@ java.lang.IllegalArgumentException: Illegal base64 character 5f
 
 So theBase64.getDecoder().decode() method is not a good substitute for Base64.decodeBase64(). According to [this SO post](https://stackoverflow.com/questions/7688644/java-lang-nosuchmethoderror-org-apache-commons-codec-binary-base64-encodebase64),  someone fixed the same issue by adding the commons-codec.jar dependency.
 
-This worked for me. I still have no idea why the Base64 method was working fine in the week-7 exercise. The commons-codec dependency is not included in the pom.xml there. Maybe I have a conflicting dependency in my indie-project classpath that got precedence in classloading. 
+This worked for me. I still have no idea why the Base64 method was working fine in the week-7 exercise. The commons-codec dependency is not included in the pom.xml there. Maybe I have a conflicting dependency in my indie-project classpath that got precedence in classloading.
+
+### Week 9
+* ran into this error 
+ Illegal attempt to associate a collection with two open sessions. Collection : [org.davidcalabrese.entity.User.posts#6]
