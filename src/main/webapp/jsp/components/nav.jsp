@@ -35,7 +35,7 @@
 
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/jsp/profile.jsp">Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="<%=request.getContextPath()%>/jsp/edit_profile.jsp">Edit Profile</a></li>
                             <li><a class="dropdown-item" href="<%=request.getContextPath()%>/logOut">Log Out</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">Settings</a></li>
