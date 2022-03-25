@@ -72,5 +72,7 @@
 | 3/20 | Ex 8 | 4  |      |
 | 3/21 |  IP, Ex 8 | Tag filter logic - unit tests |      |
 | 3/22 | Team Project  | 3  | Setup, unit tests      |
-| 3/23 | IP  |  | cognito signout     |
+| 3/23 | IP  | 6 | cognito signout, servlet logic     |
+| 3/24 | IP  | 2 |      |
+| 3/25 | IP  | 2  | implement tinyMCE    |
 | Total |  |  |  |
