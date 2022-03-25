@@ -52,20 +52,22 @@
 ### Week 9
 - [x] navbar conditional display of icons depending on user log in status
 - [x] log out
-- [ ] add API service to project
 - [x] filtering by tag
-- [ ] escape special characters in forms
+- [x] escape special characters in forms
 - [ ] deleting a post
-- [ ] get tiny api to work
-- [ ] sort posts by most recent and limit posts coming back (jquery?) 
+- [x] get tiny api to work
+- [x] sort posts by most recent
 
 ### Week 10
 - [ ] implement post filtering logic
-- [ ] upload picture
+- [ ] implement upload picture logic
+- [ ] add API service to project
+- [ ] post pagination
 
 
 ### Week 11
 - [ ] admin privileges
+- [ ] add color scheme
 
 ### Week 12
 
