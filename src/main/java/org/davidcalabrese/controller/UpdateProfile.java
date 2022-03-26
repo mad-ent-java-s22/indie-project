@@ -20,8 +20,7 @@ public class UpdateProfile extends HttpServlet  {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // get userName from session
-        HttpSession session = req.getSession();
-        String userName = (String) session.getAttribute("userName");
+        String userName = (String) req.getSession().getAttribute("userName");
 
         // fetch user from db
         User user = getUser(userName);
