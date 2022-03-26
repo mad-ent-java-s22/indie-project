@@ -35,9 +35,6 @@ public class UpdateProfile extends HttpServlet  {
         // update user in db
         userDao.saveOrUpdate(user);
 
-        // update user in session
-        session.setAttribute("user", user);
-
         String url = "/jsp/profile_updated.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(req, resp);
