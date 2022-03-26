@@ -73,7 +73,34 @@ java.lang.IllegalArgumentException: Illegal base64 character 5f
 So theBase64.getDecoder().decode() method is not a good substitute for Base64.decodeBase64(). According to [this SO post](https://stackoverflow.com/questions/7688644/java-lang-nosuchmethoderror-org-apache-commons-codec-binary-base64-encodebase64),  someone fixed the same issue by adding the commons-codec.jar dependency.
 
 This worked for me. I still have no idea why the Base64 method was working fine in the week-7 exercise. The commons-codec dependency is not included in the pom.xml there. Maybe I have a conflicting dependency in my indie-project classpath that got precedence in classloading.
+* cognito integrated into app
+* removed password column from user table
 
 ### Week 9
-* ran into this error 
- Illegal attempt to associate a collection with two open sessions. Collection : [org.davidcalabrese.entity.User.posts#6]
+* productive week
+* figured out the tag filtering thing many-to-many relationship
+  * I was adding a new tag for every new article
+  * what I wanted to do was add a row in the post_tag table and reference the already made tag in the tag column
+  * I think the way the app will work is there are a preset number of tags to choose from, those will be the only items in the tag table. It would be nice to have users be able to add tags of their own but not sure if I'll have time to implement that
+* I got the tinyMCE API working, now users can format their own posts
+* I was using a single jsp for the profile page and using JSTL conditionals to display profile info or the profile form depending on whether user was viewing the profile or editing it.
+* I changed this so that there is a jsp for viewing the profile and a jsp for editing the profile. 
+* ran into this error when trying to save the profile edits
+ > Illegal attempt to associate a collection with two open sessions. Collection : [org.davidcalabrese.entity.User.posts#6]
+ 
+* the way the edit profile logic goes is this:
+  * get userName from session, use that to pull User object from db
+  * receive form parameters and make those changes to user object
+  * call `saveOrUpdate` on the User object 
+  * set the new user attribute on the session object
+
+```java
+  userDao.saveOrUpdate(user);
+
+  // update user in session
+  req.getSession().setAttribute("user", user);
+```
+
+* this last line must be the problem
+* I did some research on updating a session variable 
+* hibernate has a merge method that might work here
