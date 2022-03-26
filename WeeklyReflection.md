@@ -104,3 +104,4 @@ This worked for me. I still have no idea why the Base64 method was working fine 
 * this last line must be the problem
 * I did some research on updating a session variable 
 * hibernate has a merge method that might work here
+* otherwise, maybe I can just change the object and it doesn't need to be updated
