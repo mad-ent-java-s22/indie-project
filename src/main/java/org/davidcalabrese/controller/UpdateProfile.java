@@ -19,11 +19,10 @@ import static org.davidcalabrese.util.Util.getUser;
 public class UpdateProfile extends HttpServlet  {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // get userName from session
-        String userName = (String) req.getSession().getAttribute("userName");
+        // get user from session
+        User user = (User) req.getSession().getAttribute("user");
 
-        // fetch user from db
-        User user = getUser(userName);
+        // create userDao, fetch user from db
         GenericDao<User> userDao = new GenericDao<>(User.class);
 
         user.setFirstName(req.getParameter("first_name"));
