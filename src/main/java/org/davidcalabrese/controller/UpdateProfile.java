@@ -2,7 +2,6 @@ package org.davidcalabrese.controller;
 
 import org.davidcalabrese.entity.User;
 import org.davidcalabrese.persistence.GenericDao;
-import org.davidcalabrese.util.Util;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,10 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-
-import static org.davidcalabrese.util.Util.getUser;
 
 @WebServlet(name = "UpdateProfile", urlPatterns = { "/update_profile" })
 public class UpdateProfile extends HttpServlet  {
