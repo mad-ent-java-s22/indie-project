@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.davidcalabrese.entity.Post;
 import org.davidcalabrese.entity.User;
 import org.davidcalabrese.testUtil.Database;
+import org.davidcalabrese.util.Util;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -72,5 +73,32 @@ public class UserTest {
         assertEquals(insertedUser, newUser);
         List<User> users = userDao.getAll();
         assertEquals(6, users.size());
+    }
+
+    @Test void fetchUserByIdAndUpdateSuccess() {
+        User user1 = userDao.getById(1);
+        user1.setFirstName("Meadow");
+        user1.setLastName("Soprano");
+        user1.setSummary("Meadow is a writer.");
+
+        userDao.saveOrUpdate(user1);
+
+        assertEquals("Meadow", user1.getFirstName());
+        assertEquals("Soprano", user1.getLastName());
+        assertEquals("Meadow is a writer.", user1.getSummary());
+    }
+
+    @Test void fetchUserByUsernameAndUpdateSuccess() {
+        User user1 = Util.getUser("user1");
+        user1.setFirstName("Meadow");
+        user1.setLastName("Soprano");
+        user1.setSummary("Meadow is a writer.");
+
+        userDao.saveOrUpdate(user1);
+
+        assertEquals("Meadow", user1.getFirstName());
+        assertEquals("Soprano", user1.getLastName());
+        assertEquals("Meadow is a writer.", user1.getSummary());
+
     }
 }
