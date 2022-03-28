@@ -37,6 +37,12 @@
                         <hr>
                         <p id="content">${post.content}</p>
                     </article>
+                    <c:if test = "${userId == post.user.id}">
+                        <div id="btns" class="mt-3 mb-3">
+                            <a href="<%=request.getContextPath()%>/edit_post" class="btn btn-outline-warning">Edit Post</a>
+                            <a href="<%=request.getContextPath()%>/delete_post" class="btn btn-outline-danger">Delete Post</a>
+                        </div> <!-- end #btns -->
+                    </c:if>
                 </div>  <!-- end .col-md-8 -->
                 <div class="col-lg-4">
                     <section
