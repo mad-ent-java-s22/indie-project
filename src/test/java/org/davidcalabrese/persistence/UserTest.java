@@ -89,7 +89,9 @@ public class UserTest {
     }
 
     @Test void fetchUserByUsernameAndUpdateSuccess() {
-        User user1 = Util.getUser("user1");
+        List<User> users = userDao.findByPropertyEqual("userName", "user1");
+        User user1 = users.get(0);
+
         user1.setFirstName("Meadow");
         user1.setLastName("Soprano");
         user1.setSummary("Meadow is a writer.");
