@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDate;
 
-@WebServlet(name = "CreateProfile", urlPatterns = { "/edit_profile" })
+@WebServlet(name = "CreateProfile", urlPatterns = { "/create_profile" })
 public class CreateProfile extends HttpServlet  {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
