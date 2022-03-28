@@ -1,6 +1,7 @@
 package org.davidcalabrese.controller;
 
 import org.davidcalabrese.entity.Post;
+import org.davidcalabrese.entity.User;
 import org.davidcalabrese.persistence.GenericDao;
 
 import javax.servlet.RequestDispatcher;
@@ -25,6 +26,9 @@ public class DisplayPost extends HttpServlet {
         log("post id: " + postId);
         Post post = postDao.getById(postId);
 
+        User user = (User) req.getSession().getAttribute("user");
+
+        req.setAttribute("userId", user.getId());
         req.setAttribute("post", post);
         String url = "/jsp/post.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
