@@ -16,4 +16,10 @@ public class Util {
         List<User> users = userDao.findByPropertyEqual("userName", userName);
         return users.get(0);
     }
+
+    public static User getUser(String userName, GenericDao<User> userDao) {
+        List<User> users = userDao.findByPropertyEqual("userName", userName);
+        return users.get(0);
+    }
+
 }
