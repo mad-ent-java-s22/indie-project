@@ -106,3 +106,19 @@ This worked for me. I still have no idea why the Base64 method was working fine 
 * hibernate has a merge method that might work here
 * otherwise, maybe I can just change the object and it doesn't need to be updated
   * [resource](https://coderanch.com/t/354487/java/updating-object-session)
+
+### Week 10
+* successfully implemented logic to edit profile
+* successfully implemented logic to delete a post
+
+### Week 11
+
+### Week 12
+
+### Week 13
+
+### Week 14
+
+### Week 15
+
+### Week 16
