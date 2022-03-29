@@ -1,11 +1,7 @@
 <jsp:useBean id="post" scope="request" type="org.davidcalabrese.entity.Post"/>
-<%--
-  Created by IntelliJ IDEA.
-  User: david
-  Date: 2/24/2022
-  Time: 12:12 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%--  User: david
+      Date: 2/24/2022
+      Time: 12:12 PM  --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -39,8 +35,16 @@
                     </article>
                     <c:if test = "${userId == post.user.id}">
                         <div id="btns" class="mt-3 mb-3">
-                            <a href="<%=request.getContextPath()%>/edit_post" class="btn btn-outline-warning">Edit Post</a>
-                            <a href="<%=request.getContextPath()%>/delete_post" class="btn btn-outline-danger">Delete Post</a>
+                            <a
+                                href="<%=request.getContextPath()%>/edit_post"
+                                class="btn btn-outline-secondary"
+                            > Edit Post</a>
+                            <a
+                                type="button"
+                                class="btn btn-outline-warning"
+                                data-bs-toggle="modal"
+                                data-bs-target="#confirmDeleteModal"
+                            >Delete Post</a>
                         </div> <!-- end #btns -->
                     </c:if>
                 </div>  <!-- end .col-md-8 -->
@@ -58,6 +62,51 @@
                     </section> <!-- end .d-flex -->
                 </div>  <!-- end .col-md-4 -->
             </div>  <!-- end .row g-5 -->
+
+            <!-- Modal -->
+            <div
+                class="modal fade"
+                id="confirmDeleteModal"
+                tabindex="-1"
+                aria-labelledby="confirmDeleteModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="confirmDeleteModalLabel">
+                                Delete Post
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="lead">Are you sure you want to delete this post?</p>
+                            <p class="my-3">This action cannot be undone.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                            >
+                                Cancel
+                            </button>
+                            <a
+                                type="button"
+                                class="btn btn-danger"
+                                href="<%=request.getContextPath()%>/delete_post/${post.id}"
+                            >
+                                Confirm Delete
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div> <!-- end #outer-container -->
     <jsp:include page="/jsp/components/footer.jsp" />
