@@ -75,4 +75,10 @@
 | 3/23 | IP  | 6 | cognito signout, servlet logic     |
 | 3/24 | IP  | 2 |      |
 | 3/25 | IP  | 2  | implement tinyMCE    |
+| 3/26 | Team project  | 1  | Client logic     |
+| 3/27 | Team Project, ex 9  | 5  | Service logic,      |
+| 3/28 |  IP   |  5  |  edit profile, flowchart  |
+| 3/29 |  IP   |   |  delete post logic   |
+| 3/30 |     |   |     |
+| 3/31 |     |   |     |
 | Total |  |  |  |
