@@ -36,7 +36,7 @@
                     <c:if test = "${userId == post.user.id}">
                         <div id="btns" class="mt-3 mb-3">
                             <a
-                                href="<%=request.getContextPath()%>/edit_post"
+                                href="<%=request.getContextPath()%>/display_update_post/${post.id}"
                                 class="btn btn-outline-secondary"
                             > Edit Post</a>
                             <a
