@@ -43,7 +43,7 @@
 | 2/25 | Indie project | 4 | stored photos, created  jsp for individual post |
 | 2/26 | IP            | 2 | more data model adjustments. jsp layout |
 | 2/27 | IP            | 1 | fixed relative image link issue |
-| 2/28 | IP            | 4 | design stuff  |
+| 2/28 | IP            | 5 | design and db stuff  |
 | Total |  | 93.75 |  |
 
 
@@ -78,7 +78,12 @@
 | 3/26 | Team project  | 1  | Client logic     |
 | 3/27 | Team Project, ex 9  | 5  | Service logic,      |
 | 3/28 |  IP   |  5  |  edit profile, flowchart  |
-| 3/29 |  IP   |   |  delete post logic   |
-| 3/30 |     |   |     |
-| 3/31 |     |   |     |
+| 3/29 |  IP   |  5 |  delete / edit post logic, alter table db bug   |
+| 3/30 | ex 9 and team project    |  3 |     |
+| 3/31 |  IP   |   | alter table bug    |
 | Total |  |  |  |
+
+### April
+| Date | Task | Hours | Notes|
+|------|------|-------|------|
+| 4/1  |      |       |      |
