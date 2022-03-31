@@ -110,6 +110,8 @@ This worked for me. I still have no idea why the Base64 method was working fine 
 ### Week 10
 * successfully implemented logic to edit profile
 * successfully implemented logic to delete a post
+* I made the mistake of making the post.title column type varchar(50), when I should have done varchar(255), I tried doing an alter table statement on the db and it broke my project. The command wasn't able to complete, it lost connection to the server somehow. I read that whenever an alter table statement is executed the db has to copy all of the current info to remake it and that can take a lot of memory so that might be part of the problem. 
+* So now my app works for retrieving blog posts, but I can't edit profiles, create new posts, edit posts, anything like that. 
 
 ### Week 11
 
