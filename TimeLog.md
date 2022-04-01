@@ -28,7 +28,7 @@
 | 3/18 |     | 0 |      |
 | 3/19 | IP  | 3 | unit tests, other      |
 | 3/20 | Ex 8 | 4  |      |
-| 3/21 |  IP, Ex 8 | Tag filter logic - unit tests |      |
+| 3/21 |  IP, Ex 8 | 6 | Tag filter logic - unit tests |
 | 3/22 | Team Project  | 3  | Setup, unit tests      |
 | 3/23 | IP  | 6 | cognito signout, servlet logic     |
 | 3/24 | IP  | 2 |      |
@@ -38,8 +38,8 @@
 | 3/28 |  IP   |  5  |  edit profile, flowchart  |
 | 3/29 |  IP   |  5 |  delete / edit post logic, alter table db bug   |
 | 3/30 | ex 9 and team project    |  3 |     |
-| 3/31 |  IP   |   | alter table bug    |
-| Total |  |  |  |
+| 3/31 |  IP   |  2  | alter table bug, ex 9    |
+| Total |  | 106 |  |
 
 ### February
 | Date | Task | Hours | Notes|
