@@ -10,6 +10,6 @@
   <error-page>
     <!-- Missing resource -->
     <error-code>404</error-code>
-    <location>/jsp/page_not_found.jsp</location>
+    <location>/404</location>
   </error-page>
 </web-app>
