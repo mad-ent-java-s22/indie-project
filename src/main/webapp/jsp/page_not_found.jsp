@@ -25,8 +25,8 @@
         <img class="img-fluid" src="<%=request.getContextPath()%>/img/otter_not_found.png" alt="surprised otter">
       </div>
       <div class="mt-3">
+        <h1 class="display-5">Uh Oh! We can't find that page!</h1>
         <button class="btn btn-secondary" onclick="history.back()">Back to Previous Page</button>
-        <h1 class="display-5">404 Page Not Found.</h1>
         <br />
         <p><b>Error code:</b> <span class="text-danger"> ${pageContext.errorData.statusCode} </span></p>
         <p><b>Request URI:</b> ${pageContext.request.scheme}://${header.host}${pageContext.errorData.requestURI}</p>
