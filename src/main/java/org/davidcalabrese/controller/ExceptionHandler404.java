@@ -12,7 +12,7 @@ import java.io.IOException;
 public class ExceptionHandler404 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/jsp/page_not_found.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/jsp/error_page_not_found.jsp");
         dispatcher.forward(req, resp);
     }
 }
