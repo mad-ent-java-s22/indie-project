@@ -22,14 +22,16 @@
     <jsp:include page = "/jsp/components/nav.jsp" />
     <main class="container">
       <div class="d-flex justify-content-center align-items-center">
-        <img src="<%=request.getContextPath()%>/img/otter_not_found.png" alt="surprised otter">
+        <img class="img-fluid" src="<%=request.getContextPath()%>/img/otter_not_found.png" alt="surprised otter">
       </div>
-      <button class="btn btn-secondary" onclick="history.back()">Back to Previous Page</button>
-      <h1>404 Page Not Found.</h1>
-      <br />
-      <p><b>Error code:</b> <span class="text-danger"> ${pageContext.errorData.statusCode} </span></p>
-      <p><b>Request URI:</b> ${pageContext.request.scheme}://${header.host}${pageContext.errorData.requestURI}</p>
-      <br />
+      <div class="mt-3">
+        <button class="btn btn-secondary" onclick="history.back()">Back to Previous Page</button>
+        <h1 class="display-5">404 Page Not Found.</h1>
+        <br />
+        <p><b>Error code:</b> <span class="text-danger"> ${pageContext.errorData.statusCode} </span></p>
+        <p><b>Request URI:</b> ${pageContext.request.scheme}://${header.host}${pageContext.errorData.requestURI}</p>
+        <br />
+      </div>
     </main>
   </div> <!-- end #outer-container -->
   <jsp:include page="/jsp/components/footer.jsp" />
