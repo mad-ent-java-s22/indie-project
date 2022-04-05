@@ -27,7 +27,7 @@
         <div class="container">
           <h1 class="display-6 text-center">Create a new blog post</h1>
         </div>
-        <form class="px-lg-5" id="form" method="POST" action="/add_post">
+        <form class="px-lg-5" id="form" method="POST" action="/create_post">
           <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" name="title" class="form-control" id="title">
