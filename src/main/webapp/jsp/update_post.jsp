@@ -1,10 +1,11 @@
-<%--   
-    {____       {__    {__                   
-  {__    {__    {__    {__                   
-{__        {__{_{_ {_{_{_ {_   {__    {_ {___ User: david 
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %><%--
+    {____       {__    {__
+  {__    {__    {__    {__
+{__        {__{_{_ {_{_{_ {_   {__    {_ {___ User: david
 {__        {__  {__    {__   {_   {__  {__    Date: 3/29/2022, 10:46 AM
-{__        {__  {__    {__  {_____ {__ {__    
-  {__     {__   {__    {__  {_         {__   
+{__        {__  {__    {__  {_____ {__ {__
+  {__     {__   {__    {__  {_         {__
     {____        {__    {__   {____   {___      --%>
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -61,23 +62,13 @@
           </div>
           <div class="mb-3">
             <label for="tags" class="form-label">Tags</label>
-            <div id="tagsHelp" class="form-text">Hold control to select multiple tags</div>
+            <div id="tagsHelp" class="form-text">Hold control to select more than one tag</div>
             <select name="tags" id="tags" multiple class="form-select">
-              <option value="politics">Politics</option>
-              <option value="education">Education</option>
-              <option value="movies">Movies</option>
-              <option value="books">Books</option>
-              <option value="entertainment">Entertainment</option>
-              <option value="food">Food</option>
-              <option value="personal">Personal</option>
-              <option value="technology">Technology</option>
-              <option value="business">Business</option>
-              <option value="sports">Sports</option>
-              <option value="opinion">Opinion</option>
-              <option value="science">Science</option>
-              <option value="health">Health</option>
-              <option value="travel">Travel</option>
-              <option value="art">Art</option>
+              <c:forEach var="tagName" items="${tagNames}">
+                <option value="${tagName.name}" ${post.tags.contains(tagName) ? 'selected="selected"' : ''}>
+                    ${tagName.name}
+                </option>
+              </c:forEach>
             </select>
           </div>
           <button id="submit" type="submit" class="btn btn-outline-primary">Save Changes</button>

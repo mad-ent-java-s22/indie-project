@@ -1,6 +1,7 @@
 package org.davidcalabrese.controller;
 
 import org.davidcalabrese.entity.Post;
+import org.davidcalabrese.entity.Tag;
 import org.davidcalabrese.persistence.GenericDao;
 import org.davidcalabrese.util.Util;
 
@@ -11,6 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @WebServlet(name = "UpdatePost", urlPatterns = { "/update_post/*" })
 public class UpdatePost extends HttpServlet {
@@ -25,10 +29,15 @@ public class UpdatePost extends HttpServlet {
         postToUpdate.setTitle(req.getParameter("title"));
         postToUpdate.setSummary(req.getParameter("summary"));
         postToUpdate.setContent(req.getParameter("content"));
+
+        // store values from tag <select> as an array
+        String[] tagArray = req.getParameterValues("tags");
+        Set<Tag> tagSet = Util.makeTagSet(tagArray);
+        postToUpdate.setTags(tagSet);
+
         postDao.saveOrUpdate(postToUpdate);
 
         req.setAttribute("post", postToUpdate);
-
         String url = "/jsp/post_updated.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(req, resp);

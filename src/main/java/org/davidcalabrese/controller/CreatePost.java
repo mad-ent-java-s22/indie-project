@@ -19,8 +19,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@WebServlet(name = "AddPost", urlPatterns = { "/add_post" })
-public class AddPost extends HttpServlet  {
+@WebServlet(name = "CreatePost", urlPatterns = { "/create_post" })
+public class CreatePost extends HttpServlet  {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // get userName and email that from cognito, stored in session
@@ -31,7 +31,6 @@ public class AddPost extends HttpServlet  {
         log("user: " + user.toString());
 
         GenericDao<Post> postDao = new GenericDao<>(Post.class);
-        GenericDao<Tag> tagDao = new GenericDao<>(Tag.class);
 
         Post newPost = new Post();
         newPost.setTitle(req.getParameter("title"));
@@ -42,14 +41,8 @@ public class AddPost extends HttpServlet  {
 
         // store values from tag <select> as an array
         String[] tagArray = req.getParameterValues("tags");
-        Set<Tag> tagSet = new HashSet<>();
+        Set<Tag> tagSet = Util.makeTagSet(tagArray);
 
-        // for each tag selected, create tag object and add to tagSet
-        for (String tagName : tagArray) {
-            List<Tag> tagList = tagDao.findByPropertyEqual("name", tagName);
-            Tag tag = tagList.get(0);
-            tagSet.add(tag);
-        }
         newPost.setTags(tagSet);
 
         //get id of newly inserted post and send user to that page to see submission
