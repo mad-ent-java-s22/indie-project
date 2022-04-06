@@ -82,6 +82,8 @@
 
 
 ### Week 13
+- [ ] make sure all methods are commented
+- [ ] run jdoc on project
 
 ### Week 14
 
