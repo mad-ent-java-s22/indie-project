@@ -54,23 +54,30 @@
 - [x] log out
 - [x] filtering by tag
 - [x] escape special characters in forms
-- [ ] deleting a post
+- [x] deleting a post
 - [x] get tiny api to work
 - [x] sort posts by most recent
 
 ### Week 10
-- [ ] implement post filtering logic
-- [ ] implement upload picture logic
-- [ ] allow user to edit profile
-- [ ] add API service to project
-- [ ] post pagination
-
+- [x] diagram out all logic flows in app
+- [x] create customer error handlers for 404, 500
+- [x] fix padding around picture on home page
+- [x] allow user to edit profile
 
 ### Week 11
-- [ ] admin privileges
-- [ ] add color scheme
+- [x] fix bug where post tags aren't saved when post is updated
+- [x] display the selected tags when updating a post (iss009)
+- [ ] continue adding a refining custom error pages
 
 ### Week 12
+- [ ] admin privileges
+- [ ] add color scheme
+- [ ] implement upload picture logic
+- [ ] post pagination
+- [ ] add API service to project
+- [ ] implement post filtering logic
+- [ ] allow users to comment
+- [ ] add to user stories
 
 ### Week 13
 
