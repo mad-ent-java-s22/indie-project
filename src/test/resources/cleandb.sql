@@ -52,7 +52,6 @@ CREATE TABLE comment (
                          date_created timestamp NOT NULL,
                          author varchar(255) NOT NULL,
                          post_id int NOT NULL,
-                         post_2_id int NOT NULL,
                          CONSTRAINT comment_pk PRIMARY KEY (id)
 );
 
@@ -71,7 +70,7 @@ ALTER TABLE post_tag ADD CONSTRAINT post_tag_tag FOREIGN KEY post_tag_tag (tag_i
     REFERENCES tag (id);
 
 -- Reference: comment_post (table: comment)
-ALTER TABLE comment ADD CONSTRAINT comment_post FOREIGN KEY comment_post (post_2_id)
+ALTER TABLE comment ADD CONSTRAINT comment_post FOREIGN KEY comment_post (post_id)
     REFERENCES post (id);
 
 -- inserts 4 test users
