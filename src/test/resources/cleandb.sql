@@ -49,7 +49,7 @@ CREATE TABLE user (
 CREATE TABLE comment (
                          id int NOT NULL AUTO_INCREMENT,
                          content text NOT NULL,
-                         date_created timestamp NOT NULL,
+                         date_created timestamp DEFAULT CURRENT_TIMESTAMP,
                          author varchar(255) NOT NULL,
                          post_id int NOT NULL,
                          CONSTRAINT comment_pk PRIMARY KEY (id)
@@ -125,6 +125,6 @@ INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (10, last_insert_id()
 INSERT INTO `blog`.`post` (`title`, `content`, `user_id`, `summary`) VALUES ('Post 6', 'This is post 6, it is about politics', 5, 'This is post 6, it is about politics');
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (1, last_insert_id());
 
-
+INSERT INTO `blog`.`comment` (`content`, `author`, `post_id`) VALUES ("comment 1", "James Joyce", 1);
 
 -- End of file.
