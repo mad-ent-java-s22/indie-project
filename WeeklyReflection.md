@@ -112,8 +112,18 @@ This worked for me. I still have no idea why the Base64 method was working fine 
 * successfully implemented logic to delete a post
 * I made the mistake of making the post.title column type varchar(50), when I should have done varchar(255), I tried doing an alter table statement on the db and it broke my project. The command wasn't able to complete, it lost connection to the server somehow. I read that whenever an alter table statement is executed the db has to copy all of the current info to remake it and that can take a lot of memory so that might be part of the problem. 
 * So now my app works for retrieving blog posts, but I can't edit profiles, create new posts, edit posts, anything like that. 
+* This bug was fixed somehow. I think maybe AWS just took a long time to make the changes to my table's column types
+* Began implementing custom error pages
 
 ### Week 11
+* worked on custom error pages
+* fixed bug where tags weren't being updated when a user edited a post
+* made it so previously selected tags appeared as selected when a user edits a post so they don't have to choose them again
+* did weird formatting hack on homepage to the background image. I couldn't figure out how to add padding so that the image aligned with the nav bar, so I added a border that is the same color as the background on either side of the image. This technically works, but doesn't feel good. 
+* checked off completed tasks in project plan and added some more for next few weeks
+* added more user stories to readme
+* updated date formatting on all_posts.jsp where it was displaying 12:00am for the time when post was created 
+
 
 ### Week 12
 
