@@ -67,6 +67,7 @@
 ### Week 11
 - [x] fix bug where post tags aren't saved when post is updated
 - [x] display the selected tags when updating a post (iss009)
+- [x] fix date formatting on all_posts.jsp where time always set to 12:00 am
 - [ ] continue adding a refining custom error pages
 
 ### Week 12
@@ -78,6 +79,7 @@
 - [ ] implement post filtering logic
 - [ ] allow users to comment
 - [ ] add to user stories
+
 
 ### Week 13
 
