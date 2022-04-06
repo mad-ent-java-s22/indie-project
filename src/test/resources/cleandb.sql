@@ -1,5 +1,6 @@
 -- tables
 DROP TABLE if exists post_tag;
+DROP TABLE if exists comment;
 DROP TABLE if exists post;
 DROP TABLE if exists tag;
 DROP TABLE if exists user;
