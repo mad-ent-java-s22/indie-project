@@ -42,6 +42,19 @@ The application will be designed so a user can get caught up on the latest news 
 * As a consumer of quality journalism, I do not want to be fed controversial or misleading content
 * As an engaged member of society, I do not want to be distracted from meaningful issues
 * As a lover of peace kindness, I do not want to be a part of a system that energizes hatred and bigotry
+* As a social media user, I want to be able to create an account to save my information
+* As a social media user, I want to be able to log in to the account and have it save my preferences`
+* As a social media user, I want to be able to create a profile
+* As a social media user, I want to be able to edit my profile in case I made a mistake or changed my mind
+* As a social media user, I want to be able to create posts and share them
+* As a social media user, I want to be able to go back and edit my posts
+* As a social media user, I want to be able to format my posts however I want
+* As a social media user, I want to be able to tag my posts as being a part of one or more categories such as entertainment, personal, politics etc
+* As a social media user, I want to be able to view other peoples posts
+* As a social media user, I want to be able to see all posts by one user
+* As a social media user, I want to be able to see all posts in one category
+* As a social media user, I want to be able to delete the posts I no longer wish to share
+* As a social media user, I want to be able to comment on other people's posts (maybe)
 
 ### Links
 [Project Plan](/ProjectPlan.md)
