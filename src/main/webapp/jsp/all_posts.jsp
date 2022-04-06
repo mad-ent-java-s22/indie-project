@@ -37,7 +37,7 @@
                                 </div>  <!-- end #tags -->
                                 <h3 class="mb-0">${post.title}</h3>
                                 <div class="mb-1 text-muted">
-                                    <tags:localDate date="${post.dateCreated}" pattern='${"MMM d, yyyy \'at\' h:mm a"}'/>
+                                    <tags:localDate date="${post.dateCreated}" pattern='${"MMM d, yyyy"}'/>
                                 </div>  <!-- end .mb-1 -->
                                 <p class="card-text mb-auto">${post.summary}</p>
                                 <a href="posts/${post.id}" class="link-secondary">Read More</a>
