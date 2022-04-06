@@ -47,7 +47,7 @@ CREATE TABLE user (
 
 -- Table: comment
 CREATE TABLE comment (
-                         id int NOT NULL,
+                         id int NOT NULL AUTO_INCREMENT,
                          content text NOT NULL,
                          date_created timestamp NOT NULL,
                          author varchar(255) NOT NULL,
@@ -124,5 +124,7 @@ INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (10, last_insert_id()
 
 INSERT INTO `blog`.`post` (`title`, `content`, `user_id`, `summary`) VALUES ('Post 6', 'This is post 6, it is about politics', 5, 'This is post 6, it is about politics');
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (1, last_insert_id());
+
+
 
 -- End of file.
