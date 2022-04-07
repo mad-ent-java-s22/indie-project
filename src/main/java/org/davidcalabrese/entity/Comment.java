@@ -27,7 +27,8 @@ public class Comment {
     @Column(name = "date_created")
     private LocalDate dateCreated;
 
-    @Column(name = "author")
+    @ManyToOne
+    @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "comment_user"))
     private User author;
 
     @ManyToOne
