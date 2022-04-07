@@ -39,7 +39,7 @@ public class CommentTest {
         Comment newComment = new Comment("Cool post!", LocalDate.now(), commentAuthor, commentedPost);
         commentDao.insert(newComment);
 
-        assertEquals(2, commentDao.getAll().size());
+        assertEquals(6, commentDao.getAll().size());
 
     }
 
@@ -47,15 +47,27 @@ public class CommentTest {
     public void getAllCommentsSuccess() {
         logger.info("in getAllCommentsSuccess");
         List<Comment> comments = commentDao.getAll();
-        assertEquals(1, comments.size());
+        assertEquals(5, comments.size());
     }
 
     @Test
     public void getCommentByIdSuccess() {
         Comment comment1 = commentDao.getById(1);
+        User user1 = userDao.getById(1);
         assertEquals("comment 1", comment1.getContent());
-        assertEquals("James Joyce", comment1.getAuthor());
+        assertEquals(user1, comment1.getAuthor());
         assertEquals(1, comment1.getId());
     }
 
+    @Test
+    public void getAllPostsCommentsSuccess() {
+        List<Comment> post1Comments = commentDao.findByPropertyEqual("post", 1);
+        assertEquals(3, post1Comments.size());
+    }
+
+    @Test
+    public void getAllUsersCommentsSuccess() {
+        List<Comment> user2Comments = commentDao.findByPropertyEqual("author", 2);
+        assertEquals(3, user2Comments.size());
+    }
 }
