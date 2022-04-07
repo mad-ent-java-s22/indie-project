@@ -28,7 +28,7 @@ public class Comment {
     private LocalDate dateCreated;
 
     @Column(name = "author")
-    private String author;
+    private User author;
 
     @ManyToOne
     @JoinColumn(name = "post_id", foreignKey = @ForeignKey(name = "comment_post"))
@@ -45,7 +45,7 @@ public class Comment {
      * @param author - the user who wrote the comment
      * @param post - the post on which the comment is made
      */
-    public Comment(String content, LocalDate dateCreated, String author, Post post) {
+    public Comment(String content, LocalDate dateCreated, User author, Post post) {
         this.content = content;
         this.dateCreated = dateCreated;
         this.author = author;
@@ -111,7 +111,7 @@ public class Comment {
      *
      * @return value of <code>author</code>
      */
-    public String getAuthor() {
+    public User getAuthor() {
         return author;
     }
 
@@ -120,7 +120,7 @@ public class Comment {
      *
      * @param author the value of <code>author</code>
      */
-    public void setAuthor(String author) {
+    public void setAuthor(User author) {
         this.author = author;
     }
 
