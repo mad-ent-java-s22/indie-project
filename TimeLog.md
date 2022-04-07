@@ -8,7 +8,7 @@
 | 4/3|  team project                |  3  |                      |
 | 4/4|  custom error pages          |  3  |                      |
 | 4/5|  fix edit post tag bug       |  3  |                      |
-| 4/6|fix time display, user stories|     |                      |
+| 4/6|fix time display, user stories|  3  |                      |
 | 4/7|                              |     |                      |
 | 4/8|                              |     |                      |
 | 4/9|                              |     |                      |
