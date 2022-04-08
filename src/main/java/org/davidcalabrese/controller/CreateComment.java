@@ -29,14 +29,11 @@ public class CreateComment extends HttpServlet {
         String commentedPostId = req.getParameter("post_id");
         Post commentedPost = postDao.getById(Integer.parseInt(commentedPostId));
 
-        Comment comment = new Comment();
-        // TODO: escaping input
-        comment.setContent(req.getParameter("content"));
-        comment.setUser(user);
-        comment.setDateCreated(LocalDate.now());
-        comment.setPost(commentedPost);
+        Comment newComment = new Comment(req.getParameter("content"),
+                LocalDate.now(), user, commentedPost);
 
-        commentDao.insert(comment);
+        commentDao.insert(newComment);
+        log("Inserting comment: " + newComment);
 
         String url = "/posts/" + commentedPostId;
         getServletContext().getRequestDispatcher(url).forward(req, resp);
