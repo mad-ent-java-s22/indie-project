@@ -28,6 +28,7 @@ public class DisplayPost extends HttpServlet {
 
         User user = (User) req.getSession().getAttribute("user");
 
+        req.setAttribute("user", user);
         req.setAttribute("userId", user.getId());
         req.setAttribute("post", post);
         String url = "/jsp/post.jsp";
