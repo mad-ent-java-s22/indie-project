@@ -119,10 +119,10 @@ public class Comment {
     /**
      * Sets the value of <code>author</code>
      *
-     * @param author the value of <code>author</code>
+     * @param user the value of <code>author</code>
      */
-    public void setUser(User author) {
-        this.user = author;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     /**
@@ -162,7 +162,7 @@ public class Comment {
                 "id=" + id +
                 ", content='" + content + '\'' +
                 ", dateCreated=" + dateCreated +
-                ", author='" + user + '\'' +
+                ", user='" + user + '\'' +
                 '}';
     }
 }
