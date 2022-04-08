@@ -12,12 +12,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
+/**
+ *  Contains method for updating post with id = * placeholder
+ */
 @WebServlet(name = "UpdatePost", urlPatterns = { "/update_post/*" })
 public class UpdatePost extends HttpServlet {
+    /**
+     * Called by server to allow servlet to handle a POST request
+     *
+     * @param req               object containing req client has made of the servlet
+     * @param resp              object that containing resp servlet sends to the client
+     * @throws ServletException if an input or output error is detected when handling GET req
+     * @throws IOException      if the request for the GET could not be handled
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int postId = Util.getId(req.getPathInfo());

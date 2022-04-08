@@ -40,7 +40,9 @@ import java.security.spec.RSAPublicKeySpec;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
+/**
+ *  Handles user authentication and login
+ */
 @WebServlet(urlPatterns = {"/auth"})
 // TODO if something goes wrong it this process, route to an error page. Currently, errors are only caught and logged.
 /* Inspired by: https://stackoverflow.com/questions/52144721/how-to-get-access-token-using-client-credentials-using-java-code */
@@ -57,6 +59,11 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     * Initializes servlet, loads cognito properties and key
+     *
+     * @throws ServletException if an input or output error is detected when handling GET req
+     */
     @Override
     public void init() throws ServletException {
         super.init();
@@ -67,10 +74,10 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     /**
      * Gets the auth code from the request and exchanges it for a token containing user info.
      *
-     * @param req servlet request
-     * @param resp servlet response
-     * @throws ServletException general servlet issues
-     * @throws IOException exceptions involving IO
+     * @param req               object containing req client has made of the servlet
+     * @param resp              object that containing resp servlet sends to the client
+     * @throws ServletException if an input or output error is detected when handling GET req
+     * @throws IOException      if the request for the GET could not be handled
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -199,7 +206,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         return userInfo;
     }
 
-    /** Create the auth url and use it to build the request.
+    /**
+     * Create the auth url and use it to build the request.
      *
      * @param authCode auth code received from Cognito as part of the login process
      * @return the constructed oauth request

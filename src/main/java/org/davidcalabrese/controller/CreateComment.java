@@ -15,19 +15,21 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDate;
 
+/**
+ *  Contains method for creating a new comment
+ */
 @WebServlet(name = "CreateComment", urlPatterns = { "/create_comment" })
 public class CreateComment extends HttpServlet {
+    /**
+     * Called by server to allow servlet to handle a POST request
+     *
+     * @param req               object containing req client has made of the servlet
+     * @param resp              object that containing resp servlet sends to the client
+     * @throws ServletException if an input or output error is detected when handling GET req
+     * @throws IOException      if the request for the GET could not be handled
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processComment(req, resp);
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processComment(req, resp);
-    }
-
-    private void processComment(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         String userName = (String) session.getAttribute("userName");
         User user = Util.getUser(userName);

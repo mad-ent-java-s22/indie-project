@@ -1,5 +1,6 @@
 package org.davidcalabrese.controller;
 
+import org.davidcalabrese.entity.Comment;
 import org.davidcalabrese.entity.Post;
 import org.davidcalabrese.entity.User;
 import org.davidcalabrese.persistence.GenericDao;
@@ -11,22 +12,35 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.List;
 
+/**
+ *  Displays the post with id = * placeholder in URL
+ */
 @WebServlet(name = "DisplayPost", urlPatterns = { "/posts/*" })
 public class DisplayPost extends HttpServlet {
+
+    /**
+     * Called by server to allow servlet to handle a GET request
+     *
+     * @param req               object containing req client has made of the servlet
+     * @param resp              object that containing resp servlet sends to the client
+     * @throws ServletException if an input or output error is detected when handling GET req
+     * @throws IOException      if the request for the GET could not be handled
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         GenericDao<Post> postDao = new GenericDao<>(Post.class);
+        GenericDao<Comment> commentDao = new GenericDao<>(Comment.class);
 
-        String pathInfo = req.getPathInfo();
-        // grab everything after slash following "posts" in url, should be the post id
-        int postId = Integer.parseInt(pathInfo.substring(1));
+        String pathInfo = req.getPathInfo();                  // grab post id from url
+        int postId = Integer.parseInt(pathInfo.substring(1)); // convert to int
+        Post post = postDao.getById(postId);                  // get post
 
-        log("post id: " + postId);
-        Post post = postDao.getById(postId);
-
-        User user = (User) req.getSession().getAttribute("user");
+        User user = (User) req.getSession().getAttribute("user"); // get current user
+        List<Comment> comments = commentDao.getAll();                // get all post comments
+        Collections.reverse(comments);                               // show newest comments first
 
         req.setAttribute("user", user);
         req.setAttribute("userId", user.getId());
