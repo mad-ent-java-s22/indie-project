@@ -63,7 +63,7 @@
         </div>  <!-- end .col-md-4 -->
       </div>  <!-- end .row g-5 -->
 
-      <section class="container mt-3 mb-5"
+      <section class="container mt-3 mb-5">
         <div class="row height d-flex justify-content-start align-items-center">
           <div class="col-md-7">
             <div>
