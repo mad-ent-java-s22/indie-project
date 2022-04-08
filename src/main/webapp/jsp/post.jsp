@@ -71,8 +71,8 @@
                     <h3 class="display-6">Comments</h3>
                 </div>
                 <div class="mt-3 d-flex flex-row align-items-center p-3 form-color">
-                    <img src="../img/${post.user.profileImage}%>" width="55" height="50" class="rounded-circle me-2">
-                    <form action="<%=request.getContextPath()%>/create_post" method="POST" id="form" class="w-100">
+                    <img src="../img/${post.user.profileImage}>" width="55" height="50" class="rounded-circle me-2">
+                    <form action="<%=request.getContextPath()%>/create_comment" method="POST" id="form" class="w-100">
                         <input
                             type="text"
                             class="form-control w-100"
