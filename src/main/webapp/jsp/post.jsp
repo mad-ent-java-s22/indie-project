@@ -72,7 +72,7 @@
               </div>
               <div class="mt-3 d-flex flex-row align-items-center p-3 pb-0 form-color">
                 <img src="/../img/${user.profileImage}" width="62" height="50" class="rounded-pill me-2 mb-3">
-                <form class="w-100" id="form" method="POST" action=<%=request.getContextPath()%>/create_comment">
+                <form class="w-100" id="form" method="POST" action=<%=request.getContextPath()%>/create_comment>
                   <div class="d-flex flex-row justify-content-center align-items-center">
                     <input
                         type="text"
