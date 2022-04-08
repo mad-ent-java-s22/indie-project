@@ -12,9 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  *  Displays the post with id = * placeholder in URL
@@ -35,15 +33,18 @@ public class DisplayPost extends HttpServlet {
         GenericDao<Post> postDao = new GenericDao<>(Post.class);
         GenericDao<Comment> commentDao = new GenericDao<>(Comment.class);
 
+
         String pathInfo = req.getPathInfo();                  // grab post id from url
         int postId = Integer.parseInt(pathInfo.substring(1)); // convert to int
         Post post = postDao.getById(postId);                  // get post
 
         User user = (User) req.getSession().getAttribute("user");  // get current user
-        List<Comment> comments = commentDao.getAll();                 // get all post comments
-        comments.sort(Comparator.comparing(Comment::getDateCreated)); // sort by date
-        Collections.reverse(comments);                                // reverse
+        Comparator<Comment> compareByDate = Comparator.comparing(Comment::getDateCreated).reversed();
 
+        List<Comment> comments = commentDao.findByPropertyEqual("post", post);   // get all post comments
+        comments.sort(compareByDate);
+
+        req.setAttribute("comments", comments);
         req.setAttribute("user", user);
         req.setAttribute("userId", user.getId());
         req.setAttribute("post", post);
