@@ -123,6 +123,18 @@ This worked for me. I still have no idea why the Base64 method was working fine 
 * checked off completed tasks in project plan and added some more for next few weeks
 * added more user stories to readme
 * updated date formatting on all_posts.jsp where it was displaying 12:00am for the time when post was created 
+#### Adding comments 
+* issue011
+* I got this error when trying to start a version of the app with the Comments entity: 
+```config
+07-Apr-2022 23:43:02.676 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [DisplayAllPosts] in context with path [] threw exception
+	org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: org.davidcalabrese.entity.User.comments[org.davidcalabrese.entity.Comment]
+```
+* I did not have the Comment entity mapped in the `hibernate.cfg.xml` file
+* I was getting a weird bug when submitting the comment form to the /create_comment servlet where I had a doPost method
+  * even though I had method="POST" as a form attribute, I was getting an error about an unsupported HTTP method or something like that
+  * somehow I was sending a GET request to the servlet and there was no doGet method, so I added one
+  * solved issue by extracting form processing logic into its own method which is then called by both doGet and doPost
 
 
 ### Week 12

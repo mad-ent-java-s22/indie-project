@@ -1,5 +1,6 @@
 -- tables
 DROP TABLE if exists post_tag;
+DROP TABLE if exists comment;
 DROP TABLE if exists post;
 DROP TABLE if exists tag;
 DROP TABLE if exists user;
@@ -45,6 +46,17 @@ CREATE TABLE user (
                       CONSTRAINT user_pk PRIMARY KEY (id)
 );
 
+-- Table: comment
+CREATE TABLE comment (
+                         id int NOT NULL AUTO_INCREMENT,
+                         content text NOT NULL,
+                         date_created timestamp DEFAULT CURRENT_TIMESTAMP,
+                         post_id int NOT NULL,
+                         user_id int NOT NULL,
+                         CONSTRAINT comment_pk PRIMARY KEY (id)
+);
+
+
 -- foreign keys
 -- Reference: post_user (table: post)
 ALTER TABLE post ADD CONSTRAINT post_user FOREIGN KEY post_user (user_id)
@@ -57,6 +69,14 @@ ALTER TABLE post_tag ADD CONSTRAINT post_tag_post FOREIGN KEY post_tag_post (pos
 -- Reference: post_tag_tag (table: post_tag)
 ALTER TABLE post_tag ADD CONSTRAINT post_tag_tag FOREIGN KEY post_tag_tag (tag_id)
     REFERENCES tag (id);
+
+-- Reference: comment_post (table: comment)
+ALTER TABLE comment ADD CONSTRAINT comment_post FOREIGN KEY comment_post (post_id)
+    REFERENCES post (id);
+
+-- Reference: comment_user (table: comment)
+ALTER TABLE comment ADD CONSTRAINT comment_user FOREIGN KEY comment_user (user_id)
+    REFERENCES user (id);
 
 -- inserts 4 test users
 INSERT INTO `blog`.`user` (`user_name`, `first_name`, `last_name`, `email`, `profile_image`, `summary`) VALUES ('user1', 'Pam', 'Smith', 'pam@gmail.com', 'generated_photo_1.jpg', 'Pam Smith has been a staff reporter for Otter since August 2011. She currently covers breaking news and education. Before that, Ms. Smith was a beat reporter covering the boroughs of Brooklyn, Queens and Manhattan.');
@@ -109,5 +129,11 @@ INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (10, last_insert_id()
 
 INSERT INTO `blog`.`post` (`title`, `content`, `user_id`, `summary`) VALUES ('Post 6', 'This is post 6, it is about politics', 5, 'This is post 6, it is about politics');
 INSERT INTO `blog`.`post_tag` (`tag_id`, `post_id`) VALUES (1, last_insert_id());
+
+INSERT INTO `blog`.`comment` (`content`, `post_id`, `user_id`) VALUES ("comment 1", 1, 1);
+INSERT INTO `blog`.`comment` (`content`, `post_id`, `user_id`) VALUES ("comment 2", 1, 2);
+INSERT INTO `blog`.`comment` (`content`, `post_id`, `user_id`) VALUES ("comment 3", 1, 3);
+INSERT INTO `blog`.`comment` (`content`, `post_id`, `user_id`) VALUES ("comment 4", 2, 2);
+INSERT INTO `blog`.`comment` (`content`, `post_id`, `user_id`) VALUES ("comment 5", 2, 2);
 
 -- End of file.

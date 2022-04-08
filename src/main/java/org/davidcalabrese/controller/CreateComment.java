@@ -1,9 +1,11 @@
 package org.davidcalabrese.controller;
 
+import org.davidcalabrese.entity.Comment;
+import org.davidcalabrese.entity.Post;
 import org.davidcalabrese.entity.User;
 import org.davidcalabrese.persistence.GenericDao;
+import org.davidcalabrese.util.Util;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,10 +16,10 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 /**
- *  Contains method for creating a user profile
+ *  Contains method for creating a new comment
  */
-@WebServlet(name = "CreateProfile", urlPatterns = { "/create_profile" })
-public class CreateProfile extends HttpServlet  {
+@WebServlet(name = "CreateComment", urlPatterns = { "/create_comment" })
+public class CreateComment extends HttpServlet {
     /**
      * Called by server to allow servlet to handle a POST request
      *
@@ -28,28 +30,23 @@ public class CreateProfile extends HttpServlet  {
      */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // get userName and email that from cognito, stored in session
         HttpSession session = req.getSession();
         String userName = (String) session.getAttribute("userName");
-        String email = (String) session.getAttribute("email");
-        GenericDao<User> userDao = new GenericDao<>(User.class);
+        User user = Util.getUser(userName);
 
-        User newUser = new User(userName, email);
-        newUser.setFirstName(req.getParameter("first_name"));
-        newUser.setLastName(req.getParameter("last_name"));
-        newUser.setSummary(req.getParameter("about"));
-        newUser.setDateCreated(LocalDate.now());
-        newUser.setProfileImage("default_profile_pic.jpg");
+        GenericDao<Comment> commentDao = new GenericDao<>(Comment.class);
+        GenericDao<Post> postDao = new GenericDao<>(Post.class);
 
-        // insert user and retrieve from db
-        int id = userDao.insert(newUser);
-        User insertedUser = userDao.getById(id);
+        String commentedPostId = req.getParameter("post_id");
+        Post commentedPost = postDao.getById(Integer.parseInt(commentedPostId));
 
-        // save user in session
-        session.setAttribute("user", insertedUser);
+        Comment newComment = new Comment(req.getParameter("content"),
+                LocalDate.now(), user, commentedPost);
 
-        String url = "/jsp/all_posts.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(req, resp);
+        commentDao.insert(newComment);
+
+        req.setAttribute("postId", commentedPostId);
+        String url = "/jsp/comment_added.jsp";
+        getServletContext().getRequestDispatcher(url).forward(req, resp);
     }
 }

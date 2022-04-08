@@ -37,6 +37,9 @@ public class Post {
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "post_user"))
     private User user;
 
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Comment> comments = new HashSet<>();
+
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
@@ -183,6 +186,24 @@ public class Post {
      */
     public void setUser(User user) {
         this.user = user;
+    }
+
+    /**
+     * Gets the value of <code>comments</code>
+     *
+     * @return value of <code>comments</code>
+     */
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    /**
+     * Sets the value of <code>comments</code>
+     *
+     * @param comments the value of <code>comments</code>
+     */
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
     }
 
     /**

@@ -1,8 +1,5 @@
 package org.davidcalabrese.controller;
 
-import org.davidcalabrese.entity.User;
-import org.davidcalabrese.persistence.GenericDao;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,13 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static org.davidcalabrese.util.Util.getId;
-
 /**
- *  Contains method for displaying the user with id = * placeholder
+ *  Contains method for displaying general error page
  */
-@WebServlet(name = "DisplayUser", urlPatterns = { "/users/*" })
-public class DisplayUser extends HttpServlet {
+@WebServlet(name = "ExceptionHandlerGeneral", urlPatterns = { "/error" })
+public class ExceptionHandlerGeneral extends HttpServlet {
     /**
      * Called by server to allow servlet to handle a GET request
      *
@@ -28,13 +23,7 @@ public class DisplayUser extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        GenericDao<User> userDao = new GenericDao<>(User.class);
-        int userId = getId(req.getPathInfo());
-
-        User user = userDao.getById(userId);
-        req.setAttribute("user", user);
-        String url = "/jsp/user.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/jsp/error_general.jsp");
         dispatcher.forward(req, resp);
     }
 }

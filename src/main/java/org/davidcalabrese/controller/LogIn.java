@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ *  Contains methods for logging a user in with cognito
+ */
 @WebServlet(urlPatterns = {"/logIn"})
 /* Begins the authentication process using AWS Cognito */
 public class LogIn extends HttpServlet implements PropertiesLoader {
