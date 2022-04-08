@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -38,9 +39,10 @@ public class DisplayPost extends HttpServlet {
         int postId = Integer.parseInt(pathInfo.substring(1)); // convert to int
         Post post = postDao.getById(postId);                  // get post
 
-        User user = (User) req.getSession().getAttribute("user"); // get current user
-        List<Comment> comments = commentDao.getAll();                // get all post comments
-        Collections.reverse(comments);                               // show newest comments first
+        User user = (User) req.getSession().getAttribute("user");  // get current user
+        List<Comment> comments = commentDao.getAll();                 // get all post comments
+        comments.sort(Comparator.comparing(Comment::getDateCreated)); // sort by date
+        Collections.reverse(comments);                                // reverse
 
         req.setAttribute("user", user);
         req.setAttribute("userId", user.getId());
