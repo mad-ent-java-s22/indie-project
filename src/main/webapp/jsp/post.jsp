@@ -63,66 +63,67 @@
                 </div>  <!-- end .col-md-4 -->
             </div>  <!-- end .row g-5 -->
 
-            <section class="container mt-3 mb-5">
-                <div class="row height d-flex justify-content-start align-items-center">
-                    <div class="col-md-7">
-                        <div>
-                            <div class="p-3">
-                                <h3 class="display-6">Comments</h3>
-                            </div>
-                            <div class="mt-3 d-flex flex-row align-items-center p-3 form-color">
-                                <img src="../img/${user.profileImage}%>" width="55" height="50" class="rounded-circle me-2">
-                                <form action="/create_post" method="POST" id="form" class="w-100">
-                                    <input
-                                        type="text"
-                                        class="form-control w-100"
-                                        placeholder="Enter your comment..."
-                                        id="content"
-                                        name="content"
-                                    >
-                                    <input
-                                        type="hidden"
-                                        id="post_id"
-                                        name="post_id"
-                                        value="${post.id}"
-                                    >
-                                </form>
-                                <div class="d-flex m-2">
-                                    <button class="btn btn-success" type="submit">Post</button>
-                                </div>
-                            </div>
-                            <c:choose>
-                                <c:when test="${empty post.comments}">
-                                    <p class="d-flex justify-content-center align-items-center mt-3">No Comments Yet</p>
-                                </c:when>
-                                <c:otherwise>
-                                    <c:forEach var="comment" items="${post.comments}">
-                                        <div class="mt-2">
-                                            <div class="d-flex flex-row p-3">
-                                                <img src="../img/${comment.user.profileImage}" width="32" height="32" class="rounded-circle me-3">
-                                                <div class="w-100">
-                                                    <div class="d-flex justify-content-between align-items-center">
-                                                        <div class="d-flex flex-row align-items-center">
-                                                            <span class="mr-2">${comment.user.username}</span>
-                                                        </div>
-                                                        <small>
-                                                            <tags:localDate date="${comment.dateCreated}" pattern='${"MMM d, yyyy"}'/>
-                                                        </small>
-                                                    </div>
-                                                    <p class="text-justify comment-text mb-0">
-                                                        ${comment.content}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div> <!-- end mt-2 -->
-                                    </c:forEach>
-                                </c:otherwise>
-                            </c:choose>
-
-                        </div>
-                    </div>
+<section class="container mt-3 mb-5">
+    <div class="row height d-flex justify-content-start align-items-center">
+        <div class="col-md-7">
+            <div>
+                <div class="p-3">
+                    <h3 class="display-6">Comments</h3>
                 </div>
-            </section>
+                <div class="mt-3 d-flex flex-row align-items-center p-3 form-color">
+                    <img src="../img/${post.user.profileImage}%>" width="55" height="50" class="rounded-circle me-2">
+                    <form action="/create_post" method="POST" id="form" class="w-100">
+                        <input
+                            type="text"
+                            class="form-control w-100"
+                            placeholder="Enter your comment..."
+                            id="content"
+                            name="content"
+                        >
+                        <input
+                            type="hidden"
+                            id="post_id"
+                            name="post_id"
+                            value="${post.id}"
+                        >
+                        <div class="d-flex m-2">
+                            <button class="btn btn-success" type="submit">Post</button>
+                        </div>
+                    </form>
+
+                </div>
+                <c:choose>
+                    <c:when test="${empty post.comments}">
+                        <p class="d-flex justify-content-center align-items-center mt-3">No Comments Yet</p>
+                    </c:when>
+                    <c:otherwise>
+                        <c:forEach var="comment" items="${post.comments}">
+                            <div class="mt-2">
+                                <div class="d-flex flex-row p-3">
+                                    <img src="../img/${comment.user.profileImage}" width="32" height="32" class="rounded-circle me-3">
+                                    <div class="w-100">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex flex-row align-items-center">
+                                                <span class="mr-2">${comment.user.username}</span>
+                                            </div>
+                                            <small>
+                                                <tags:localDate date="${comment.dateCreated}" pattern='${"MMM d, yyyy"}'/>
+                                            </small>
+                                        </div>
+                                        <p class="text-justify comment-text mb-0">
+                                            ${comment.content}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> <!-- end mt-2 -->
+                        </c:forEach>
+                    </c:otherwise>
+                </c:choose>
+
+            </div>
+        </div>
+    </div>
+</section>
 
             <!-- Modal -->
             <div
