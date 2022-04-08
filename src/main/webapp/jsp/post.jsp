@@ -67,12 +67,12 @@
     <div class="row height d-flex justify-content-start align-items-center">
         <div class="col-md-7">
             <div>
-                <div class="p-3">
+                <div class="p-3 pb-0">
                     <h3 class="display-6">Comments</h3>
                 </div>
                 <div class="mt-3 d-flex flex-row align-items-center p-3 pb-0 form-color">
                     <img src="/../img/${user.profileImage}" width="55" height="50" class="rounded-circle me-2 mb-3">
-                   <form action="/create_comment" method="POST" id="form" class="w-100">
+                   <form class="w-100" id="form" method="POST" action="/create_comment">
                         <div class="d-flex flex-row justify-content-center align-items-center">
                             <input
                                 type="text"
