@@ -43,6 +43,8 @@ public class CreateComment extends HttpServlet {
         Comment newComment = new Comment(req.getParameter("content"),
                 LocalDate.now(), user, commentedPost);
 
+        commentDao.insert(newComment);
+
         req.setAttribute("postId", commentedPostId);
         String url = "/jsp/comment_added.jsp";
         getServletContext().getRequestDispatcher(url).forward(req, resp);
