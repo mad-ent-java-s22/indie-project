@@ -29,7 +29,7 @@ public class Comment {
 
     @ManyToOne
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "comment_user"))
-    private User author;
+    private User user;
 
     @ManyToOne
     @JoinColumn(name = "post_id", foreignKey = @ForeignKey(name = "comment_post"))
@@ -43,13 +43,13 @@ public class Comment {
      *
      * @param content - the text that makes up the comment
      * @param dateCreated the datetime during which the comment was posted
-     * @param author - the user who wrote the comment
+     * @param user - the user who wrote the comment
      * @param post - the post on which the comment is made
      */
-    public Comment(String content, LocalDate dateCreated, User author, Post post) {
+    public Comment(String content, LocalDate dateCreated, User user, Post post) {
         this.content = content;
         this.dateCreated = dateCreated;
-        this.author = author;
+        this.user = user;
         this.post = post;
     }
 
@@ -112,8 +112,8 @@ public class Comment {
      *
      * @return value of <code>author</code>
      */
-    public User getAuthor() {
-        return author;
+    public User getUser() {
+        return user;
     }
 
     /**
@@ -121,8 +121,8 @@ public class Comment {
      *
      * @param author the value of <code>author</code>
      */
-    public void setAuthor(User author) {
-        this.author = author;
+    public void setUser(User author) {
+        this.user = author;
     }
 
     /**
@@ -148,12 +148,12 @@ public class Comment {
         if (this == o) return true;
         if (!(o instanceof Comment)) return false;
         Comment comment = (Comment) o;
-        return id == comment.id && content.equals(comment.content) && dateCreated.equals(comment.dateCreated) && author.equals(comment.author);
+        return id == comment.id && content.equals(comment.content) && dateCreated.equals(comment.dateCreated) && user.equals(comment.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, content, dateCreated, author);
+        return Objects.hash(id, content, dateCreated, user);
     }
 
     @Override
@@ -162,7 +162,7 @@ public class Comment {
                 "id=" + id +
                 ", content='" + content + '\'' +
                 ", dateCreated=" + dateCreated +
-                ", author='" + author + '\'' +
+                ", author='" + user + '\'' +
                 '}';
     }
 }

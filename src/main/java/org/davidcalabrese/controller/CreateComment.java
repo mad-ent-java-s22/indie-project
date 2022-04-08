@@ -32,7 +32,7 @@ public class CreateComment extends HttpServlet {
         Comment comment = new Comment();
         // TODO: escaping input
         comment.setContent(req.getParameter("content"));
-        comment.setAuthor(user);
+        comment.setUser(user);
         comment.setDateCreated(LocalDate.now());
         comment.setPost(commentedPost);
 

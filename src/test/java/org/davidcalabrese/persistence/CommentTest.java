@@ -55,7 +55,7 @@ public class CommentTest {
         Comment comment1 = commentDao.getById(1);
         User user1 = userDao.getById(1);
         assertEquals("comment 1", comment1.getContent());
-        assertEquals(user1, comment1.getAuthor());
+        assertEquals(user1, comment1.getUser());
         assertEquals(1, comment1.getId());
     }
 
