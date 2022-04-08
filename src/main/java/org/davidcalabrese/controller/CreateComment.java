@@ -19,6 +19,15 @@ import java.time.LocalDate;
 public class CreateComment extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        processComment(req, resp);
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        processComment(req, resp);
+    }
+
+    private void processComment(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         String userName = (String) session.getAttribute("userName");
         User user = Util.getUser(userName);
