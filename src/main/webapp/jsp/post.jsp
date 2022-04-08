@@ -31,7 +31,7 @@
                         </p>
                         <p class="display-6" id="summary">${post.summary}</p>
                         <hr>
-                        <p id="content">${post.content}</p>
+                        <p id="post-content">${post.content}</p>
                     </article>
                     <c:if test = "${userId == post.user.id}">
                         <div id="btns" class="mt-3 mb-3">
@@ -62,6 +62,64 @@
                     </section> <!-- end .d-flex -->
                 </div>  <!-- end .col-md-4 -->
             </div>  <!-- end .row g-5 -->
+
+            <section class="container mt-3 mb-5">
+                <div class="row height d-flex justify-content-start align-items-center">
+                    <div class="col-md-8">
+                        <div>
+                            <div class="p-3">
+                                <h3 class="display-6">Comments</h3>
+                            </div>
+                            <div class="mt-3 d-flex flex-row align-items-center p-3 form-color">
+                                <img src="../img/${user.profileImage}%>" width="50" height="50" class="rounded-circle me-2">
+                                <form action="/create_post" method="POST" id="form" class="w-100">
+                                    <input
+                                        type="text"
+                                        class="form-control w-100"
+                                        placeholder="Enter your comment..."
+                                        id="content"
+                                        name="content"
+                                    >
+                                    <input
+                                        type="hidden"
+                                        id="post_id"
+                                        name="post_id"
+                                        value="${post.id}"
+                                    >
+                                </form>
+                            </div>
+                            <c:choose>
+                                <c:when test="${empty post.comments}">
+                                    <p class="d-flex justify-content-center align-items-center mt-3">No Comments Yet</p>
+                                </c:when>
+                                <c:otherwise>
+                                    <c:forEach var="comment" items="${post.comments}">
+                                        <div class="mt-2">
+                                            <div class="d-flex flex-row p-3">
+                                                <img src="../img/${comment.author.profileImage}" width="32" height="32" class="rounded-circle me-3">
+                                                <div class="w-100">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex flex-row align-items-center">
+                                                            <span class="mr-2">${comment.author.username}</span>
+                                                        </div>
+                                                        <small>
+                                                            <tags:localDate date="${comment.dateCreated}" pattern='${"MMM d, yyyy"}'/>
+                                                        </small>
+                                                    </div>
+                                                    <p class="text-justify comment-text mb-0">
+                                                        ${comment.content}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div> <!-- end mt-2 -->
+                                    </c:forEach>
+                                </c:otherwise>
+                            </c:choose>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Modal -->
             <div
