@@ -95,11 +95,11 @@
 
               </div>
               <c:choose>
-                <c:when test="${empty post.comments}">
+                <c:when test="${empty comments}">
                   <p class="d-flex justify-content-center align-items-center mt-3">No Comments Yet</p>
                 </c:when>
                 <c:otherwise>
-                  <c:forEach var="comment" items="${post.comments}">
+                  <c:forEach var="comment" items="${comments}">
                     <div class="mt-2">
                       <div class="d-flex flex-row p-3">
                         <img src="../img/${comment.user.profileImage}" width="40" height="32" class="rounded-pill me-3">
