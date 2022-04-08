@@ -6,7 +6,6 @@ import org.davidcalabrese.entity.User;
 import org.davidcalabrese.persistence.GenericDao;
 import org.davidcalabrese.util.Util;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,10 +30,13 @@ public class CreateComment extends HttpServlet {
         Post commentedPost = postDao.getById(Integer.parseInt(commentedPostId));
 
         Comment comment = new Comment();
+        // TODO: escaping input
         comment.setContent(req.getParameter("content"));
         comment.setAuthor(user);
         comment.setDateCreated(LocalDate.now());
         comment.setPost(commentedPost);
+
+        commentDao.insert(comment);
 
         String url = "/posts/" + commentedPostId;
         getServletContext().getRequestDispatcher(url).forward(req, resp);
