@@ -39,10 +39,9 @@ public class DisplayPost extends HttpServlet {
         Post post = postDao.getById(postId);                  // get post
 
         User user = (User) req.getSession().getAttribute("user");  // get current user
-        Comparator<Comment> compareByDate = Comparator.comparing(Comment::getDateCreated).reversed();
 
         List<Comment> comments = commentDao.findByPropertyEqual("post", post);   // get all post comments
-        comments.sort(compareByDate);
+        comments.sort(Comparator.comparing(Comment::getDateCreated).reversed());
 
         req.setAttribute("comments", comments);
         req.setAttribute("user", user);
