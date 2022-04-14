@@ -14,8 +14,8 @@
 | 4/9|  prepare clojure pro dev preesntation           |  3  |                      |
 | 4/10| team project - post and delete services        |  4  |                      |
 | 4/11| team project - rescope, swagger docs           |  5  |                      |
-| 4/12|                                                |    |                      |
-| 4/13|                                                |    |                      |
+| 4/12| team project                                   |  3  |                      |
+| 4/13| team project - finishing touches               |  6  |                      |
 | 4/14|                                                |    |                      |
 | 4/15|                                                |    |                      |
 | 4/16|                                                |    |                      |
