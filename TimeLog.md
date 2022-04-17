@@ -16,9 +16,9 @@
 | 4/11| team project - rescope, swagger docs           |  5  |                      |
 | 4/12| team project                                   |  3  |                      |
 | 4/13| team project - finishing touches               |  6  |                      |
-| 4/14|                                                |    |                      |
-| 4/15|                                                |    |                      |
-| 4/16|                                                |    |                      |
+| 4/14|                                                |  0  |                      |
+| 4/15|                                                |  0  |                      |
+| 4/16| JMS studying                                   |  2  |                      |
 | 4/17|                                                |    |                      |
 | 4/18|                                                |    |                      |
 | 4/19|                                                |    |                      |
