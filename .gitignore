@@ -52,5 +52,6 @@ fabric.properties
 
 # props files that I do not want shared
 cognito.properties
+api.properties
 jwks.json
 https-instance.config
