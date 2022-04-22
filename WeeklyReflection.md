@@ -141,7 +141,19 @@ This worked for me. I still have no idea why the Base64 method was working fine 
 * didn't  spend much time on the project this week because of the team project stuff and prepping for the professional development presentation. 
 
 ### Week 13
-
+* didn't spend too much time on the project this week either until Thursday. 
+* I did integrate the OpenAI API into the project though (issue 13)!
+* I had a lot of trouble doing this because I wasn't reading the server logs carefully enough. 
+* I was getting this null pointer exception when sending the request. 
+* I could successfully post to the API in my test but not my project. 
+* I thought this was because of the library I was using so I tried a few different ones. First I tried okhttp3 and unirest, because postman will generate the request code for you for those libraries. 
+* Then I tried the java 11 java.net.http.HttpClient library and I was getting same NullPointerException
+* The reason was because I didn't have an api.properties file in my main/resources directory, only test/resources
+* so my API_KEY wasn't being loaded into an instance field before sending the request. 
+* I looked at the log files right away but I didn't think it was the key because it worked fine in the tests. 
+* But the logs were pointing to the _exact line_ in my app where I was passing the API_KEY field to the request header. 
+* I should have figured this out immediately. 
+* However, I learned a few different ways to do API requests to that's cool. 
 ### Week 14
 
 ### Week 15
