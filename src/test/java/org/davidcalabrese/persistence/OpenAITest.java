@@ -1,10 +1,8 @@
 package org.davidcalabrese.persistence;
 
-import org.davidcalabrese.entity.OpenAIResponse;
 import org.davidcalabrese.services.OpenAIService;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -46,18 +44,18 @@ public class OpenAITest {
         assertEquals("Write a blog post about sports", singletTopicString);
     }
 
-    @Test
-    public void shouldGetPostOnTopic() {
-        OpenAIService service = new OpenAIService();
-        List<String> topic = new ArrayList<>(List.of("sports"));
-
-        OpenAIResponse resp = null;
-        try {
-            resp = service.getPostOnTopic(topic);
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        assertEquals("?", resp.getChoices().get(0).getText());
-    }
+//    @Test
+//    public void shouldGetPostOnTopic() {
+//        OpenAIService service = new OpenAIService();
+//        List<String> topic = new ArrayList<>(List.of("sports"));
+//
+//        OpenAIResponse resp = null;
+//        try {
+//            resp = service.getPostOnTopic(topic);
+//        } catch (IOException | InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//
+//        assertEquals("?", resp.getChoices().get(0).getText());
+//    }
 }
