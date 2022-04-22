@@ -66,8 +66,15 @@
         </form>
       </div>
     </div>
+    <hr>
+    <div class="row g-5 mx-xl-5 px-lg-5 mb-3">
+      <div class="px-lg-5 d-flex flex-column align-items-center justify-content-center">
+        <h2 class="display-6 text-center">Feeling Lazy?</h2>
+        <p>Want AI to generate a blog post for you?</p>
+        <a href="<%=request.getContextPath()%>/display_generate_post" class="btn btn-info mt-0">You know it!</a>
+      </div>
+    </div>
   </main>
-
 </div> <!-- end #outer-container -->
 <jsp:include page="/jsp/components/footer.jsp" />
 </body>
