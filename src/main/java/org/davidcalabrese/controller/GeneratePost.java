@@ -4,6 +4,7 @@ import org.davidcalabrese.entity.OpenAIResponse;
 import org.davidcalabrese.entity.Tag;
 import org.davidcalabrese.persistence.GenericDao;
 import org.davidcalabrese.services.OpenAIService;
+import org.davidcalabrese.util.Util;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -34,14 +35,15 @@ public class GeneratePost extends HttpServlet {
         GenericDao<Tag> tagDao = new GenericDao<>(Tag.class);
         String[] tagArray = req.getParameterValues("tags");
 
-        List<String> tagList = new ArrayList<>(Arrays.asList(tagArray));
+        List<String> tagStringList = new ArrayList<>(Arrays.asList(tagArray));
+        List<Tag> tagList = Util.makeTagList(tagArray);
         List<Tag> possibleTags  = tagDao.getAll();
 
         OpenAIService service = new OpenAIService();
 
         OpenAIResponse response = null;
         try {
-            response = service.getPostOnTopic(tagList);
+            response = service.getPostOnTopic(tagStringList);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
