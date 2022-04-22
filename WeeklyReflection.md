@@ -138,6 +138,7 @@ This worked for me. I still have no idea why the Base64 method was working fine 
 
 
 ### Week 12
+* didn't  spend much time on the project this week because of the team project stuff and prepping for the professional development presentation. 
 
 ### Week 13
 
