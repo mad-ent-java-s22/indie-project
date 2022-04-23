@@ -24,7 +24,7 @@
         <!-- if user hasn't been added to db yet - display form (with username and email filled in from cognito values) -->
         <div class="row flex-lg-nowrap">
           <div class="col">
-            <div class="row">
+            <div class="row container mx-auto">
               <div class="col mb-3">
                 <div class="card">
                   <div class="card-body">
@@ -105,7 +105,14 @@
                           <div class="row mt-3">
                             <div class="col">
                               <label for="about">User Summary</label>
-                              <textarea name="about" id="about" cols="30" rows="10" class="form-control"></textarea>
+                              <textarea
+                                  name="about"
+                                  id="about"
+                                  cols="30"
+                                  rows="10"
+                                  class="form-control"
+                                  style="height: 109px;"
+                              ></textarea>
                             </div>
                           </div>
 
