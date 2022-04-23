@@ -7,6 +7,11 @@ import java.io.UncheckedIOException;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * Maps an HttpResponse object to a OpenAIResponse entity
+ *
+ * @param <W> the class of the entity being mapped
+ */
 public class JsonBodyHandler<W> implements HttpResponse.BodyHandler<W> {
 
     private Class<W> wClass;
