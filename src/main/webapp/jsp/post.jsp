@@ -33,7 +33,7 @@
             <hr>
             <p id="post-content">${post.content}</p>
           </article>
-          <c:if test = "${userId == post.user.id}">
+          <c:if test = "${userId == post.user.id || user.accessPrivileges.equals('admin')}">
             <div id="btns" class="mt-3 mb-3">
               <a
                   href="<%=request.getContextPath()%>/display_update_post/${post.id}"
