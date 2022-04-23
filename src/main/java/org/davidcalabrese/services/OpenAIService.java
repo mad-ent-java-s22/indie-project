@@ -18,6 +18,9 @@ import java.util.List;
 import java.util.Properties;
 import java.util.StringJoiner;
 
+/**
+ * Makes a post request to the OpenAI API to generate a blog post
+ */
 @Path("/open_ai")
 public class OpenAIService implements PropertiesLoader {
     Properties properties;
@@ -61,6 +64,14 @@ public class OpenAIService implements PropertiesLoader {
 //        return null;
 //    }
 
+    /**
+     * Makes the POST request to the API
+     *
+     * @param topics a list of topics the blog post should be about
+     * @return API response mapped to the OpenAIResponse entity
+     * @throws IOException - for io errors
+     * @throws InterruptedException - for when thread is interrupted
+     */
     @POST
     // The Java method will produce content identified by the MIME Media type "text/plain"
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -94,7 +105,12 @@ public class OpenAIService implements PropertiesLoader {
     }
 
 
-
+    /**
+     * Takes a list of topic(s) and formulates a string prompt
+     *
+     * @param topics the list of topics
+     * @return the prompt to be sent to the API
+     */
     public String buildPromptFromTopicList(List<String> topics) {
         StringJoiner sj = new StringJoiner(" and ");
         for (String topic : topics) {
@@ -103,6 +119,9 @@ public class OpenAIService implements PropertiesLoader {
         return "Write a blog post about " + sj;
     }
 
+    /**
+     * Loads the api key into the API_KEY field
+     */
     private void loadProperties() {
         try {
             properties = loadProperties("/api.properties");
