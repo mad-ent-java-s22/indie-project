@@ -37,7 +37,7 @@
                             class="d-flex justify-content-center align-items-center rounded"
                             style="height: 140px; background-color: rgb(233, 236, 239)"
                         >
-                          <img src="../img/default_profile_pic.jpg" style="height: 140px; width: 120px" alt="" />
+                          <img src="${user.profileImage}" style="height: 140px; width: 120px; object-fit: cover;" alt="" />
                         </div>
                       </div>
                     </div>

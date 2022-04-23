@@ -55,8 +55,10 @@
             <img
                 class="rounded"
                 width="200" height="250"
-                src="../img/${post.user.profileImage}"
-                alt="profile pic">
+                src="${post.user.profileImage}"
+                alt="profile pic"
+                style="object-fit: cover;"
+            >
             <h4 class="display-6 fw-normal mt-2">${post.user.firstName} ${post.user.lastName}</h4>
             <p class="mx-5 fst-italic">${post.user.summary}</p>
           </section> <!-- end .d-flex -->
@@ -71,7 +73,13 @@
                 <h3 class="display-6">Comments</h3>
               </div>
               <div class="mt-3 d-flex flex-row align-items-center p-3 pb-0 form-color">
-                <img src="/../img/${user.profileImage}" width="62" height="50" class="rounded-pill me-2 mb-3">
+                <img
+                    src="${user.profileImage}"
+                    width="62"
+                    height="50"
+                    class="rounded-pill me-2 mb-3"
+                    style="object-fit: cover;"
+                >
                 <form class="w-100" id="form" method="POST" action="<%=request.getContextPath()%>/create_comment">
                   <div class="d-flex flex-row justify-content-center align-items-center">
                     <input
@@ -102,7 +110,13 @@
                   <c:forEach var="comment" items="${comments}">
                     <div class="mt-2">
                       <div class="d-flex flex-row p-3">
-                        <img src="../img/${comment.user.profileImage}" width="40" height="32" class="rounded-pill me-3">
+                        <img
+                            src="${comment.user.profileImage}"
+                            width="40"
+                            height="32"
+                            class="rounded-pill me-3"
+                            style="object-fit: cover;"
+                        >
                         <div class="w-100">
                           <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex flex-row align-items-center">

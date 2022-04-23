@@ -23,7 +23,13 @@
       <div class="row mb-4">
         <div class="row" id="user-summary">
           <div class="col-12 col-md-4 col-lg-2 d-flex justify-content-center align-items-center">
-              <img class="rounded" width="200" height="250" src="../img/${user.profileImage}" alt="">
+              <img
+                  class="rounded"
+                  width="200" height="250"
+                  src="${user.profileImage}"
+                  alt="profile pic"
+                  style="object-fit: cover;"
+              >
           </div> <!-- end .col-4 -->
           <div class="col-12 col-md-8 col-lg-10">
             <h4 class="display-6 fw-normal mt-2 text-center">${user.firstName} ${user.lastName}</h4>
