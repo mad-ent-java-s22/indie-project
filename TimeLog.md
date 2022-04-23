@@ -19,13 +19,13 @@
 | 4/14|                                                |  0  |                      |
 | 4/15|                                                |  0  |                      |
 | 4/16| JMS studying                                   |  2  |                      |
-| 4/17|                                                |    |                      |
-| 4/18|                                                |    |                      |
-| 4/19|                                                |    |                      |
-| 4/20|                                                |    |                      |
-| 4/21|                                                |    |                      |
-| 4/22|                                                |    |                      |
-| 4/23|                                                |    |                      |
+| 4/17| clojure presentation prep                      |  3  |                      |
+| 4/18| clojure presentation prep                      |  3  |                      |
+| 4/19| clojure presentation prep                      |  2  |                      |
+| 4/20| clojure presentation prep                      |  5  |                      |
+| 4/21| indie project - Open AI API                    |  4  |                      |
+| 4/22| indie project - Open AI API                    |  4  |                      |
+| 4/23| indie project - img file location & formatting |  1  |                      |
 | 4/24|                                                |    |                      |
 | 4/25|                                                |    |                      |
 | 4/26|                                                |    |                      |
