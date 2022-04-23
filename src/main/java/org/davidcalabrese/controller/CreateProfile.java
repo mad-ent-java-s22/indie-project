@@ -48,7 +48,7 @@ public class CreateProfile extends HttpServlet  {
         // save user in session
         session.setAttribute("user", insertedUser);
 
-        String url = "/jsp/all_posts.jsp";
+        String url = "/all_posts.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(req, resp);
     }
