@@ -51,7 +51,7 @@
                             <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">${user.firstName} ${user.lastName}</h4>
                           </c:otherwise>
                         </c:choose>
-                        <p class="mb-0">@${userName}</p>
+                        <p class="mb-0 text-start">@${userName}</p>
                       </div>
                       <div class="text-center text-sm-right">
                         <c:if test="${not empty user.dateCreated}">

@@ -43,7 +43,7 @@
                         <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                           <div class="text-center text-sm-left mb-2 mb-sm-0">
                             <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">New User</h4>
-                            <p class="mb-0">@${userName}</p>
+                            <p class="mb-0 text-start">@${userName}</p>
                           </div>
                           <div class="text-center text-sm-right">
                             <c:if test="${not empty user.dateCreated}">
@@ -150,7 +150,7 @@
                             <c:if test="${not empty user.firstName}">
                               <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">${user.firstName} ${user.lastName}</h4>
                             </c:if>
-                            <p class="mb-0">@${userName}</p>
+                            <p class="mb-0 text-start">@${userName}</p>
                           </div>
                           <div class="text-center text-sm-right">
                             <c:if test="${not empty user.dateCreated}">
