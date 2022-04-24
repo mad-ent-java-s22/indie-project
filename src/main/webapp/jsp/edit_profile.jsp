@@ -77,6 +77,23 @@
                           <div class="form-floating mb-3">
                             <input
                                 type="text"
+                                name="profile_image"
+                                id="profile_image"
+                                class="form-control"
+                                placeholder="Profile URL"
+                                <c:if test="${not empty user.profileImage}">
+                                  value="${user.profileImage}"
+                                </c:if>
+                            />
+                            <label for="profile_image">Profile Image URL</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-floating mb-3">
+                            <input
+                                type="text"
                                 name="first_name"
                                 id="first_name"
                                 class="form-control"

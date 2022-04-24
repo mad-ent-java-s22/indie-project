@@ -35,6 +35,7 @@ public class UpdateProfile extends HttpServlet  {
         user.setFirstName(req.getParameter("first_name"));
         user.setLastName(req.getParameter("last_name"));
         user.setSummary(req.getParameter("about"));
+        user.setProfileImage(req.getParameter("profile_image"));
 
         // update user in db
         userDao.saveOrUpdate(user);
