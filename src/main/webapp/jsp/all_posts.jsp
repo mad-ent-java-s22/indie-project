@@ -45,11 +45,11 @@
                             <div class="col-auto d-none d-md-block" id="post-img">
                                 <a href="users/${post.user.id}">
                                     <img
-                                            class="bd-placeholder-img"
-                                            width="200" height="250"
-                                            src="${post.user.profileImage}"
-                                            alt="profile pic"
-                                            style="object-fit: cover;"
+                                        class="bd-placeholder-img"
+                                        width="200" height="250"
+                                        src="${post.user.profileImage}"
+                                        alt="profile pic"
+                                        style="object-fit: cover;"
                                     >
                                 </a>
 

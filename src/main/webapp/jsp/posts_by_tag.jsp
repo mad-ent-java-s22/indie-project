@@ -53,8 +53,10 @@
                   <img
                       class="bd-placeholder-img"
                       width="200" height="250"
-                      src="<%=request.getContextPath()%>/img/${post.user.profileImage}"
-                      alt="profile pic">
+                      src="${post.user.profileImage}"
+                      alt="profile pic"
+                      style="object-fit: cover;"
+                  >
                 </a>
 
               </div> <!-- end #post-img -->

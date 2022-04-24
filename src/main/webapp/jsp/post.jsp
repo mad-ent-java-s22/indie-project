@@ -16,7 +16,7 @@
 <div class="container py-4" id="outer-container">
   <div class="container" id="inner-container">
     <jsp:include page = "/jsp/components/nav.jsp" />
-    <main class="container">
+    <main class="container mx-3">
       <div class="row g-5">
         <div class="col-lg-8">
           <article class="blog-post">
