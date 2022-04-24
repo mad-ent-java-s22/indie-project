@@ -78,7 +78,7 @@
                     width="62"
                     height="50"
                     class="rounded-pill me-2 mb-3"
-                    style="object-fit: cover;"
+                    style="object-fit: contain;"
                 >
                 <form class="w-100" id="form" method="POST" action="<%=request.getContextPath()%>/create_comment">
                   <div class="d-flex flex-row justify-content-center align-items-center">
