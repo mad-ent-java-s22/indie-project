@@ -52,12 +52,6 @@
                           </c:otherwise>
                         </c:choose>
                         <p class="mb-0">@${userName}</p>
-                        <div class="mt-2">
-                          <button class="btn btn-primary" type="button">
-                            <i class="fa fa-fw fa-camera"></i>
-                            <span>Change Photo</span>
-                          </button>
-                        </div>
                       </div>
                       <div class="text-center text-sm-right">
                         <c:if test="${not empty user.dateCreated}">
