@@ -56,7 +56,7 @@
                   <tags:localDate date="${post.dateCreated}" pattern='${"MMM d, yyyy \'at\' h:mm a"}'/>
                 </div>  <!-- end .mb-1 -->
                 <p class="card-text mb-auto">${post.summary}</p>
-                <a href="../posts/${post.id}" class="link-secondary">Read More</a>
+                <a href="../posts/${post.id}" class="link-secondary stretched-link">Read More</a>
               </div> <!-- end .col -->
             </div> <!-- end .row -->
           </section> <!-- end .col-md-6 -->
