@@ -101,6 +101,7 @@ INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('science', 'orange');
 INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('health', 'brown');
 INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('travel', 'grey');
 INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('art', 'blue-grey');
+INSERT INTO `blog`.`tag` (`name`, `color`) VALUES ('ai-generated', 'dark-red');
 
 -- inserts 5 test posts, each with a tag or two
 INSERT INTO `blog`.`post` (`title`, `content`, `user_id`, `summary`) VALUES ('Masks in school',
