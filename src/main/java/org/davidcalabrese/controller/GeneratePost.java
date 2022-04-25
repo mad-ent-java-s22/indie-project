@@ -48,13 +48,10 @@ public class GeneratePost extends HttpServlet {
             e.printStackTrace();
         }
 
-
         assert response != null;
         String postText = response.getChoices().get(0).getText();
 
-        String postTextWithParagraphBreaks = postText.replace("\\n\\n", "<p>");
-
-        log("replaced text: " + postTextWithParagraphBreaks);
+        String postTextWithParagraphBreaks = postText.replace("\n\n", "<p>");
 
         req.setAttribute("postText", postTextWithParagraphBreaks);
         req.setAttribute("possibleTags", possibleTags);
