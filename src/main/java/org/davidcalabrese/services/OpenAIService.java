@@ -73,7 +73,6 @@ public class OpenAIService implements PropertiesLoader {
      * @throws InterruptedException - for when thread is interrupted
      */
     @POST
-    // The Java method will produce content identified by the MIME Media type "text/plain"
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
     public OpenAIResponse getPostOnTopic(@FormParam("tags") List<String> topics) throws IOException, InterruptedException {
