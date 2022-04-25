@@ -82,7 +82,7 @@ public class OpenAIService implements PropertiesLoader {
 
         var values = new HashMap<String, Object>() {{
             put("prompt", prompt);
-            put("max_tokens", 300);
+            put("max_tokens", 600);
             put("temperature", 0.9);
             put("stop", "\"\"\"");
         }};
