@@ -52,7 +52,9 @@ public class GeneratePost extends HttpServlet {
         assert response != null;
         String postText = response.getChoices().get(0).getText();
 
-        req.setAttribute("postText", postText);
+        String postTextWithParagraphBreaks = postText.replace("\\n\\n", "<p>");
+
+        req.setAttribute("postText", postTextWithParagraphBreaks);
         req.setAttribute("possibleTags", possibleTags);
         req.setAttribute("chosenTags", tagList);
 
