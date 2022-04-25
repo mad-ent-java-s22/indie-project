@@ -44,6 +44,9 @@ public class Util {
             Tag tag = tags.get(0);
             tagList.add(tag);
         }
+
+        Tag aiGeneratedTag = tagDao.getById(22);
+        tagList.add(aiGeneratedTag);
         return tagList;
     }
 
