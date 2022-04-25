@@ -86,7 +86,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         HttpSession session = req.getSession();
 
         if (authCode == null) {
-            //TODO forward to an error page or back to the login
+            req.getRequestDispatcher("/error").forward(req, resp);
         } else {
             HttpRequest authRequest = buildAuthRequest(authCode);
             try {
@@ -111,10 +111,10 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 }
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
-                //TODO forward to an error page
+                req.getRequestDispatcher("/error").forward(req, resp);
             } catch (InterruptedException e) {
                 logger.error("Error getting token from Cognito oauth url " + e.getMessage(), e);
-                //TODO forward to an error page
+                req.getRequestDispatcher("/error").forward(req, resp);
             }
         }
 
@@ -158,6 +158,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         ObjectMapper mapper = new ObjectMapper();
         CognitoTokenHeader tokenHeader = mapper.readValue(CognitoJWTParser.getHeader(tokenResponse.getIdToken()).toString(), CognitoTokenHeader.class);
 
+        // TODO: something with these?
         // Header should have kid and alg- https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-id-token.html
         String keyId = tokenHeader.getKid();
         String alg = tokenHeader.getAlg();
@@ -197,9 +198,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         List<String> userInfo = new ArrayList<>();
         userInfo.add(userName);
         userInfo.add(email);
-
-        // TODO decide what you want to do with the info!
-        // for now, I'm just returning username for display back to the browser
 
         return userInfo;
     }
