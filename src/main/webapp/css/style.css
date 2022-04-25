@@ -63,6 +63,8 @@
 .text-color-grey:active, .text-color-grey:hover {color: #5d5d5d }
 .text-color-blue-grey {color: #607d8b }     /* art  */
 .text-color-blue-grey:active, .text-color-blue-grey:hover {color: #394852 }
+.text-color-dark-red {color: #4f1818 }     /* AI-generated  */
+.text-color-blue-grey:active, .text-color-blue-grey:hover {color: #280808 }
 
 .user-info {
     background:#fcfcfc;
