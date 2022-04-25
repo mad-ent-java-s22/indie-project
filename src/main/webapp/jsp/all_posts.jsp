@@ -32,12 +32,14 @@
                     </a>
                   </c:forEach>
                 </div>  <!-- end #tags -->
-                <h3 class="mb-0">${post.title}</h3>
-                <div class="mb-1 text-muted">
-                  <tags:localDate date="${post.dateCreated}" pattern='${"MMM d, yyyy"}'/>
-                </div>  <!-- end .mb-1 -->
-                <p class="card-text mb-auto">${post.summary}</p>
-                <a href="posts/${post.id}" class="link-secondary">Read More</a>
+                <div class="position-relative">
+                  <h3 class="mb-0">${post.title}</h3>
+                  <div class="mb-1 text-muted">
+                    <tags:localDate date="${post.dateCreated}" pattern='${"MMM d, yyyy"}'/>
+                  </div>  <!-- end .mb-1 -->
+                  <p class="card-text mb-auto">${post.summary}</p>
+                  <a href="posts/${post.id}" class="link-secondary stretched-link">Read More</a>
+                </div> <!-- end .position-relative -->
               </div> <!-- end .col -->
               <div class="col-auto d-none d-md-block" id="post-img">
                 <a href="users/${post.user.id}">
@@ -49,7 +51,6 @@
                       style="object-fit: cover;"
                   >
                 </a>
-
               </div> <!-- end #post-img -->
             </div> <!-- end .row -->
           </div> <!-- end .col-12 col-xxl-6 -->
