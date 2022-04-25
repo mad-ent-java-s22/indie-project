@@ -32,14 +32,13 @@ public class DisplayPostsByTag extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao<Tag> tagDao = new GenericDao<>(Tag.class);
-
-        int tagId = getId(req.getPathInfo());
-
-        Tag searchedTag = tagDao.getById(tagId);
+        int tagId = getId(req.getPathInfo());    // get tag id from url
+        Tag searchedTag = tagDao.getById(tagId); // get tag with id
 
         Set<Post> postsWithSearchedTag = searchedTag.getPosts();
+        // convert from set to list to sort
         List<Post> postList = new java.util.ArrayList<>(List.copyOf(postsWithSearchedTag));
-
+        // sort list reverse chronologically (newest first)
         postList.sort(Comparator.comparing(Post::getDateCreated).reversed());
 
         req.setAttribute("tag", searchedTag);
