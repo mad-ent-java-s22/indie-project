@@ -54,6 +54,8 @@ public class GeneratePost extends HttpServlet {
 
         String postTextWithParagraphBreaks = postText.replace("\\n\\n", "<p>");
 
+        log("replaced text: " + postTextWithParagraphBreaks);
+
         req.setAttribute("postText", postTextWithParagraphBreaks);
         req.setAttribute("possibleTags", possibleTags);
         req.setAttribute("chosenTags", tagList);
