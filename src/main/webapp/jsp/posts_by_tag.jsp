@@ -49,12 +49,6 @@
                       class="link-secondary stretched-link"
                   >Read More</a>
                 </div> <!-- end .position-relative -->
-                <h3 class="mb-0">${post.title}</h3>
-                <div class="mb-1 text-muted">
-                  <tags:localDate date="${post.dateCreated}" pattern='${"MMM d, yyyy"}'/>
-                </div>  <!-- end .mb-1 -->
-                <p class="card-text mb-auto">${post.summary}</p>
-                <a href="<%=request.getContextPath()%>/posts/${post.id}" class="link-secondary">Read More</a>
               </div> <!-- end .col -->
               <div class="col-auto d-none d-md-block" id="post-img">
                 <a href="<%=request.getContextPath()%>/users/${post.user.id}">
