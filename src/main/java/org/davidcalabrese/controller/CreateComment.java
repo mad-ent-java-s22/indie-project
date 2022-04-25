@@ -45,8 +45,7 @@ public class CreateComment extends HttpServlet {
 
         commentDao.insert(newComment);
 
-        req.setAttribute("postId", commentedPostId);
-        String url = "/jsp/comment_added.jsp";
+        String url = "/posts/" + commentedPostId;
         getServletContext().getRequestDispatcher(url).forward(req, resp);
     }
 }

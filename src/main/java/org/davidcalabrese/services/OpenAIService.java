@@ -77,7 +77,6 @@ public class OpenAIService implements PropertiesLoader {
     @Produces(MediaType.APPLICATION_JSON)
     public OpenAIResponse getPostOnTopic(@FormParam("tags") List<String> topics) throws IOException, InterruptedException {
         loadProperties();
-        logger.info("Key: " + API_KEY);
         String prompt = buildPromptFromTopicList(topics);
 
         var values = new HashMap<String, Object>() {{
