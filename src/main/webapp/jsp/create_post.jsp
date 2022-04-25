@@ -1,9 +1,7 @@
 <%--
-  Created by IntelliJ IDEA.
   User: david
   Date: 3/11/2022
   Time: 6:48 PM
-  To change this template use File | Settings | File Templates.
 --%>
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

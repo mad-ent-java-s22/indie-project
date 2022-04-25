@@ -1,7 +1,9 @@
 <jsp:useBean id="post" scope="request" type="org.davidcalabrese.entity.Post"/>
-<%--  User: david
-      Date: 2/24/2022
-      Time: 12:12 PM  --%>
+<%--
+  User: david
+  Date: 2/24/2022
+  Time: 12:12 PM
+--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

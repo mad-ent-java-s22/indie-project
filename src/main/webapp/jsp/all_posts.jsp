@@ -1,9 +1,7 @@
 <%--
-  Created by IntelliJ IDEA.
   User: david
   Date: 2/21/2022
   Time: 4:33 PM
-  To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
