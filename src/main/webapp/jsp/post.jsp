@@ -120,7 +120,7 @@
                         <div class="w-100">
                           <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex flex-row align-items-center">
-                              <span class="mr-2">${comment.user.userName}</span>
+                              <span class="mr-2">${comment.user.firstName} ${comment.user.lastName}</span>
                             </div>
                             <small>
                               <tags:localDate date="${comment.dateCreated}" pattern='${"MMM d, yyyy"}'/>
