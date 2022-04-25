@@ -37,6 +37,7 @@ public class GeneratePost extends HttpServlet {
 
         List<String> tagStringList = new ArrayList<>(Arrays.asList(tagArray));
         List<Tag> tagList = Util.makeTagList(tagArray);
+
         List<Tag> possibleTags  = tagDao.getAll();
 
         OpenAIService service = new OpenAIService();
