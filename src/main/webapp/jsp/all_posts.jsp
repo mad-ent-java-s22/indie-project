@@ -52,7 +52,7 @@
 
                             </div> <!-- end #post-img -->
                         </div> <!-- end .row -->
-                    </div> <!-- end .col-md-6 -->
+                    </div> <!-- end .col-12 col-xxl-6 -->
                 </c:forEach>
             </div> <!-- end .row mb-2 -->
         </main>
