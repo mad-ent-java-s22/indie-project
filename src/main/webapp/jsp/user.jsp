@@ -40,7 +40,7 @@
       <c:if test="${not empty user.posts}">
       <div class="row mb-2">
         <h2 class="display-6 text-center p-2">${user.firstName}'s Recent Posts</h2>
-        <c:forEach var="post" items="${user.posts}">
+        <c:forEach var="post" items="${posts}">
           <section class="col-12 col-xl-6">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
               <div class="col p-4 d-flex flex-column position-static">
