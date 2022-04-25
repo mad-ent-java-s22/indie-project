@@ -1,7 +1,6 @@
 <%--
-  User: david
-  Date: 3/23/2022
-  Time: 10:20 AM
+  Author: David Calabrese
+  Date: 3/23/2022, 10:20 AM
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

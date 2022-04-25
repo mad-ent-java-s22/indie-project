@@ -1,9 +1,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%--
-  User: david
-  Date: 3/29/2022 10:46 AM
-  Time: 10:46 AM
+  Author: David Calabrese
+  Date: 3/29/2022 10:46 AM, 10:46 AM
 --%>
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

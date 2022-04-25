@@ -1,7 +1,6 @@
 <%--
-  User: david
-  Date: 2/21/2022
-  Time: 5:50 PM
+  Author: David Calabrese
+  Date: 2/21/2022, 5:50 PM
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <header class="pb-3 mb-4 border-bottom">
