@@ -52,12 +52,11 @@
                                 </small>
                               </div>
                             </c:if>
-
                           </div>
                         </div>
                       </div>
                       <div class="pt-3">
-                        <form class="form" method="POST" action="/create_profile" novalidate="">
+                        <form class="form" method="POST" action="/update_profile" novalidate="">
                           <div class="row">
                             <div class="col">
                               <input
