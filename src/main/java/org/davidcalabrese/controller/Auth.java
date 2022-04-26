@@ -107,7 +107,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                     GenericDao<User> userDao = new GenericDao<>(User.class);
                     userDao.insert(newUser);
                     session.setAttribute("user", newUser);
-                    req.getRequestDispatcher("/jsp/profile.jsp").forward(req, resp);
+                    req.getRequestDispatcher("/display_edit_profile").forward(req, resp);
                 }
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
