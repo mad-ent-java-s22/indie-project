@@ -36,13 +36,13 @@ CREATE TABLE tag (
 CREATE TABLE user (
                       id int NOT NULL AUTO_INCREMENT,
                       user_name varchar(50) NOT NULL,
-                      first_name varchar(50) NOT NULL,
-                      last_name varchar(75) NOT NULL,
+                      first_name varchar(50),
+                      last_name varchar(75),
                       date_created timestamp DEFAULT CURRENT_TIMESTAMP,
                       email varchar(255) NOT NULL,
                       access_privileges varchar(5) DEFAULT 'user',
                       profile_image varchar(255) DEFAULT 'default-profile-pic.jpg',
-                      summary text NOT NULL,
+                      summary text,
                       CONSTRAINT user_pk PRIMARY KEY (id)
 );
 
