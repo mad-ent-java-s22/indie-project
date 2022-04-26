@@ -13,8 +13,6 @@ import org.davidcalabrese.entity.User;
 import org.davidcalabrese.persistence.GenericDao;
 import org.davidcalabrese.util.PropertiesLoader;
 
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -102,12 +100,14 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                     logger.info("User " + userName + "exists in db...dispatching to index.jsp");
                     User user = getUser(userName);
                     session.setAttribute("user", user);
-                    RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
-                    dispatcher.forward(req, resp);
+                    req.getRequestDispatcher("index.jsp").forward(req, resp);
                 } else {
                     logger.info("User " + userName + "does not exist in db...dispatching to profile.jsp");
-                    RequestDispatcher dispatcher = req.getRequestDispatcher("/jsp/profile.jsp");
-                    dispatcher.forward(req, resp);
+                    User newUser = new User(userName, email);
+                    GenericDao<User> userDao = new GenericDao<>(User.class);
+                    userDao.insert(newUser);
+                    session.setAttribute("user", newUser);
+                    req.getRequestDispatcher("/jsp/profile.jsp").forward(req, resp);
                 }
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
