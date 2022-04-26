@@ -19,7 +19,7 @@
     <jsp:include page = "/jsp/components/nav.jsp" />
   <main>
     <c:choose>
-      <c:when test="${empty user}">
+      <c:when test="${showProfileForm == true}">
         <!-- if user hasn't been added to db yet - display form (with username and email filled in from cognito values) -->
         <div class="row flex-lg-nowrap">
           <div class="col">
@@ -35,19 +35,33 @@
                                 class="d-flex justify-content-center align-items-center rounded"
                                 style="height: 140px; background-color: rgb(233, 236, 239)"
                             >
-                              <img src="../img/default_profile_pic.jpg" style="height: 140px; width: 120px" alt="" />
+                          <c:choose>
+                            <c:when test="${empty user.profileImage}">
+                              <img src="../img/default_profile_pic.jpg" style="height: 140px; width: 120px" alt="profile pic" />
+                            </c:when>
+                          <c:otherwise>
+                              <img src="${user.profileImage}" style="height: 140px; width: 120px; object-fit: cover;" alt="profile pic" />
+                            </c:otherwise>
+                          </c:choose>
                             </div>
                           </div>
                         </div>
                         <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                           <div class="text-center text-sm-left mb-2 mb-sm-0">
-                            <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">New User</h4>
+                            <c:choose>
+                              <c:when test="${empty user}">
+                                <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">New User</h4>
+                              </c:when>
+                              <c:otherwise>
+                                <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">${user.firstName} ${user.lastName}</h4>
+                              </c:otherwise>
+                            </c:choose>
                             <p class="mb-0 text-start">@${userName}</p>
                           </div>
                           <div class="text-center text-sm-right">
                             <c:if test="${not empty user.dateCreated}">
                               <div class="text-muted">
-                                <small>Joined
+                                <small>Joined Otter
                                   <tags:localDate date="${user.dateCreated}" pattern='${"MMM d, yyyy"}'/>
                                 </small>
                               </div>
@@ -234,7 +248,7 @@
                           </div>
                           <div class="row mt-3">
                             <div class="col d-flex justify-content-end">
-                              <a class="btn btn-primary" href="<%=request.getContextPath()%>/jsp/edit_profile.jsp">Edit Profile</a>
+                              <a class="btn btn-primary" href="<%=request.getContextPath()%>/display_edit_profile">Edit Profile</a>
                             </div>
                           </div>
                         </section>
