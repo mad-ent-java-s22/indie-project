@@ -3,7 +3,6 @@ package org.davidcalabrese.controller;
 import org.davidcalabrese.entity.User;
 import org.davidcalabrese.persistence.GenericDao;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -49,7 +48,6 @@ public class CreateProfile extends HttpServlet  {
         session.setAttribute("user", insertedUser);
 
         String url = "/all_posts.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(req, resp);
+        getServletContext().getRequestDispatcher(url).forward(req, resp);
     }
 }
