@@ -117,7 +117,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 req.getRequestDispatcher("/error").forward(req, resp);
             }
         }
-
     }
 
     /**
