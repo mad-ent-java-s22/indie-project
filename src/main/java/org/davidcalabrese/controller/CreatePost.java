@@ -2,7 +2,6 @@ package org.davidcalabrese.controller;
 
 import org.davidcalabrese.entity.Post;
 import org.davidcalabrese.entity.Tag;
-import org.davidcalabrese.entity.User;
 import org.davidcalabrese.persistence.GenericDao;
 import org.davidcalabrese.util.Util;
 
@@ -15,8 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -37,9 +34,6 @@ public class CreatePost extends HttpServlet  {
         // get userName and email that from cognito, stored in session
         HttpSession session = req.getSession();
         String userName = (String) session.getAttribute("userName");
-        User user = Util.getUser(userName);
-        log("userName: " + userName);
-        log("user: " + user.toString());
 
         GenericDao<Post> postDao = new GenericDao<>(Post.class);
 
