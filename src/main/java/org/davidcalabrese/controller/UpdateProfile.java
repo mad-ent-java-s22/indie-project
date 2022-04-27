@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.time.LocalDate;
 
 /**
  *  Contains method for processing edit profile page
@@ -34,9 +33,6 @@ public class UpdateProfile extends HttpServlet  {
         user.setSummary(req.getParameter("about"));
         user.setProfileImage(req.getParameter("profile_image"));
 
-        if (user.getDateCreated() == null) {    // only set dateCreated field if it's null
-            user.setDateCreated(LocalDate.now());
-        }
         userDao.saveOrUpdate(user); // update user in db
 
         String url = "/jsp/profile_updated.jsp";
