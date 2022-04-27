@@ -2,6 +2,7 @@ package org.davidcalabrese.controller;
 
 import org.davidcalabrese.entity.User;
 import org.davidcalabrese.persistence.GenericDao;
+import org.davidcalabrese.util.Util;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- *  Contains method for processing edit profile page
+ *  Deletes a user's profile
  */
-@WebServlet(name = "DeleteProfile", urlPatterns = { "/delete_profile" })
+@WebServlet(name = "DeleteProfile", urlPatterns = { "/delete_profile/*" })
 public class DeleteProfile extends HttpServlet  {
   /**
    * Called by server to allow servlet to handle a POST request
@@ -24,11 +25,12 @@ public class DeleteProfile extends HttpServlet  {
    * @throws IOException      if the request for the GET could not be handled
    */
   @Override
-  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    User user = (User) req.getSession().getAttribute("user"); // get user from session
-    GenericDao<User> userDao = new GenericDao<>(User.class); // create userDao, fetch user from db
+  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    int userId = Util.getId(req.getPathInfo());
+    GenericDao<User> userDao = new GenericDao<>(User.class);
 
-    userDao.delete(user); // delete user in db
+    User userToDelete = userDao.getById(userId);
+    userDao.delete(userToDelete); // delete user in db
     req.getSession().invalidate();  // end session
 
     String url = "/jsp/profile_deleted.jsp";  // forward to confirmation pg

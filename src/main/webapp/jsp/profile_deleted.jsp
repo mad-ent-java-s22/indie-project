@@ -17,11 +17,13 @@
   <div class="container" id="inner-container">
     <jsp:include page = "/jsp/components/nav.jsp" />
     <main class="container">
-      <div class="p-4 p-md-5 mb-4 text-white rounded bg-success">
+      <div class="p-4 p-md-5 mb-4 text-white rounded bg-info">
         <div class="col-md-12 px-0">
-          <h1 class="display-4 w-100">Your profile has been updated!</h1>
+          <h1 class="display-4 w-100">Your profile has been deleted!</h1>
           <p class="lead my-3 fst-italic">Thank you for using Otter.</p>
-          <p class="lead mb-0"><a href="<%=request.getContextPath()%>/all_posts" class="btn btn-dark">Go Home</a></p>
+            <a class="btn btn-secondary" href="http://blogenv2-env.eba-zg5dcynj.us-east-2.elasticbeanstalk.com/">
+              Go Back Home
+            </a>
         </div>
       </div>
     </main>

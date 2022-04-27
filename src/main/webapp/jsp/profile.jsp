@@ -305,7 +305,7 @@
             <a
                 type="button"
                 class="btn btn-danger"
-                href="<%=request.getContextPath()%>/delete_profile"
+                href="<%=request.getContextPath()%>/delete_profile/${user.id}"
             >
               Confirm Delete
             </a>
