@@ -75,13 +75,15 @@ public class User {
     }
 
     /**
-     * Constructor that takes userName and email
+     * Constructor that takes userName, email & dateCreated
      *
      * @param userName string which identifies a user in application
+     * @param dateCreated date in which account is created
      * @param email user's email address
      */
-    public User(String userName, String email) {
+    public User(String userName, LocalDate dateCreated, String email) {
         this.userName = userName;
+        this.dateCreated = dateCreated;
         this.email = email;
     }
 

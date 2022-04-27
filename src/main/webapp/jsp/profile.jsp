@@ -11,13 +11,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
+  <script src="<%=request.getContextPath()%>/js/tinymce/js/tinymce/tinymce.min.js"></script>
+  <script>tinymce.init({ selector: 'textarea#about', });</script>
 </head>
 <body>
 <div class="container py-4" id="outer-container">
     <jsp:include page = "/jsp/components/nav.jsp" />
   <main>
     <c:choose>
-      <c:when test="${empty user}">
+      <c:when test="${showProfileForm == true}">
         <!-- if user hasn't been added to db yet - display form (with username and email filled in from cognito values) -->
         <div class="row flex-lg-nowrap">
           <div class="col">
@@ -33,69 +35,126 @@
                                 class="d-flex justify-content-center align-items-center rounded"
                                 style="height: 140px; background-color: rgb(233, 236, 239)"
                             >
-                              <img src="../img/default_profile_pic.jpg" style="height: 140px; width: 120px" alt="" />
+                          <c:choose>
+                            <c:when test="${empty user.profileImage}">
+                              <img src="../img/default_profile_pic.jpg" style="height: 140px; width: 120px" alt="profile pic" />
+                            </c:when>
+                          <c:otherwise>
+                              <img src="${user.profileImage}" style="height: 140px; width: 120px; object-fit: cover;" alt="profile pic" />
+                            </c:otherwise>
+                          </c:choose>
                             </div>
                           </div>
                         </div>
                         <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                           <div class="text-center text-sm-left mb-2 mb-sm-0">
-                            <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">New User</h4>
+                            <c:choose>
+                              <c:when test="${empty user}">
+                                <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">New User</h4>
+                              </c:when>
+                              <c:otherwise>
+                                <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">${user.firstName} ${user.lastName}</h4>
+                              </c:otherwise>
+                            </c:choose>
                             <p class="mb-0 text-start">@${userName}</p>
                           </div>
                           <div class="text-center text-sm-right">
                             <c:if test="${not empty user.dateCreated}">
                               <div class="text-muted">
-                                <small>Joined
+                                <small>Joined Otter
                                   <tags:localDate date="${user.dateCreated}" pattern='${"MMM d, yyyy"}'/>
                                 </small>
                               </div>
                             </c:if>
-
                           </div>
                         </div>
                       </div>
                       <div class="pt-3">
-                        <form class="form" method="POST" action="/create_profile" novalidate="">
+                        <form class="form" method="POST" action="/update_profile" novalidate="">
                           <div class="row">
                             <div class="col">
-                              <input
-                                  type="text"
-                                  name="first_name"
-                                  class="form-control"
-                                  placeholder="First name"
-                                  aria-label="First name"
-                              />
+                              <div class="form-floating mb-3">
+                                <input
+                                    type="text"
+                                    name="profile_image"
+                                    id="profile_image"
+                                    class="form-control"
+                                    placeholder="Profile URL"
+                                    <c:if test="${not empty user.profileImage}">
+                                      value="${user.profileImage}"
+                                    </c:if>
+                                />
+                                <label for="profile_image">Profile Image URL</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-floating mb-3">
+                                <input
+                                    type="text"
+                                    name="first_name"
+                                    id="first_name"
+                                    class="form-control"
+                                    placeholder="First name"
+                                    aria-label="First name"
+                                    <c:if test="${not empty user.firstName}">
+                                      value="${user.firstName}"
+                                    </c:if>
+                                />
+                                <label for="first_name">First name</label>
+                              </div>
                             </div>
                             <div class="col">
-                              <input
-                                  name="last_name"
-                                  type="text"
-                                  class="form-control"
-                                  placeholder="Last name"
-                                  aria-label="Last name"
-                              />
+                              <div class="form-floating mb-3">
+                                <input
+                                    type="text"
+                                    name="last_name"
+                                    id="last_name"
+                                    class="form-control"
+                                    placeholder="Last name"
+                                    aria-label="Last name"
+                                    <c:if test="${not empty user.lastName}">
+                                      value="${user.lastName}"
+                                    </c:if>
+                                />
+                                <label class="form-label" for="last_name">Last name</label>
+                              </div>
                             </div>
                           </div>
                           <fieldset disabled="disabled">
                             <div class="row mt-3">
                               <div class="col">
-                                <input name="userName" type="text" class="form-control" placeholder="username" value="${userName}" />
+                                <div class="form-floating mb-3">
+                                  <input
+                                      name="userName"
+                                      id="userName"
+                                      type="text"
+                                      class="form-control"
+                                      placeholder="username"
+                                      value="${userName}" />
+                                  <label class="form-label" for="userName">username</label>
+                                </div>
                               </div>
                               <div class="col">
-                                <input
-                                    value="${email}"
-                                    name="email"
-                                    type="email"
-                                    class="form-control"
-                                    placeholder="email"
-                                    aria-label="email"
-                                />
+                                <div class="form-floating mb-3">
+                                  <input
+                                      type="email"
+                                      id="email"
+                                      name="email"
+                                      value="${email}"
+                                      class="form-control"
+                                      placeholder="email"
+                                      aria-label="email"
+                                  />
+                                  <label class="form-label" for="email">Email</label>
+                                </div>
                               </div>
                             </div>
                           </fieldset>
                           <div class="row mt-3">
                             <div class="col">
-                              <label for="about">User Summary</label>
+                              <label class="form-label" for="about">User Summary</label>
                               <textarea
                                   name="about"
                                   id="about"
@@ -103,7 +162,7 @@
                                   rows="10"
                                   class="form-control"
                                   style="height: 109px;"
-                              ></textarea>
+                              ><c:if test="${not empty user.summary}">${user.summary}</c:if></textarea>
                             </div>
                           </div>
 
@@ -187,10 +246,9 @@
                               <p class="user-info p-3">${user.summary}</p>
                             </div>
                           </div>
-
                           <div class="row mt-3">
                             <div class="col d-flex justify-content-end">
-                              <a class="btn btn-primary" href="<%=request.getContextPath()%>/jsp/edit_profile.jsp">Edit Profile</a>
+                              <a class="btn btn-primary" href="<%=request.getContextPath()%>/display_edit_profile">Edit Profile</a>
                             </div>
                           </div>
                         </section>
@@ -204,9 +262,7 @@
         </div>
       </c:otherwise>
     </c:choose>
-
   </main>
-
   </div> <!-- end #outer-container -->
   <jsp:include page="/jsp/components/footer.jsp" />
 </body>

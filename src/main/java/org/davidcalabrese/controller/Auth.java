@@ -13,8 +13,6 @@ import org.davidcalabrese.entity.User;
 import org.davidcalabrese.persistence.GenericDao;
 import org.davidcalabrese.util.PropertiesLoader;
 
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,6 +35,7 @@ import java.security.PublicKey;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.RSAPublicKeySpec;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -102,12 +101,14 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                     logger.info("User " + userName + "exists in db...dispatching to index.jsp");
                     User user = getUser(userName);
                     session.setAttribute("user", user);
-                    RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
-                    dispatcher.forward(req, resp);
+                    req.getRequestDispatcher("index.jsp").forward(req, resp);
                 } else {
                     logger.info("User " + userName + "does not exist in db...dispatching to profile.jsp");
-                    RequestDispatcher dispatcher = req.getRequestDispatcher("/jsp/profile.jsp");
-                    dispatcher.forward(req, resp);
+                    User newUser = new User(userName, LocalDate.now(), email);
+                    GenericDao<User> userDao = new GenericDao<>(User.class);
+                    userDao.insert(newUser);
+                    session.setAttribute("user", newUser);
+                    req.getRequestDispatcher("/display_edit_profile").forward(req, resp);
                 }
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
@@ -117,7 +118,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 req.getRequestDispatcher("/error").forward(req, resp);
             }
         }
-
     }
 
     /**
@@ -134,16 +134,9 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
         response = client.send(authRequest, HttpResponse.BodyHandlers.ofString());
 
-
-        logger.debug("Response headers: " + response.headers().toString());
-        logger.debug("Response body: " + response.body().toString());
-
         ObjectMapper mapper = new ObjectMapper();
-        TokenResponse tokenResponse = mapper.readValue(response.body().toString(), TokenResponse.class);
-        logger.debug("Id token: " + tokenResponse.getIdToken());
 
-        return tokenResponse;
-
+        return mapper.readValue(response.body().toString(), TokenResponse.class);
     }
 
     /**
@@ -158,7 +151,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         ObjectMapper mapper = new ObjectMapper();
         CognitoTokenHeader tokenHeader = mapper.readValue(CognitoJWTParser.getHeader(tokenResponse.getIdToken()).toString(), CognitoTokenHeader.class);
 
-        // TODO: something with these?
         // Header should have kid and alg- https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-id-token.html
         String keyId = tokenHeader.getKid();
         String alg = tokenHeader.getAlg();
