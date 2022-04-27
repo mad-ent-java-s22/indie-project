@@ -8,10 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Properties;
 
 /**
- *  Contains method for logging out userr
+ *  Contains method for logging out user
  */
 @WebServlet(urlPatterns = {"/logOut"})
 /* Begins the authentication process using AWS Cognito */
