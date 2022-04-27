@@ -35,7 +35,9 @@ public class DisplayAllPosts extends HttpServlet {
         List<Post> posts = postDao.getAll();
         Collections.reverse(posts);
 
-        req.setAttribute("posts", posts);
+        List<Post> tenMostRecentPosts = posts.subList(0, 10);
+
+        req.setAttribute("posts", tenMostRecentPosts);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(req, resp);
     }
