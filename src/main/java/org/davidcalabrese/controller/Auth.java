@@ -35,6 +35,7 @@ import java.security.PublicKey;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.RSAPublicKeySpec;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -103,7 +104,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                     req.getRequestDispatcher("index.jsp").forward(req, resp);
                 } else {
                     logger.info("User " + userName + "does not exist in db...dispatching to profile.jsp");
-                    User newUser = new User(userName, email);
+                    User newUser = new User(userName, LocalDate.now(), email);
                     GenericDao<User> userDao = new GenericDao<>(User.class);
                     userDao.insert(newUser);
                     session.setAttribute("user", newUser);
