@@ -23,7 +23,7 @@
             <c:when test="${empty userName}">
               <h1 class="display-4 text-white">Welcome to <span class="o-glyph">O</span>tter</h1>
               <p class="col-md-8 fs-4 text-white">Ethical social media.</p>
-              <a href="/logIn" class="btn btn-primary btn-lg" type="button">Sign in or Sign Up</a>
+              <a href="/logIn" class="btn btn-success btn-lg" type="button">Sign In or Sign Up</a>
             </c:when>
             <c:otherwise>
               <div class="d-flex justify-content-center align-items-center flex-column">
