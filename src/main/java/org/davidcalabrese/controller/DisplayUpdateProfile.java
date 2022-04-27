@@ -10,8 +10,8 @@ import java.io.IOException;
 /**
  *  Contains method for displaying the profile form
  */
-@WebServlet(name = "DisplayEditProfile", urlPatterns = { "/display_edit_profile" })
-public class DisplayEditProfile extends HttpServlet {
+@WebServlet(name = "DisplayUpdateProfile", urlPatterns = { "/display_update_profile" })
+public class DisplayUpdateProfile extends HttpServlet {
     /**
      * Called by server to allow servlet to handle a GET request
      *
