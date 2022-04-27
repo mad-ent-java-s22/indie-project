@@ -1,11 +1,9 @@
 package org.davidcalabrese.controller;
 
 import org.davidcalabrese.entity.Post;
-import org.davidcalabrese.entity.User;
 import org.davidcalabrese.persistence.GenericDao;
 import org.davidcalabrese.util.Util;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,8 +34,6 @@ public class DeletePost extends HttpServlet {
         postDao.delete(postToDelete); // delete post
 
         String url = "/jsp/post_deleted.jsp";
-
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(req, resp);
+        req.getRequestDispatcher(url).forward(req, resp);
     }
 }
