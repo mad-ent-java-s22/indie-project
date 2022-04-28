@@ -2,6 +2,9 @@ package org.davidcalabrese.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Generated POJO, represents a nested object within the OpenAIResponse
+ */
 public class ChoicesItem{
 
 	@JsonProperty("finish_reason")
