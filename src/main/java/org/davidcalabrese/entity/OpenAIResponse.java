@@ -1,8 +1,12 @@
 package org.davidcalabrese.entity;
 
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
+/**
+ * Generated POJO representing response of requests to the OpenAI API
+ */
 public class OpenAIResponse{
 
 	@JsonProperty("created")
