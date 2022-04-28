@@ -6,6 +6,9 @@ import org.hibernate.annotations.NaturalId;
 import javax.persistence.*;
 import java.util.*;
 
+/**
+ * Represents a tag used to indicate a post subject
+ */
 @Entity(name = "Tag")
 @Table(name = "tag")
 public class Tag {
