@@ -1,9 +1,7 @@
 package org.davidcalabrese.controller;
 
-import org.davidcalabrese.entity.Post;
 import org.davidcalabrese.entity.Tag;
 import org.davidcalabrese.persistence.GenericDao;
-import org.davidcalabrese.util.Util;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
