@@ -269,12 +269,22 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         }
     }
 
+    /**
+     * Indicates whether a user exists in the MySQL DB
+     * @param userName the user's username
+     * @return true if user exists, else false
+     */
     public boolean userExists(String userName) {
         GenericDao<User> userDao = new GenericDao<>(User.class);
         List<User> users = userDao.findByPropertyEqual("userName", userName);
         return (users.size() == 1);
     }
 
+    /**
+     * Fetches a user from db given the username
+     * @param userName the user's username
+     * @return the User object associated with that username
+     */
     public User getUser(String userName) {
         GenericDao<User> userDao = new GenericDao<>(User.class);
         List<User> users = userDao.findByPropertyEqual("userName", userName);
