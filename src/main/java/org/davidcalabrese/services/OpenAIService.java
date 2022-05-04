@@ -74,11 +74,11 @@ public class OpenAIService implements PropertiesLoader {
      * @return the prompt to be sent to the API
      */
     public String buildPromptFromTopicList(List<String> topics) {
-        StringJoiner sj = new StringJoiner(" and ");
+        StringJoiner sj = new StringJoiner(" and ", "about", ".");
         for (String topic : topics) {
             sj.add(topic);
         }
-        return "Write a blog post about " + sj;
+        return "Write a blog post " + sj;
     }
 
     /**
