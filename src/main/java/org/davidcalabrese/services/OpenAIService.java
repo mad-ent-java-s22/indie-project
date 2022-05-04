@@ -33,8 +33,8 @@ public class OpenAIService implements PropertiesLoader {
      *
      * @param topics a list of topics the blog post should be about
      * @return API response mapped to the OpenAIResponse entity
-     * @throws IOException - for io errors
-     * @throws InterruptedException - for when thread is interrupted
+     * @throws IOException  for io errors
+     * @throws InterruptedException  for when thread is interrupted
      */
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -68,7 +68,18 @@ public class OpenAIService implements PropertiesLoader {
 
 
     /**
-     * Takes a list of topic(s) and formulates a string prompt
+     * Takes a list of topic(s) and formulates a string prompt to be sent to the OpenAI API.
+     * <p>
+     * If the select list is empty it will send back the prompt <pre>Write a blog post</pre>
+     * <p>
+     * If one or more items from select dropdown are selected they are concatenated into a <code>StringJoiner</code>
+     * which will become the prompt sent to the OpenAI API. For example, if the user chooses "sports",
+     * "politics" and "entertainment" from the select dropdown, <code>buildPromptFromTopicList</code> will create this prompt:
+     *
+     * <pre>
+     *   Write a blog post about sports and politics and entertainment.
+     * </pre>
+     *
      *
      * @param topics the list of topics
      * @return the prompt to be sent to the API
