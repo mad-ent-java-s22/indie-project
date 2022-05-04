@@ -33,7 +33,7 @@
 | 4/28|          SICK                                  |    |                      |
 | 4/29|          SICK                                  |    |                      |
 | 4/30|          SICK                                  |    |                      |
-|Total|                                                |    |                      |
+|Total|                                                |  81  |                      |
 
 ### March
 | Date | Task | Hours | Notes|
