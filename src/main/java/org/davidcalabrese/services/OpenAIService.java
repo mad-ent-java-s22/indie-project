@@ -28,42 +28,6 @@ public class OpenAIService implements PropertiesLoader {
     private final Logger logger = LogManager.getLogger(this.getClass());
     private final String BASE_URL = "https://api.openai.com/v1/engines/text-davinci-002/completions";
 
-//    @POST
-//    // The Java method will produce content identified by the MIME Media type "text/plain"
-//    @Produces("application/json")
-//    public Response getGenericBlogPost() {
-//        // Returns a generic blog post
-//        loadProperties();
-//
-//        OkHttpClient client = new OkHttpClient()
-//                .newBuilder()
-//                .build();
-//
-//        RequestBody body = RequestBody.create("{ " +
-//                "\"prompt\": \"Write a blog post\",  " +
-//                "\"max_tokens\": 5,  " +
-//                "\"temperature\": 0.9,  " +
-//                "\"top_p\": 1,  " +
-//                "\"n\": 1,  " +
-//                "\"stream\": false,  " +
-//                "\"logprobs\": null,  " +
-//                "\"stop\": [\"\\\"\\\"\\\"\"]}", okhttp3.MediaType.parse(APPLICATION_JSON));
-//        Request request = new Request.Builder()
-//                .url(BASE_URL)
-//                .method("POST", body)
-//                .addHeader("Authorization", API_KEY)
-//                .addHeader("Content-Type", "application/json")
-//                .build();
-//        System.out.println(request);
-//        try {
-//            return client.newCall(request).execute();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return null;
-//    }
-
     /**
      * Makes the POST request to the API
      *
