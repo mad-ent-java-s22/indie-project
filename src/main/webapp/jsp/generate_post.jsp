@@ -44,7 +44,7 @@
                 <option value="health">Health</option>
                 <option value="travel">Travel</option>
                 <option value="art">Art</option>
-                <option selected value=""></option>
+                <option selected hidden value="anything at all"></option>
               </select>
           </div>
           <button id="submit" type="submit" class="btn btn-outline-primary">Generate a post</button>
