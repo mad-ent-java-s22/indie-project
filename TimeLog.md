@@ -26,13 +26,13 @@
 | 4/21| indie project - Open AI API                    |  4  |                      |
 | 4/22| indie project - Open AI API                    |  4  |                      |
 | 4/23| indie project - img file location & formatting |  1  |                      |
-| 4/24|                                                |    |                      |
-| 4/25|                                                |    |                      |
-| 4/26|                                                |    |                      |
-| 4/27|                                                |    |                      |
-| 4/28|                                                |    |                      |
-| 4/29|                                                |    |                      |
-| 4/30|                                                |    |                      |
+| 4/24| make entire card clickable, improve styles     |  2  |                      |
+| 4/25| add tag for ai-generated posts                 |  4  |                      |
+| 4/26| pagination                                     |  3  |                      |
+| 4/27| pagination allow for deleting profile (iss016) |  1  |                      |
+| 4/28|          SICK                                  |    |                      |
+| 4/29|          SICK                                  |    |                      |
+| 4/30|          SICK                                  |    |                      |
 |Total|                                                |    |                      |
 
 ### March
