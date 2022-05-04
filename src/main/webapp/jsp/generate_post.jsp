@@ -28,7 +28,7 @@
           <div class="mb-3">
             <label for="tags" class="form-label">Select up to 3 topics for your post</label>
             <div id="tagsHelp" class="form-text">Hold control to select more than one tag</div>
-            <select name="tags" id="tags" multiple class="form-select">
+            <select name="tags" id="tags" multiple class="form-select" size="10">
                 <option value="politics">Politics</option>
                 <option value="education">Education</option>
                 <option value="movies">Movies</option>
