@@ -28,7 +28,7 @@
           <div class="mb-3">
             <label for="tags" class="form-label">Select up to 3 topics for your post</label>
             <div id="tagsHelp" class="form-text">Hold control to select more than one tag</div>
-            <select name="tags" id="tags" multiple class="form-select" size="10">
+            <select required name="tags" id="tags" multiple class="form-select" size="10">
                 <option value="politics">Politics</option>
                 <option value="education">Education</option>
                 <option value="movies">Movies</option>
@@ -44,7 +44,6 @@
                 <option value="health">Health</option>
                 <option value="travel">Travel</option>
                 <option value="art">Art</option>
-                <option selected hidden value="anything at all"></option>
               </select>
           </div>
           <button id="submit" type="submit" class="btn btn-outline-primary">Generate a post</button>
