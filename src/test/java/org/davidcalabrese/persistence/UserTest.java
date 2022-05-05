@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 import org.davidcalabrese.entity.Post;
 import org.davidcalabrese.entity.User;
 import org.davidcalabrese.testUtil.Database;
-import org.davidcalabrese.util.Util;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -61,7 +60,9 @@ public class UserTest {
     }
 
     @Test void createUserSuccess() {
-        User newUser = new User("user6", "user6@gmail.com");
+        User newUser = new User();
+        newUser.setUserName("user6");
+        newUser.setEmail("user6@gmail.com");
         newUser.setFirstName("Meadow");
         newUser.setLastName("Soprano");
         newUser.setSummary("Meadow is a writer.");

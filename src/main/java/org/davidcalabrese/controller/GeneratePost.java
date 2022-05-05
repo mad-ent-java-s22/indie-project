@@ -52,6 +52,8 @@ public class GeneratePost extends HttpServlet {
         assert response != null;
         String postText = response.getChoices().get(0).getText();
 
+        // API response comes back as text with "\n\n" indicating a paragraph break.
+        // However, this will be ignored by the HTML. Replace all "\n\n"s with p tags
         String postTextWithParagraphBreaks = postText.replace("\n\n", "<p>");
 
         req.setAttribute("postText", postTextWithParagraphBreaks);
