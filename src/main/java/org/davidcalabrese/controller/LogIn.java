@@ -37,6 +37,7 @@ public class LogIn extends HttpServlet implements PropertiesLoader {
         CLIENT_ID = cognitoProps.getProperty("client.id");
         LOGIN_URL = cognitoProps.getProperty("loginURL");
         REDIRECT_URL = cognitoProps.getProperty("redirectURL");
+
     }
 
     /**
@@ -49,9 +50,12 @@ public class LogIn extends HttpServlet implements PropertiesLoader {
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // TODO if properties weren't loaded properly, route to an error page
-        // How would I know if they aren't loaded properly?
-        String url = LOGIN_URL + "?response_type=code&client_id=" + CLIENT_ID + "&redirect_uri=" + REDIRECT_URL;
-        resp.sendRedirect(url);
+        try {
+            String url = LOGIN_URL + "?response_type=code&client_id=" + CLIENT_ID + "&redirect_uri=" + REDIRECT_URL;
+            resp.sendRedirect(url);
+        } catch (Exception e) {
+            logger.error("Error loading cognito properties " + e.getMessage(), e);
+            resp.sendRedirect("/error");
+        }
     }
 }
