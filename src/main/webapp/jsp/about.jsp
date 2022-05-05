@@ -19,8 +19,13 @@
       <div class="row g-5 m-3">
         <h1 class="display-6 text-center mt-5">About Otter</h1>
         <p class="lead">Otter is a social media application conceived of and created with ethical design principles.</p>
-        <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis inventore accusamus corrupti tempora excepturi rem! Illo enim sequi voluptate mollitia odio et repudiandae rem voluptas. Libero, eum architecto nemo mollitia reiciendis voluptates voluptate odio facere, cum repellat, veniam reprehenderit beatae sit laborum sequi assumenda nesciunt placeat! Labore dolorum accusamus facilis?</p>
-        <p class="mt-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad sapiente ab saepe expedita aperiam vel, unde, neque dolore delectus iure, debitis nihil. Eius, amet. Fugit velit non in voluptas eum exercitationem cupiditate corporis. Non praesentium rem minima quis saepe nisi?</p>
+        <p class="mt-2">
+          Do you feel like you need to take a shower after spending time on conventional social media sites like Facebook or Twitter? That's because those sites make you feel dirty! Otter won't make you feel dirty! It's just good clean fun! Create an account, share some articles and get on with your life. We promise we won't hijack your attention or rewire your brain when you use our site. Just check it out, have some fun, and move on with your life!
+        </p>
+        <p class="mt-2">This blog is my Enterprise Java final project. It was a lot of fun to build and I hope you find it a lot of fun to use.</p>
+        <p class="mt-2">
+          One of Otter's more unconventional features is that it will generate content for you! Everyone wants to write a blog, but who has time to think up ideas and type out the articles? That's where AI comes in! Otter has access to GPT-3, OpenAI's latest and most powerful language model generator. Just give it a few topics and it will create your articles for you. You'll be on your way to a lucrative blogging career in no time.
+        </p>
       </div>
     </main>
   </div> <!-- end #outer-container -->
