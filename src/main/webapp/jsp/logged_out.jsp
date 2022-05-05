@@ -24,7 +24,7 @@
       </div>
       <div class="col-md-12 px-0">
         <a class="btn btn-outline-info" href="http://blogenv2-env.eba-zg5dcynj.us-east-2.elasticbeanstalk.com/">
-          Go Back Home
+          Sign back in
         </a>
       </div>
     </main>
