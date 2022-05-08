@@ -92,3 +92,15 @@ The application will be designed so a user can get caught up on the latest news 
 
 ### Data Model 
 ![ERD](DesignDocuments/ERD_4-6-22_no_comment_table.png)
+
+### Flowcharts
+![Key](flowcharts/key.jpg)
+![Login](flowcharts/login.jpg)
+![Profile](flowcharts/profile.jpg)
+![Create a post](flowcharts/create_post.jpg)
+![Update a post](flowcharts/update_post.jpg)
+![Delete a post](flowcharts/delete_post.jpg)
+![Generate a post](flowcharts/generate_post.jpg)
+![Create a comment](flowcharts/create_comment.jpg)
+
+
