@@ -89,3 +89,7 @@ The application will be designed so a user can get caught up on the latest news 
 * Unit Testing
     * JUnit tests to achieve 80%+ code coverage
 * IDE: IntelliJ IDEA
+
+
+### Data Model 
+![ERD](DesignDocuments/ERD_4-6-22_no_comment_table.png)
