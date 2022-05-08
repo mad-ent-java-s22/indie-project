@@ -1,12 +1,16 @@
 # Time Log
 
 #### May
-| Date |          Task                                 |Hours|       Notes          |
-|------|-----------------------------------------------|-----|----------------------|
-| 5/1  |                                                |     |                      |
-| 5/2  |                                                |     |                      |
-| 5/3  |                                                |     |                      |
-| 5/4  |                                                |     |                      |
+| Date |          Task                        |Hours| Notes |
+|------|--------------------------------------|-----|-------|
+| 5/1  |    SICK                              |     |       |
+| 5/2  |    SICK                              |     |       |
+| 5/3  | refactor login class (iss030)        |  3  |       |
+| 5/4  | add startup servlet  (iss030)        |  6  |       |
+| 5/5  | update about page, merge iss030      |  2  |       |
+| 5/6  |                                      |  0  |       |
+| 5/7  |                                      |  0  |       |
+| 5/8  | prepare presentation, review rubric  |  2  |       |
 
 
 ### April
