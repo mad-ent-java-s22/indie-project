@@ -1,5 +1,7 @@
 # Time Log
 
+Total time (excluding May) - 315.75 hrs
+
 #### May
 | Date |          Task                        |Hours| Notes |
 |------|--------------------------------------|-----|-------|
