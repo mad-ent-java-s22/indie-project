@@ -72,9 +72,8 @@ The application will be designed so a user can get caught up on the latest news 
 * Dependency Management
     * Maven
 * Web Services consumed using Java
-    * Potential APIs to use in a blog 
-      * [HTTP Cat](https://http.cat/?ref=apilist.fun) provides a cat image for every http status code. This could be used with custom http error pages
-      * [Google Calendar](https://developers.google.com/calendar) Could be used to add to calendar events that are posted in blog
+    * [OpenAI API](https://beta.openai.com/docs/introduction) provides access to natural language model GPT-3
+    * Used to generate blog posts
 * CSS
     * Bootstrap
 * Data Validation
