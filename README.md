@@ -93,6 +93,18 @@ The application will be designed so a user can get caught up on the latest news 
 ### Data Model 
 ![ERD](DesignDocuments/ERD_4-6-22_no_comment_table.png)
 
+### "Wireframes"
+![Splash Page](DesignDocuments/Wireframes/splash_page.jpg)
+![Home Screen](DesignDocuments/Wireframes/home_screen.jpg)
+![Create Post](DesignDocuments/Wireframes/create_post.jpg)
+![Generate Post](DesignDocuments/Wireframes/generate_post.jpg)
+![Post](DesignDocuments/Wireframes/post.jpg)
+![Post Confirmation](DesignDocuments/Wireframes/post_confirmation.jpg)
+![Delete Confirmation](DesignDocuments/Wireframes/delete_confirmation.jpg)
+![Tiny editor](DesignDocuments/Wireframes/tiny_embedded_text_editor_screengrab.jpg)
+![User page](DesignDocuments/Wireframes/user.jpg)
+![Pagination attempt](DesignDocuments/Wireframes/paginate.jpg)
+
 ### Flowcharts
 ![Key](flowcharts/key.jpg)
 ![Login](flowcharts/login.jpg)
