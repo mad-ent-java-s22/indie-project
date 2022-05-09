@@ -91,7 +91,7 @@ The application will be designed so a user can get caught up on the latest news 
 
 
 ### Data Model 
-![ERD](DesignDocuments/ERD_4-6-22_no_comment_table.png)
+![ERD](DesignDocuments/ERD_4-6-22.png)
 
 ### "Wireframes"
 ![Splash Page](DesignDocuments/Wireframes/splash_page.jpg)
