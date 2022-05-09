@@ -94,16 +94,16 @@ The application will be designed so a user can get caught up on the latest news 
 ![ERD](DesignDocuments/ERD_4-6-22.png)
 
 ### "Wireframes"
-![Splash Page](DesignDocuments/Wireframes/splash_page.jpg)
-![Home Screen](DesignDocuments/Wireframes/home_screen.jpg)
-![Create Post](DesignDocuments/Wireframes/create_post.jpg)
-![Generate Post](DesignDocuments/Wireframes/generate_post.jpg)
-![Post](DesignDocuments/Wireframes/post.jpg)
-![Post Confirmation](DesignDocuments/Wireframes/post_confirmation.jpg)
-![Delete Confirmation](DesignDocuments/Wireframes/delete_confirmation.jpg)
-![Tiny editor](DesignDocuments/Wireframes/tiny_embedded_text_editor_screengrab.jpg)
-![User page](DesignDocuments/Wireframes/user.jpg)
-![Pagination attempt](DesignDocuments/Wireframes/paginate.jpg)
+![Splash Page](DesignDocuments/wireframes/splash_page.jpg)
+![Home Screen](DesignDocuments/wireframes/home_screen.jpg)
+![Create Post](DesignDocuments/wireframes/create_post.jpg)
+![Generate Post](DesignDocuments/wireframes/generate_post.jpg)
+![Post](DesignDocuments/wireframes/post.jpg)
+![Post Confirmation](DesignDocuments/wireframes/post_confirmation.jpg)
+![Delete Confirmation](DesignDocuments/wireframes/delete_confirmation.jpg)
+![Tiny editor](DesignDocuments/wireframes/tiny_embedded_text_editor_screengrab.jpg)
+![User page](DesignDocuments/wireframes/user.jpg)
+![Pagination attempt](DesignDocuments/wireframes/paginate.jpg)
 
 ### Flowcharts
 ![Key](flowcharts/key.jpg)
