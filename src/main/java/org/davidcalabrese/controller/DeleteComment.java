@@ -1,6 +1,7 @@
 package org.davidcalabrese.controller;
 
 import org.davidcalabrese.entity.Comment;
+import org.davidcalabrese.entity.Post;
 import org.davidcalabrese.persistence.GenericDao;
 import org.davidcalabrese.util.Util;
 
@@ -26,13 +27,17 @@ public class DeleteComment extends HttpServlet {
    */
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    // grab comment id param from url, create comment dao
+    // grab comment id param from url, create comment dao and post daos
     int commentId = Util.getId(req.getPathInfo());
     GenericDao<Comment> commentDao = new GenericDao<>(Comment.class);
+    GenericDao<Post> postDao = new GenericDao<>(Post.class);
 
     Comment commentToDelete = commentDao.getById(commentId); // fetch comment with id
-    commentDao.delete(commentToDelete); // delete comment
+    commentDao.delete(commentToDelete);                      // delete comment
 
-    resp.sendRedirect(req.getHeader("referer"));          // redirect back to same page
+    int idOfPostWithComment = commentToDelete.getPost().getId();  // get post id
+    String url = "/posts/" + idOfPostWithComment;      // get url of post to forward back to
+
+    getServletContext().getRequestDispatcher(url).forward(req, resp);
   }
 }

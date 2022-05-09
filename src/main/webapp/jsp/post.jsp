@@ -129,14 +129,13 @@
                               <tags:localDate date="${comment.dateCreated}" pattern='${"MMM d, yyyy"}'/>
                             </small>
                           </div>
-                          <c:if test = "${user.id == comment.user.id || user.accessPrivileges.equals('admin')}">
-                          <p class="text-justify comment-text mb-0 d-flex flex-row">
-                              ${comment.content}
-                              <a href="/delete_comment/${comment.id}" class="ms-auto">
-                                <i class="fa-solid fa-trash"></i>
-                              </a>
+                          <p class="text-justify comment-text mb-0 d-flex flex-row">${comment.content}
+                            <c:if test = "${user.id == comment.user.id || user.accessPrivileges.equals('admin')}">
+                            <a href="/delete_comment/${comment.id}" class="ms-auto">
+                              <i class="fa-solid fa-trash"></i>
+                            </a>
+                            </c:if>
                           </p>
-                          </c:if>
                         </div>
                       </div>
                     </div> <!-- end mt-2 -->
