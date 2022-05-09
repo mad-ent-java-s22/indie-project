@@ -130,7 +130,7 @@
                             </small>
                           </div>
                           <c:if test = "${user.id == comment.user.id || user.accessPrivileges.equals('admin')}">
-                          <p class="text-justify comment-text mb-0">
+                          <p class="text-justify comment-text mb-0 d-flex flex-row">
                               ${comment.content}
                               <a href="/delete_comment/${comment.id}" class="ms-auto">
                                 <i class="fa-solid fa-trash"></i>
