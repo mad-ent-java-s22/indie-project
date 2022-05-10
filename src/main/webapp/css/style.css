@@ -31,6 +31,9 @@
     bottom: 3px;
 }
 
+.fa-trash { color: #ff0000; }
+.fa-trash:hover { color: #be0000; }
+
 .tag-link { text-decoration: none; }
 .text-color-red {color: #d32f2f }           /* politics */
 .text-color-red:active, .text-color-red:hover { color: #942222 }

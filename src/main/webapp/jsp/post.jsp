@@ -11,6 +11,8 @@
   <title>Read Post | Otter </title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <!-- font awesome -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' integrity='sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==' crossorigin='anonymous' referrerpolicy='no-referrer' />
   <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
 </head>
 <body>
@@ -127,8 +129,12 @@
                               <tags:localDate date="${comment.dateCreated}" pattern='${"MMM d, yyyy"}'/>
                             </small>
                           </div>
-                          <p class="text-justify comment-text mb-0">
-                              ${comment.content}
+                          <p class="text-justify comment-text mb-0 d-flex flex-row">${comment.content}
+                            <c:if test = "${user.id == comment.user.id || user.accessPrivileges.equals('admin')}">
+                            <a href="/delete_comment/${comment.id}" class="ms-auto">
+                              <i class="fa-solid fa-trash"></i>
+                            </a>
+                            </c:if>
                           </p>
                         </div>
                       </div>
