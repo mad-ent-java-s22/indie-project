@@ -50,6 +50,14 @@ public class DisplayPost extends HttpServlet {
         getServletContext().getRequestDispatcher(url).forward(req, resp);
     }
 
+    /**
+     * Triggered when submitting comment form to post page. Pass to doGet.
+     *
+     * @param req               object containing req client has made of the servlet
+     * @param resp              object that containing resp servlet sends to the client
+     * @throws ServletException if an input or output error is detected when handling GET req
+     * @throws IOException      if the request for the GET could not be handled
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doGet(req, resp);
