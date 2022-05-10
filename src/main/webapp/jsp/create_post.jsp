@@ -14,6 +14,7 @@
   <script src="<%=request.getContextPath()%>/js/tinymce/js/tinymce/tinymce.min.js"></script>
   <script>tinymce.init({ selector: 'textarea#content', });</script>
   <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
+  <link rel="icon" href="/favicon-32x32.png" sizes="any">
 </head>
 <body>
 <div class="container py-4" id="outer-container">
