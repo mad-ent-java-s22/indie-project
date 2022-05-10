@@ -2,6 +2,8 @@
 
 Repository for Enterprise Java project.
 
+[Video Walkthrough](https://www.youtube.com/watch?v=D1EdAm-5-pg)
+
 ### Problem statement
 Social media applications such as Facebook, Twitter and, to a lesser extent, others, are incentivized to keep users on their sites or apps for as long as possible in order to increase ad exposure and revenue. Numerous studies have indicated that social media can have negative effects on users, especially already vulnerable groups such as pre-teens and teenagers and people with mental health issues such as anxiety and depression. Since social media is relatively new, long-term consequences have not been established. 
 
