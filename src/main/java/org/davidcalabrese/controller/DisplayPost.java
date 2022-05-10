@@ -5,14 +5,15 @@ import org.davidcalabrese.entity.Post;
 import org.davidcalabrese.entity.User;
 import org.davidcalabrese.persistence.GenericDao;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  *  Displays the post with id = * placeholder in URL
@@ -31,8 +32,6 @@ public class DisplayPost extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao<Post> postDao = new GenericDao<>(Post.class);
-        GenericDao<Comment> commentDao = new GenericDao<>(Comment.class);
-
 
         String pathInfo = req.getPathInfo();                  // grab post id from url
         int postId = Integer.parseInt(pathInfo.substring(1)); // convert to int
@@ -40,16 +39,15 @@ public class DisplayPost extends HttpServlet {
 
         User user = (User) req.getSession().getAttribute("user");  // get current user
 
-        List<Comment> comments = commentDao.findByPropertyEqual("post", post);   // get all post comments
-        comments.sort(Comparator.comparing(Comment::getDateCreated).reversed());
+        List<Comment> comments = new ArrayList<>(List.copyOf(post.getComments()));  // get all post comments
+        comments.sort(Comparator.comparing(Comment::getDateCreated).reversed());    // reverse (newest first)
 
         req.setAttribute("comments", comments);
         req.setAttribute("user", user);
         req.setAttribute("userId", user.getId());
         req.setAttribute("post", post);
         String url = "/jsp/post.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(req, resp);
+        getServletContext().getRequestDispatcher(url).forward(req, resp);
     }
 
     @Override
