@@ -37,7 +37,6 @@ public class LogIn extends HttpServlet implements PropertiesLoader {
         CLIENT_ID = cognitoProps.getProperty("client.id");
         LOGIN_URL = cognitoProps.getProperty("loginURL");
         REDIRECT_URL = cognitoProps.getProperty("redirectURL");
-
     }
 
     /**
