@@ -1,7 +1,6 @@
 package org.davidcalabrese.controller;
 
 import org.davidcalabrese.entity.Comment;
-import org.davidcalabrese.entity.Post;
 import org.davidcalabrese.persistence.GenericDao;
 import org.davidcalabrese.util.Util;
 
@@ -30,7 +29,6 @@ public class DeleteComment extends HttpServlet {
     // grab comment id param from url, create comment dao and post daos
     int commentId = Util.getId(req.getPathInfo());
     GenericDao<Comment> commentDao = new GenericDao<>(Comment.class);
-    GenericDao<Post> postDao = new GenericDao<>(Post.class);
 
     Comment commentToDelete = commentDao.getById(commentId); // fetch comment with id
     commentDao.delete(commentToDelete);                      // delete comment

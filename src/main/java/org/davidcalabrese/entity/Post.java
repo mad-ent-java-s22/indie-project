@@ -224,16 +224,6 @@ public class Post {
         this.tags = tags;
     }
 
-    public void addTag(Tag tag) {
-        tags.add(tag);
-        tag.getPosts().add(this);
-    }
-
-    public void removeTag(Tag tag) {
-        tags.remove(tag);
-        tag.getPosts().remove(this);
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

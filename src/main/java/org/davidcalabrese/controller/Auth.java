@@ -263,6 +263,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
     /**
      * Indicates whether a user exists in the MySQL DB
+     *
      * @param userName the user's username
      * @return true if user exists, else false
      */
@@ -274,6 +275,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
     /**
      * Fetches a user from db given the username
+     *
      * @param userName the user's username
      * @return the User object associated with that username
      */
