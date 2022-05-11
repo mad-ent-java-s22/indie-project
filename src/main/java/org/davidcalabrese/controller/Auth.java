@@ -65,7 +65,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     @Override
     public void init() throws ServletException {
         super.init();
-        loadProperties();
+//      loadProperties();
+        getPropsFromServletContext();
         loadKey();
     }
 
@@ -247,25 +248,17 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     }
 
     /**
-     * Read in the cognito props file and get/set the client id, secret, and required urls
-     * for authenticating a user.
+     * Fetches all the cognito properties that were stored in the application context in the ApplicationStartup class.
      */
-    // TODO This code appears in a couple classes, consider using a startup servlet similar to adv java project
-    private void loadProperties() {
-        try {
-            properties = loadProperties("/cognito.properties");
-            CLIENT_ID = properties.getProperty("client.id");
-            CLIENT_SECRET = properties.getProperty("client.secret");
-            OAUTH_URL = properties.getProperty("oauthURL");
-            LOGIN_URL = properties.getProperty("loginURL");
-            REDIRECT_URL = properties.getProperty("redirectURL");
-            REGION = properties.getProperty("region");
-            POOL_ID = properties.getProperty("poolId");
-        } catch (IOException ioException) {
-            logger.error("Cannot load properties..." + ioException.getMessage(), ioException);
-        } catch (Exception e) {
-            logger.error("Error loading properties" + e.getMessage(), e);
-        }
+    private void getPropsFromServletContext() {
+        properties = (Properties) getServletContext().getAttribute("cognitoProps");
+        CLIENT_ID = properties.getProperty("client.id");
+        LOGIN_URL = properties.getProperty("loginURL");
+        REDIRECT_URL = properties.getProperty("redirectURL");
+        CLIENT_SECRET = properties.getProperty("client.secret");
+        OAUTH_URL = properties.getProperty("oauthURL");
+        REGION = properties.getProperty("region");
+        POOL_ID = properties.getProperty("poolId");
     }
 
     /**
